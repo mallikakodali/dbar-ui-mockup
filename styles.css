@@ -1149,6 +1149,32 @@ tfoot td {
   white-space: nowrap;
 }
 
+/* Sticky first column for wide tables */
+.performance-table.wide-table th.metric-header,
+.performance-table.wide-table td.metric-name {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  background: var(--bg-white);
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
+}
+
+.performance-table.wide-table th.metric-header {
+  background: var(--bg-gray);
+  z-index: 11;
+}
+
+.performance-table.wide-table .section-header-row td {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  background: var(--bg-gray);
+}
+
+.performance-table.wide-table .subtotal-row td.metric-name {
+  background: var(--bg-light);
+}
+
 .performance-table th,
 .performance-table td {
   padding: 10px 12px;
