@@ -2525,6 +2525,12 @@ tfoot td {
   line-height: 1.5;
 }
 
+.priority-banner.phase-1 {
+  background: #DBEAFE;
+  border: 1px solid #3B82F6;
+  color: #1E40AF;
+}
+
 .priority-banner.phase-2 {
   background: #FEF3C7;
   border: 1px solid #F59E0B;
