@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBAR - Contract Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#C41E3A"/>
+          <rect x="8" y="10" width="24" height="4" rx="1" fill="white"/>
+          <rect x="10" y="17" width="20" height="4" rx="1" fill="white"/>
+          <rect x="12" y="24" width="16" height="4" rx="1" fill="white"/>
+        </svg>
+        <span class="logo-text">go/<span class="logo-highlight">dbar</span></span>
+      </div>
+    </div>
+    
+    <div class="header-center">
+      <div class="search-group">
+        <select class="contracts-dropdown">
+          <option>Contracts</option>
+        </select>
+        <div class="search-input-wrapper">
+          <input type="text" placeholder="Enter Contract ID..." class="search-input">
+          <button class="search-btn">»</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="header-right">
+      <button class="contract-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        Contract
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+      <div class="user-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="#" class="breadcrumb-link">DBAR</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="#" class="breadcrumb-link">Companion</a>
+      <span class="breadcrumb-separator">›</span>
+    </nav>
+
+    <!-- Contract Header -->
+    <div class="contract-header">
+      <div class="contract-title-row">
+        <h1 class="contract-id">801Vp00000PlbDxIAJ</h1>
+        <span class="status-badge active">Active</span>
+        <button class="debook-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16v16H4z"/>
+            <path d="M9 9l6 6m0-6l-6 6"/>
+          </svg>
+          Debook Contract
+        </button>
+      </div>
+      <div class="contract-meta">
+        <span>Salesforce Opportunity ID: <a href="#" class="meta-link">006Vp0000089YlqlAE <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></span>
+      </div>
+      <div class="contract-meta">
+        <span class="meta-label">Last Modified: Aug 11, 2025</span>
+      </div>
+    </div>
+
+    <!-- Date Cards -->
+    <div class="date-cards">
+      <div class="date-card">
+        <div class="date-label">Start Date</div>
+        <div class="date-value">May 9, 2025</div>
+      </div>
+      <div class="date-card">
+        <div class="date-label">End Date</div>
+        <div class="date-value">May 8, 2026</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="consumption">Consumption</button>
+      <button class="tab" data-tab="azure-p3">Azure P3</button>
+      <button class="tab" data-tab="commit-buckets">Commit Buckets</button>
+      <button class="tab" data-tab="pricing-plan">Pricing Plan</button>
+      <button class="tab active" data-tab="billing-settings">Billing Settings</button>
+      <button class="tab" data-tab="billings">Billings</button>
+    </div>
+
+    <!-- Overview Tab Content -->
+    <div class="tab-content" id="overview-content" style="display: none;">
+      <!-- Two Column Layout -->
+      <div class="overview-layout">
+        <!-- Left Column: Original Overview Content -->
+        <div class="overview-main">
+          <!-- Overview Section -->
+          <section class="section">
+            <h2 class="section-title">Overview</h2>
+            
+            <!-- Customer Information -->
+            <div class="info-group">
+              <h4 class="info-group-title">Customer Information</h4>
+              <div class="info-rows">
+                <div class="info-row">
+                  <span class="info-label">Salesforce Account ID</span>
+                  <a href="#" class="info-link">0018Y00003497Y1QAI <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Netsuite Customer ID</span>
+                  <a href="#" class="info-link">1654058 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contract Information -->
+            <div class="info-group">
+              <h4 class="info-group-title">Contract Information</h4>
+              <div class="info-rows">
+                <div class="info-row">
+                  <span class="info-label">Contract Type</span>
+                  <span class="info-value">Renewal</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Parent Contracts</span>
+                  <span class="info-value">801Vp00000ApWGpIAN</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Netsuite Class</span>
+                  <span class="info-value">Azure</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Is Reseller Contract</span>
+                  <span class="info-value">No</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Contract Rollover</span>
+                  <span class="info-value">$0.00 <button class="inline-edit-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></button></span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Is Bursting</span>
+                  <span class="info-value">No</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Salesforce Order Information -->
+          <section class="section">
+            <h2 class="section-title">Salesforce Order Information</h2>
+            
+            <div class="section-toolbar">
+              <div class="toolbar-left">
+                <div class="search-filter">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Orders">
+                </div>
+                <select class="filter-dropdown">
+                  <option>Order Type</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="orders-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Salesforce Opportunity ID <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                    <th>Type</th>
+                    <th>Salesforce Order ID</th>
+                    <th>Original Salesforce Order ID</th>
+                    <th>Netsuite ZAB Subscription</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#" class="table-link">006Vp0000089YlqlAE <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></td>
+                    <td>Renewal</td>
+                    <td><a href="#" class="table-link">801Vp00000PlbDxIAJ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></td>
+                    <td><a href="#" class="table-link">801Vp00000PlbDxIAJ <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></td>
+                    <td><a href="#" class="table-link">006Vp0000089YlqIAE <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Sidebar: TDCP & TDCA (Smaller) -->
+        <div class="overview-sidebar compact">
+          <!-- TDCP Section -->
+          <div class="sidebar-card-small">
+            <h4 class="sidebar-title-small">TDCP Breakdown</h4>
+            <div class="sidebar-rows-small">
+              <div class="sidebar-row-small">
+                <span>Prepaid Values</span>
+                <span>$225,000</span>
+              </div>
+              <div class="sidebar-row-small">
+                <span>PIA</span>
+                <span>$45,000</span>
+              </div>
+              <div class="sidebar-row-small">
+                <span>Support</span>
+                <span>$22,500</span>
+              </div>
+              <div class="sidebar-row-small">
+                <span>DSE</span>
+                <span>$9,000</span>
+              </div>
+              <div class="sidebar-row-small">
+                <span>DTU</span>
+                <span>$4,500</span>
+              </div>
+              <div class="sidebar-row-small total">
+                <span>Total</span>
+                <span>$306,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TDCA Section -->
+          <div class="sidebar-card-small">
+            <h4 class="sidebar-title-small">TDCA Breakdown</h4>
+            <div class="sidebar-rows-small">
+              <div class="sidebar-row-small">
+                <span>TDCP</span>
+                <span>$306,000</span>
+              </div>
+              <div class="sidebar-row-small">
+                <span>Comp Usage</span>
+                <span>$22,500</span>
+              </div>
+              <div class="sidebar-row-small">
+                <span>Rollover</span>
+                <span>$13,500</span>
+              </div>
+              <div class="sidebar-row-small">
+                <span>OTD</span>
+                <span>$7,500</span>
+              </div>
+              <div class="sidebar-row-small total">
+                <span>Total</span>
+                <span>$349,500</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consumption Tab Content -->
+    <div class="tab-content" id="consumption-content" style="display: none;">
+      <!-- Total Consumption Breakdown - 12 Months -->
+      <section class="section">
+        <h2 class="section-title">Total Consumption Breakdown</h2>
+        <p class="section-description">Monthly breakdown of consumption components for the past 12 months.</p>
+
+        <div class="performance-table-wrapper">
+          <table class="performance-table wide-table">
+            <thead>
+              <tr>
+                <th class="metric-header">Metric</th>
+                <th>Feb 25</th>
+                <th>Mar 25</th>
+                <th>Apr 25</th>
+                <th>May 25</th>
+                <th>Jun 25</th>
+                <th>Jul 25</th>
+                <th>Aug 25</th>
+                <th>Sep 25</th>
+                <th>Oct 25</th>
+                <th>Nov 25</th>
+                <th>Dec 25</th>
+                <th class="mtd-column">Jan 26 <span class="draft-badge">Draft</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Consumption Section -->
+              <tr class="section-header-row">
+                <td colspan="13"><strong>Total Cumulative Consumption</strong></td>
+              </tr>
+              <tr>
+                <td class="metric-name indent">Cloud Usage</td>
+                <td class="amount">$26,200</td>
+                <td class="amount">$27,800</td>
+                <td class="amount">$29,100</td>
+                <td class="amount">$28,500</td>
+                <td class="amount">$32,150</td>
+                <td class="amount">$29,800</td>
+                <td class="amount">$35,200</td>
+                <td class="amount">$31,450</td>
+                <td class="amount">$28,900</td>
+                <td class="amount">$33,750</td>
+                <td class="amount">$36,100</td>
+                <td class="amount mtd-column">$29,400</td>
+              </tr>
+              <tr>
+                <td class="metric-name indent">+ Support Charge</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount">$2,500</td>
+                <td class="amount mtd-column">$2,500</td>
+              </tr>
+              <tr>
+                <td class="metric-name indent">+ DSE Charge</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount">$1,000</td>
+                <td class="amount mtd-column">$1,000</td>
+              </tr>
+              <tr>
+                <td class="metric-name indent">- OTD</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount negative">-$833</td>
+                <td class="amount mtd-column negative">-$833</td>
+              </tr>
+              <tr>
+                <td class="metric-name indent">- Applied Comp Usage</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount negative">-$2,500</td>
+                <td class="amount mtd-column negative">-$2,500</td>
+              </tr>
+              <tr>
+                <td class="metric-name indent">- Rollover</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount negative">-$1,500</td>
+                <td class="amount mtd-column negative">-$1,500</td>
+              </tr>
+              <tr class="subtotal-row">
+                <td class="metric-name"><strong>Total Consumption</strong></td>
+                <td class="amount"><strong>$24,867</strong></td>
+                <td class="amount"><strong>$26,467</strong></td>
+                <td class="amount"><strong>$27,767</strong></td>
+                <td class="amount"><strong>$27,167</strong></td>
+                <td class="amount"><strong>$30,817</strong></td>
+                <td class="amount"><strong>$28,467</strong></td>
+                <td class="amount"><strong>$33,867</strong></td>
+                <td class="amount"><strong>$30,117</strong></td>
+                <td class="amount"><strong>$27,567</strong></td>
+                <td class="amount"><strong>$32,417</strong></td>
+                <td class="amount"><strong>$34,767</strong></td>
+                <td class="amount mtd-column"><strong>$28,067</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Usage by Cloud - 12 Months -->
+      <section class="section">
+        <h2 class="section-title">Usage by Cloud</h2>
+        <p class="section-description">Cloud usage breakdown by billing channel for the past 12 months.</p>
+
+        <div class="performance-table-wrapper">
+          <table class="performance-table wide-table">
+            <thead>
+              <tr>
+                <th class="metric-header">Cloud / Channel</th>
+                <th>Feb 25</th>
+                <th>Mar 25</th>
+                <th>Apr 25</th>
+                <th>May 25</th>
+                <th>Jun 25</th>
+                <th>Jul 25</th>
+                <th>Aug 25</th>
+                <th>Sep 25</th>
+                <th>Oct 25</th>
+                <th>Nov 25</th>
+                <th>Dec 25</th>
+                <th class="mtd-column">Jan 26 <span class="draft-badge">Draft</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="metric-name">Azure</td>
+                <td class="amount">$10,200</td>
+                <td class="amount">$10,800</td>
+                <td class="amount">$11,400</td>
+                <td class="amount">$11,200</td>
+                <td class="amount">$12,650</td>
+                <td class="amount">$11,700</td>
+                <td class="amount">$13,850</td>
+                <td class="amount">$12,350</td>
+                <td class="amount">$11,350</td>
+                <td class="amount">$13,250</td>
+                <td class="amount">$14,250</td>
+                <td class="amount mtd-column">$11,500</td>
+              </tr>
+              <tr>
+                <td class="metric-name">AWS Marketplace</td>
+                <td class="amount">$9,100</td>
+                <td class="amount">$9,600</td>
+                <td class="amount">$10,100</td>
+                <td class="amount">$9,900</td>
+                <td class="amount">$11,200</td>
+                <td class="amount">$10,400</td>
+                <td class="amount">$12,300</td>
+                <td class="amount">$10,950</td>
+                <td class="amount">$10,100</td>
+                <td class="amount">$11,800</td>
+                <td class="amount">$12,350</td>
+                <td class="amount mtd-column">$10,200</td>
+              </tr>
+              <tr>
+                <td class="metric-name">GCP Marketplace</td>
+                <td class="amount">$4,200</td>
+                <td class="amount">$4,500</td>
+                <td class="amount">$4,700</td>
+                <td class="amount">$4,500</td>
+                <td class="amount">$5,100</td>
+                <td class="amount">$4,800</td>
+                <td class="amount">$5,600</td>
+                <td class="amount">$5,000</td>
+                <td class="amount">$4,600</td>
+                <td class="amount">$5,400</td>
+                <td class="amount">$5,800</td>
+                <td class="amount mtd-column">$4,500</td>
+              </tr>
+              <tr>
+                <td class="metric-name">SAP</td>
+                <td class="amount">$1,600</td>
+                <td class="amount">$1,700</td>
+                <td class="amount">$1,750</td>
+                <td class="amount">$1,750</td>
+                <td class="amount">$1,950</td>
+                <td class="amount">$1,800</td>
+                <td class="amount">$2,150</td>
+                <td class="amount">$1,950</td>
+                <td class="amount">$1,750</td>
+                <td class="amount">$2,050</td>
+                <td class="amount">$2,200</td>
+                <td class="amount mtd-column">$1,800</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Databricks Direct</td>
+                <td class="amount">$1,100</td>
+                <td class="amount">$1,200</td>
+                <td class="amount">$1,150</td>
+                <td class="amount">$1,150</td>
+                <td class="amount">$1,250</td>
+                <td class="amount">$1,100</td>
+                <td class="amount">$1,300</td>
+                <td class="amount">$1,200</td>
+                <td class="amount">$1,100</td>
+                <td class="amount">$1,250</td>
+                <td class="amount">$1,500</td>
+                <td class="amount mtd-column">$1,400</td>
+              </tr>
+              <tr class="subtotal-row">
+                <td class="metric-name"><strong>Total Cloud Usage</strong></td>
+                <td class="amount"><strong>$26,200</strong></td>
+                <td class="amount"><strong>$27,800</strong></td>
+                <td class="amount"><strong>$29,100</strong></td>
+                <td class="amount"><strong>$28,500</strong></td>
+                <td class="amount"><strong>$32,150</strong></td>
+                <td class="amount"><strong>$29,800</strong></td>
+                <td class="amount"><strong>$35,200</strong></td>
+                <td class="amount"><strong>$31,450</strong></td>
+                <td class="amount"><strong>$28,900</strong></td>
+                <td class="amount"><strong>$33,750</strong></td>
+                <td class="amount"><strong>$36,100</strong></td>
+                <td class="amount mtd-column"><strong>$29,400</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Monthly Reconciliation Section -->
+      <section class="section">
+        <h2 class="section-title">Monthly Reconciliation</h2>
+        <p class="section-description">Previous closed month vs current draft month.</p>
+
+        <div class="reconciliation-two-col">
+          <!-- December 2025 (Closed) -->
+          <div class="recon-month-card">
+            <div class="recon-month-header closed">
+              <span class="month-name">December 2025</span>
+              <span class="month-status closed-badge">Closed</span>
+            </div>
+            <div class="recon-month-body">
+              <div class="recon-item">
+                <span class="recon-item-label">Total Consumption</span>
+                <span class="recon-item-value">$34,767.00</span>
+              </div>
+              <div class="recon-item">
+                <span class="recon-item-label">Total Billed</span>
+                <span class="recon-item-value">$30,767.00</span>
+              </div>
+              <div class="recon-divider"></div>
+              <div class="recon-item result">
+                <span class="recon-item-label">Position</span>
+                <span class="recon-item-value burst">Burst: $4,000.00</span>
+              </div>
+              <p class="recon-item-note">Burst amount allocated to Direct and AWS MP.</p>
+            </div>
+          </div>
+
+          <!-- January 2026 (Draft) -->
+          <div class="recon-month-card">
+            <div class="recon-month-header draft">
+              <span class="month-name">January 2026</span>
+              <span class="month-status draft-badge">MTD Draft</span>
+            </div>
+            <div class="recon-month-body">
+              <div class="recon-item">
+                <span class="recon-item-label">Total Consumption</span>
+                <span class="recon-item-value">$28,067.00</span>
+              </div>
+              <div class="recon-item">
+                <span class="recon-item-label">Total Billed</span>
+                <span class="recon-item-value">$30,000.00</span>
+              </div>
+              <div class="recon-divider"></div>
+              <div class="recon-item result">
+                <span class="recon-item-label">Position</span>
+                <span class="recon-item-value credit">Credit: $1,933.00</span>
+              </div>
+              <p class="recon-item-note">Credit will be applied to next installment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End of Year Reconciliation -->
+      <section class="section">
+        <h2 class="section-title">End of Year Reconciliation</h2>
+        <p class="section-description">Annual reconciliation performed at the end of each contract year.</p>
+
+        <div class="reconciliation-summary">
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Total Available (Year)</span>
+              <span class="recon-value">$349,500.00</span>
+            </div>
+            <div class="recon-body">
+              <div class="recon-row">
+                <span>TDCA</span>
+                <span>$349,500.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Total Consumption (Year)</span>
+              <span class="recon-value">$273,250.00</span>
+            </div>
+            <div class="recon-body">
+              <div class="recon-row">
+                <span>Cloud + Support + DSE - Credits</span>
+                <span>$273,250.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Total Billed (Year)</span>
+              <span class="recon-value">$262,985.00</span>
+            </div>
+            <div class="recon-body">
+              <div class="recon-row">
+                <span>Installments + Arrears + Burst</span>
+                <span>$262,985.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Year End Position</span>
+              <span class="recon-value burst">Burst: $10,265.00</span>
+            </div>
+            <div class="recon-body">
+              <div class="recon-row">
+                <span>Consumption - Billed</span>
+                <span class="burst">$10,265.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End of Contract Reconciliation -->
+      <section class="section">
+        <h2 class="section-title">End of Contract Reconciliation</h2>
+        <p class="section-description">Final reconciliation performed at contract expiration, including P3 adjustments.</p>
+
+        <div class="reconciliation-summary">
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Total Contract Value</span>
+              <span class="recon-value">$300,000.00</span>
+            </div>
+          </div>
+
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Total Consumption (Contract)</span>
+              <span class="recon-value">$273,250.00</span>
+            </div>
+          </div>
+
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Total Billed (Contract)</span>
+              <span class="recon-value">$262,985.00</span>
+            </div>
+          </div>
+
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Unconsumed P3 (Excluded)</span>
+              <span class="recon-value negative">-$8,400.00</span>
+            </div>
+          </div>
+
+          <div class="recon-card">
+            <div class="recon-header">
+              <span class="recon-label">Final Settlement</span>
+              <span class="recon-value burst">Burst Due: $1,865.00</span>
+            </div>
+            <div class="recon-body">
+              <div class="recon-note">
+                Final burst amount after excluding unconsumed P3 from Total Billed calculation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Azure P3 Tab Content -->
+    <div class="tab-content" id="azure-p3-content" style="display: none;">
+      <!-- P3 Summary Cards -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Azure P3 Overview</h2>
+            <p class="section-description">P3 usage, consumption, and balance tracking.</p>
+          </div>
+          <button class="toolbar-btn primary" onclick="openP3Modal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            Add P3 Entry
+          </button>
+        </div>
+
+        <!-- P3 Summary Cards -->
+        <div class="p3-summary-cards">
+          <div class="p3-card">
+            <div class="p3-card-label">Total P3 Paid (CTD)</div>
+            <div class="p3-card-value">$80,000.00</div>
+            <div class="p3-card-sub">Cumulative P3 payments</div>
+          </div>
+          <div class="p3-card">
+            <div class="p3-card-label">Total P3 Consumed (CTD)</div>
+            <div class="p3-card-value">$71,600.00</div>
+            <div class="p3-card-sub">Usage applied from P3</div>
+          </div>
+          <div class="p3-card highlight">
+            <div class="p3-card-label">P3 Balance</div>
+            <div class="p3-card-value positive">$8,400.00</div>
+            <div class="p3-card-sub">Remaining P3 credits</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- P3 Monthly Breakdown -->
+      <section class="section">
+        <h2 class="section-title">Monthly P3 Breakdown</h2>
+        <p class="section-description">Month-by-month P3 activity showing usage, consumption, and running balance.</p>
+
+        <div class="performance-table-wrapper">
+          <table class="performance-table">
+            <thead>
+              <tr>
+                <th class="metric-header">Month</th>
+                <th>P3 Paid</th>
+                <th>P3 Consumed</th>
+                <th>Monthly Balance</th>
+                <th>Running Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="metric-name">May 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$8,500</td>
+                <td class="amount positive">$1,500</td>
+                <td class="amount">$1,500</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Jun 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$9,200</td>
+                <td class="amount positive">$800</td>
+                <td class="amount">$2,300</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Jul 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$8,800</td>
+                <td class="amount positive">$1,200</td>
+                <td class="amount">$3,500</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Aug 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$9,500</td>
+                <td class="amount positive">$500</td>
+                <td class="amount">$4,000</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Sep 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$8,900</td>
+                <td class="amount positive">$1,100</td>
+                <td class="amount">$5,100</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Oct 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$9,100</td>
+                <td class="amount positive">$900</td>
+                <td class="amount">$6,000</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Nov 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$9,300</td>
+                <td class="amount positive">$700</td>
+                <td class="amount">$6,700</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Dec 2025</td>
+                <td class="amount">$10,000</td>
+                <td class="amount">$9,600</td>
+                <td class="amount positive">$400</td>
+                <td class="amount">$7,100</td>
+              </tr>
+              <tr class="draft-row">
+                <td class="metric-name">Jan 2026 <span class="draft-badge">Draft</span></td>
+                <td class="amount mtd-column">$10,000</td>
+                <td class="amount mtd-column">$8,700</td>
+                <td class="amount mtd-column positive">$1,300</td>
+                <td class="amount mtd-column">$8,400</td>
+              </tr>
+              <tr class="subtotal-row">
+                <td class="metric-name"><strong>Total (CTD)</strong></td>
+                <td class="amount"><strong>$80,000</strong></td>
+                <td class="amount"><strong>$71,600</strong></td>
+                <td class="amount positive"><strong>$8,400</strong></td>
+                <td class="amount"><strong>$8,400</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- P3 Entries Table -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">P3 Entries</h2>
+            <p class="section-description">All P3 transactions including payments and consumption records.</p>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="billings-filters">
+          <div class="search-filter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" placeholder="Filter P3 Entries">
+          </div>
+          <select class="filter-dropdown">
+            <option value="">Entry Type</option>
+            <option>P3 Payment</option>
+            <option>P3 Consumption</option>
+            <option>Adjustment</option>
+          </select>
+          <select class="filter-dropdown">
+            <option value="">Period</option>
+            <option>Jan 2026</option>
+            <option>Dec 2025</option>
+            <option>Nov 2025</option>
+          </select>
+        </div>
+
+        <!-- P3 Table -->
+        <div class="billings-table">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Period</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Jan 15, 2026</td>
+                <td>Jan 2026</td>
+                <td><span class="tag azure-p3">P3 Payment</span></td>
+                <td>Monthly P3 allocation</td>
+                <td class="amount">$10,000.00</td>
+                <td>
+                  <span class="status-indicator draft">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                    </svg>
+                    Draft
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jan 20, 2026</td>
+                <td>Jan 2026</td>
+                <td><span class="tag postpaid">P3 Consumption</span></td>
+                <td>Azure RI consumption</td>
+                <td class="amount negative">-$8,700.00</td>
+                <td>
+                  <span class="status-indicator draft">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                    </svg>
+                    Draft
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Dec 15, 2025</td>
+                <td>Dec 2025</td>
+                <td><span class="tag azure-p3">P3 Payment</span></td>
+                <td>Monthly P3 allocation</td>
+                <td class="amount">$10,000.00</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Dec 31, 2025</td>
+                <td>Dec 2025</td>
+                <td><span class="tag postpaid">P3 Consumption</span></td>
+                <td>Azure RI consumption</td>
+                <td class="amount negative">-$9,600.00</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Nov 15, 2025</td>
+                <td>Nov 2025</td>
+                <td><span class="tag azure-p3">P3 Payment</span></td>
+                <td>Monthly P3 allocation</td>
+                <td class="amount">$10,000.00</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Nov 30, 2025</td>
+                <td>Nov 2025</td>
+                <td><span class="tag postpaid">P3 Consumption</span></td>
+                <td>Azure RI consumption</td>
+                <td class="amount negative">-$9,300.00</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Oct 15, 2025</td>
+                <td>Oct 2025</td>
+                <td><span class="tag in-deal">Adjustment</span></td>
+                <td>P3 reconciliation adjustment</td>
+                <td class="amount negative">-$421.83</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Commit Buckets Tab Content -->
+    <div class="tab-content" id="commit-buckets-content" style="display: none;">
+      <!-- Header -->
+      <div class="commit-buckets-header">
+        <h2 class="section-title">Commit Buckets</h2>
+        <div class="header-actions">
+          <button class="toolbar-btn outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+            Edit Billing Schedules
+          </button>
+          <button class="toolbar-btn outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            Create Bucket
+          </button>
+        </div>
+      </div>
+
+      <!-- Bucket Card 1: Azure Commit -->
+      <div class="commit-bucket-card">
+        <div class="bucket-card-header">
+          <div class="bucket-tags">
+            <span class="bucket-name">Azure Commit</span>
+            <span class="bucket-tag gray">700</span>
+            <span class="bucket-tag blue">Specified Commit</span>
+            <span class="bucket-tag green">Postpaid</span>
+          </div>
+          <button class="edit-bucket-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="bucket-card-body">
+          <div class="bucket-meta">
+            <span class="meta-label">Product Groups:</span>
+            <span class="meta-tag">Azure</span>
+            <span class="meta-tag dark">AZURE-COMMIT-DOLLAR</span>
+          </div>
+          
+          <div class="bucket-period">
+            <span class="period-label">Period:</span>
+            <span class="period-value">May 9, 2025 - May 8, 2026</span>
+          </div>
+          
+          <div class="bucket-progress-section">
+            <div class="bucket-progress-bar">
+              <div class="bucket-progress-fill" style="width: 72.03%;"></div>
+            </div>
+            <div class="bucket-progress-stats">
+              <span class="consumed-amount">$64,110.23</span>
+              <span class="separator">/</span>
+              <span class="total-amount">$89,000.00</span>
+              <span class="percentage">(72.03%)</span>
+            </div>
+          </div>
+          
+          <div class="bucket-footer">
+            <div class="billing-schedule">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <div class="ledger-entries">
+              <span class="ledger-label">Ledger Entries</span>
+              <span class="ledger-count">12</span>
+              <button class="expand-btn" onclick="toggleLedger(this)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ledger Entries Section (Expandable) -->
+          <div class="ledger-section" style="display: none;">
+            <div class="ledger-toolbar">
+              <div class="ledger-filters">
+                <div class="search-filter">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown">
+                  <option>Cloud</option>
+                  <option>Azure</option>
+                  <option>AWS</option>
+                  <option>GCP</option>
+                </select>
+              </div>
+              <button class="toolbar-btn outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Create Ledger Entry
+              </button>
+            </div>
+
+            <div class="ledger-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Manual</th>
+                    <th>From Date <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                    <th>To Date <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                    <th>Cloud</th>
+                    <th>Reason</th>
+                    <th style="text-align: right;">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>Jan 1, 2026</td>
+                    <td>Jan 31, 2026</td>
+                    <td>Azure</td>
+                    <td></td>
+                    <td class="amount" style="text-align: right;">$4,454.76</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Dec 1, 2025</td>
+                    <td>Dec 31, 2025</td>
+                    <td>Azure</td>
+                    <td></td>
+                    <td class="amount" style="text-align: right;">$6,442.17</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Nov 1, 2025</td>
+                    <td>Nov 30, 2025</td>
+                    <td>Azure</td>
+                    <td></td>
+                    <td class="amount" style="text-align: right;">$5,513.05</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Oct 1, 2025</td>
+                    <td>Oct 31, 2025</td>
+                    <td>Azure</td>
+                    <td></td>
+                    <td class="amount" style="text-align: right;">$6,585.25</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="manual-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                      </span>
+                    </td>
+                    <td>Oct 1, 2025</td>
+                    <td>Oct 1, 2025</td>
+                    <td></td>
+                    <td>DBAR UB ledger alignment</td>
+                    <td class="amount" style="text-align: right;">$3,428.81</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Sep 1, 2025</td>
+                    <td>Sep 30, 2025</td>
+                    <td>Azure</td>
+                    <td></td>
+                    <td class="amount" style="text-align: right;">$11,501.88</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="manual-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                      </span>
+                    </td>
+                    <td>Sep 1, 2025</td>
+                    <td>--</td>
+                    <td>Azure</td>
+                    <td>DBAR September ledger reset Oct 6</td>
+                    <td class="amount negative" style="text-align: right;">-$5,284.65</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="manual-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                      </span>
+                    </td>
+                    <td>Sep 1, 2025</td>
+                    <td>--</td>
+                    <td>Azure</td>
+                    <td>CRA to DBAR Migration: snapshot_trueup</td>
+                    <td class="amount negative" style="text-align: right;">-$0.01</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Aug 1, 2025</td>
+                    <td>Aug 30, 2025</td>
+                    <td>Azure</td>
+                    <td>CRA to DBAR Migration: Monthly usage burndown</td>
+                    <td class="amount" style="text-align: right;">$6,163.51</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Jul 1, 2025</td>
+                    <td>Jul 30, 2025</td>
+                    <td></td>
+                    <td>CRA to DBAR Migration: Monthly usage burndown</td>
+                    <td class="amount" style="text-align: right;">$7,893.05</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="ledger-pagination">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn nav">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bucket Card 2: Complimentary Credits -->
+      <div class="commit-bucket-card">
+        <div class="bucket-card-header">
+          <div class="bucket-tags">
+            <span class="bucket-name">Complimentary Usage Credits</span>
+            <span class="bucket-tag gray">701</span>
+            <span class="bucket-tag purple">Credit Bucket</span>
+            <span class="bucket-tag green">Prepaid</span>
+          </div>
+          <button class="edit-bucket-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="bucket-card-body">
+          <div class="bucket-meta">
+            <span class="meta-label">Product Groups:</span>
+            <span class="meta-tag">All Products</span>
+            <span class="meta-tag dark">COMP-CREDITS-USD</span>
+          </div>
+          
+          <div class="bucket-period">
+            <span class="period-label">Period:</span>
+            <span class="period-value">May 9, 2025 - May 8, 2026</span>
+          </div>
+          
+          <div class="bucket-progress-section">
+            <div class="bucket-progress-bar">
+              <div class="bucket-progress-fill full" style="width: 100%;"></div>
+            </div>
+            <div class="bucket-progress-stats">
+              <span class="consumed-amount">$25,000.00</span>
+              <span class="separator">/</span>
+              <span class="total-amount">$25,000.00</span>
+              <span class="percentage">(100%)</span>
+            </div>
+          </div>
+          
+          <div class="bucket-footer">
+            <div class="billing-schedule">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <div class="ledger-entries">
+              <span class="ledger-label">Ledger Entries</span>
+              <span class="ledger-count">8</span>
+              <button class="expand-btn" onclick="toggleLedger(this)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ledger Entries Section -->
+          <div class="ledger-section" style="display: none;">
+            <div class="ledger-toolbar">
+              <div class="ledger-filters">
+                <div class="search-filter">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown">
+                  <option>Cloud</option>
+                </select>
+              </div>
+              <button class="toolbar-btn outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Create Ledger Entry
+              </button>
+            </div>
+            <div class="ledger-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Manual</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Cloud</th>
+                    <th>Reason</th>
+                    <th style="text-align: right;">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>Dec 1, 2025</td>
+                    <td>Dec 31, 2025</td>
+                    <td>All</td>
+                    <td>Complimentary credits applied</td>
+                    <td class="amount" style="text-align: right;">$3,500.00</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Nov 1, 2025</td>
+                    <td>Nov 30, 2025</td>
+                    <td>All</td>
+                    <td>Complimentary credits applied</td>
+                    <td class="amount" style="text-align: right;">$3,500.00</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Oct 1, 2025</td>
+                    <td>Oct 31, 2025</td>
+                    <td>All</td>
+                    <td>Complimentary credits applied</td>
+                    <td class="amount" style="text-align: right;">$3,500.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bucket Card 3: Rollover -->
+      <div class="commit-bucket-card">
+        <div class="bucket-card-header">
+          <div class="bucket-tags">
+            <span class="bucket-name">Rollover</span>
+            <span class="bucket-tag gray">702</span>
+            <span class="bucket-tag orange">Rollover Bucket</span>
+            <span class="bucket-tag green">Prepaid</span>
+          </div>
+          <button class="edit-bucket-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="bucket-card-body">
+          <div class="bucket-meta">
+            <span class="meta-label">Product Groups:</span>
+            <span class="meta-tag">All Products</span>
+            <span class="meta-tag dark">ROLLOVER-USD</span>
+          </div>
+          
+          <div class="bucket-period">
+            <span class="period-label">Period:</span>
+            <span class="period-value">May 9, 2025 - May 8, 2026</span>
+          </div>
+          
+          <div class="bucket-progress-section">
+            <div class="bucket-progress-bar">
+              <div class="bucket-progress-fill" style="width: 66.67%;"></div>
+            </div>
+            <div class="bucket-progress-stats">
+              <span class="consumed-amount">$10,000.00</span>
+              <span class="separator">/</span>
+              <span class="total-amount">$15,000.00</span>
+              <span class="percentage">(66.67%)</span>
+            </div>
+          </div>
+          
+          <div class="bucket-footer">
+            <div class="billing-schedule">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <div class="ledger-entries">
+              <span class="ledger-label">Ledger Entries</span>
+              <span class="ledger-count">5</span>
+              <button class="expand-btn" onclick="toggleLedger(this)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ledger Entries Section -->
+          <div class="ledger-section" style="display: none;">
+            <div class="ledger-toolbar">
+              <div class="ledger-filters">
+                <div class="search-filter">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown">
+                  <option>Cloud</option>
+                </select>
+              </div>
+              <button class="toolbar-btn outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Create Ledger Entry
+              </button>
+            </div>
+            <div class="ledger-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Manual</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Cloud</th>
+                    <th>Reason</th>
+                    <th style="text-align: right;">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>Oct 1, 2025</td>
+                    <td>Oct 31, 2025</td>
+                    <td>All</td>
+                    <td>Rollover credit applied</td>
+                    <td class="amount" style="text-align: right;">$2,500.00</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Sep 1, 2025</td>
+                    <td>Sep 30, 2025</td>
+                    <td>All</td>
+                    <td>Rollover credit applied</td>
+                    <td class="amount" style="text-align: right;">$2,500.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bucket Card 4: True Up Credit -->
+      <div class="commit-bucket-card">
+        <div class="bucket-card-header">
+          <div class="bucket-tags">
+            <span class="bucket-name">True Up Credit</span>
+            <span class="bucket-tag gray">703</span>
+            <span class="bucket-tag blue">Adjustment Bucket</span>
+            <span class="bucket-tag green">Prepaid</span>
+          </div>
+          <button class="edit-bucket-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="bucket-card-body">
+          <div class="bucket-meta">
+            <span class="meta-label">Product Groups:</span>
+            <span class="meta-tag">All Products</span>
+            <span class="meta-tag dark">TRUEUP-CREDIT-USD</span>
+          </div>
+          
+          <div class="bucket-period">
+            <span class="period-label">Period:</span>
+            <span class="period-value">May 9, 2025 - May 8, 2026</span>
+          </div>
+          
+          <div class="bucket-progress-section">
+            <div class="bucket-progress-bar">
+              <div class="bucket-progress-fill" style="width: 0%;"></div>
+            </div>
+            <div class="bucket-progress-stats">
+              <span class="consumed-amount">$0.00</span>
+              <span class="separator">/</span>
+              <span class="total-amount">$10,000.00</span>
+              <span class="percentage">(0%)</span>
+            </div>
+          </div>
+          
+          <div class="bucket-footer">
+            <div class="billing-schedule">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <div class="ledger-entries">
+              <span class="ledger-label">Ledger Entries</span>
+              <span class="ledger-count">0</span>
+              <button class="expand-btn" onclick="toggleLedger(this)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ledger Entries Section (Empty) -->
+          <div class="ledger-section" style="display: none;">
+            <div class="ledger-toolbar">
+              <div class="ledger-filters">
+                <div class="search-filter">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown">
+                  <option>Cloud</option>
+                </select>
+              </div>
+              <button class="toolbar-btn outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Create Ledger Entry
+              </button>
+            </div>
+            <div class="ledger-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 60px;">Manual</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>Cloud</th>
+                    <th>Reason</th>
+                    <th style="text-align: right;">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="empty-state">
+                    <td colspan="6">
+                      <div class="empty-content">
+                        <p class="empty-text">No ledger entries</p>
+                        <p class="empty-subtext">Create a ledger entry to get started</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Billing Settings Tab Content -->
+    <div class="tab-content" id="billing-settings-content">
+      <!-- Billing Channels Section -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Billing Channels</h2>
+            <p class="section-description">How the contract is expected to be billed as per the active contract terms.</p>
+          </div>
+          <button class="toolbar-btn outline" onclick="toggleEditMode()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+            Edit Billing Schedule
+          </button>
+        </div>
+        
+        <div class="billing-channels-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Channel</th>
+                <th>Amount</th>
+                <th>Payment Type</th>
+                <th>Installment Schedule</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Databricks Direct</td>
+                <td class="amount">$125,000.00</td>
+                <td>
+                  <span class="payment-badge prepaid">Prepaid Upfront</span>
+                </td>
+                <td class="schedule-cell">—</td>
+              </tr>
+              <tr>
+                <td>AWS Marketplace</td>
+                <td class="amount">$75,000.00</td>
+                <td>
+                  <span class="payment-badge arrears">Paid in Arrears</span>
+                </td>
+                <td class="schedule-cell">
+                  <div class="inline-schedule">
+                    <div class="schedule-row" data-editable="false">
+                      <span class="schedule-date">Jun 15, 2025</span>
+                      <span class="schedule-amount">$25,000.00</span>
+                      <span class="schedule-status paid">Paid</span>
+                    </div>
+                    <div class="schedule-row" data-editable="true">
+                      <span class="schedule-date">Sep 15, 2025</span>
+                      <span class="schedule-amount">$25,000.00</span>
+                      <span class="schedule-status pending">Pending</span>
+                    </div>
+                    <div class="schedule-row" data-editable="true">
+                      <span class="schedule-date">Dec 15, 2025</span>
+                      <span class="schedule-amount">$25,000.00</span>
+                      <span class="schedule-status pending">Pending</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Azure</td>
+                <td class="amount">$50,000.00</td>
+                <td>
+                  <span class="payment-badge prepaid">Prepaid Upfront</span>
+                </td>
+                <td class="schedule-cell">—</td>
+              </tr>
+              <tr>
+                <td>GCP Marketplace</td>
+                <td class="amount">$30,000.00</td>
+                <td>
+                  <span class="payment-badge arrears">Paid in Arrears</span>
+                </td>
+                <td class="schedule-cell">
+                  <div class="inline-schedule">
+                    <div class="schedule-row" data-editable="false">
+                      <span class="schedule-date">Jun 1, 2025</span>
+                      <span class="schedule-amount">$7,500.00</span>
+                      <span class="schedule-status paid">Paid</span>
+                    </div>
+                    <div class="schedule-row" data-editable="true">
+                      <span class="schedule-date">Sep 1, 2025</span>
+                      <span class="schedule-amount">$7,500.00</span>
+                      <span class="schedule-status pending">Pending</span>
+                    </div>
+                    <div class="schedule-row" data-editable="true">
+                      <span class="schedule-date">Dec 1, 2025</span>
+                      <span class="schedule-amount">$7,500.00</span>
+                      <span class="schedule-status pending">Pending</span>
+                    </div>
+                    <div class="schedule-row" data-editable="true">
+                      <span class="schedule-date">Mar 1, 2026</span>
+                      <span class="schedule-amount">$7,500.00</span>
+                      <span class="schedule-status pending">Pending</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>SAP</td>
+                <td class="amount">$20,000.00</td>
+                <td>
+                  <span class="payment-badge arrears">Paid in Arrears</span>
+                </td>
+                <td class="schedule-cell">
+                  <div class="inline-schedule">
+                    <div class="schedule-row" data-editable="true">
+                      <span class="schedule-date">Aug 1, 2025</span>
+                      <span class="schedule-amount">$10,000.00</span>
+                      <span class="schedule-status pending">Pending</span>
+                    </div>
+                    <div class="schedule-row" data-editable="true">
+                      <span class="schedule-date">Feb 1, 2026</span>
+                      <span class="schedule-amount">$10,000.00</span>
+                      <span class="schedule-status pending">Pending</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td class="amount"><strong>$300,000.00</strong></td>
+                <td colspan="2"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- Currency Conversion Section -->
+      <section class="section">
+        <h2 class="section-title">
+          Currency Conversion
+          <button class="edit-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+            </svg>
+          </button>
+        </h2>
+        <div class="info-card">
+          <span class="info-value">--</span>
+        </div>
+      </section>
+
+      <!-- Reseller Information Section -->
+      <section class="section">
+        <h2 class="section-title">Reseller Information</h2>
+        <div class="reseller-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Reseller Name</th>
+                <th>Netsuite Customer ID</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Fee (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>azure</td>
+                <td><a href="#" class="table-link">1654058 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></td>
+                <td>May 9, 2025</td>
+                <td>May 9, 2026</td>
+                <td>15.00%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Additional Billing Charges Section -->
+      <section class="section">
+        <h2 class="section-title">Additional Billing Charges and Discounts</h2>
+        <div class="section-toolbar">
+          <div class="toolbar-left">
+            <div class="search-filter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input type="text" placeholder="Filter Billing Charges and Discounts">
+            </div>
+            <select class="filter-dropdown">
+              <option>Charge Type</option>
+            </select>
+          </div>
+          <div class="toolbar-right">
+            <button class="toolbar-btn outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+              </svg>
+              Edit Billing Schedules
+            </button>
+            <button class="toolbar-btn primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+              Create Charge or Discount
+            </button>
+          </div>
+        </div>
+        <div class="charges-table">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU Code <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                <th>Charge Type</th>
+                <th>Billing Schedule</th>
+                <th>Total Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="empty-state">
+                <td colspan="4">
+                  <div class="empty-content">
+                    <div class="empty-icon">
+                      <div class="bar"></div>
+                      <div class="bar"></div>
+                      <div class="bar"></div>
+                    </div>
+                    <p class="empty-text">No billing charges and discounts loaded</p>
+                    <p class="empty-subtext">There are no entries to be settled now</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Billings Tab Content -->
+    <div class="tab-content" id="billings-content" style="display: none;">
+      <!-- Summary Cards -->
+      <section class="section summary-section">
+        <h2 class="section-title">Billing Summary</h2>
+        <p class="section-description">Contract-to-date billing totals by year. Note: Total Billed excludes Unconsumed/Unexpired P3 Amounts for end-of-contract reconciliation purposes.</p>
+        
+        <!-- Yearly Breakdown Table -->
+        <div class="yearly-breakdown">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Installments Billing</th>
+                <th>Azure P3</th>
+                <th>Early Arrears Payments</th>
+                <th>Burst Payments</th>
+                <th>Total Billed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="year-label">2025</td>
+                <td class="amount">$75,000.00</td>
+                <td class="amount">$22,500.00</td>
+                <td class="amount">$18,750.00</td>
+                <td class="amount">$14,234.74</td>
+                <td class="amount year-total">$130,484.74</td>
+              </tr>
+              <tr>
+                <td class="year-label">2026</td>
+                <td class="amount">$50,000.00</td>
+                <td class="amount">$10,000.00</td>
+                <td class="amount">$8,500.00</td>
+                <td class="amount">$4,000.00</td>
+                <td class="amount year-total">$72,500.00</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="total-row">
+                <td><strong>Total (CTD)</strong></td>
+                <td class="amount"><strong>$125,000.00</strong></td>
+                <td class="amount"><strong>$32,500.00</strong></td>
+                <td class="amount"><strong>$27,250.00</strong></td>
+                <td class="amount"><strong>$18,234.74</strong></td>
+                <td class="amount grand-total"><strong>$202,984.74</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+          <p class="summary-footnote">* Total Billed excludes Unconsumed/Unexpired P3 Amounts for end-of-contract reconciliation purposes.</p>
+        </div>
+      </section>
+
+      <!-- Billings Table Section -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Invoices & Payments</h2>
+            <p class="section-description">All invoices issued against this contract with payment reconciliation from P3 and GCP reports.</p>
+          </div>
+          <button class="toolbar-btn outline" id="collapseAllBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 15l-6-6-6 6"/>
+            </svg>
+            Collapse All
+          </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="billings-filters">
+          <div class="search-filter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" placeholder="Filter Billings">
+          </div>
+          <label class="toggle-filter">
+            <input type="checkbox" id="nonZeroOnly">
+            <span class="toggle-label">Non-Zero Only</span>
+          </label>
+          <select class="filter-dropdown">
+            <option value="">Tags</option>
+            <option>In-deal Burst</option>
+            <option>Overage Burst</option>
+            <option>Installment Due</option>
+            <option>Azure P3</option>
+            <option>Postpaid Usage</option>
+          </select>
+          <select class="filter-dropdown">
+            <option value="">Billing Channel</option>
+            <option>Databricks Direct</option>
+            <option>AWS Marketplace</option>
+            <option>GCP Marketplace</option>
+            <option>Azure</option>
+            <option>SAP</option>
+          </select>
+          <select class="filter-dropdown">
+            <option value="">Status</option>
+            <option>Draft</option>
+            <option>Finalized</option>
+            <option>Paid</option>
+          </select>
+        </div>
+
+        <!-- Billings Table -->
+        <div class="billings-table">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Period</th>
+                <th>Posting Date</th>
+                <th>Billing Date</th>
+                <th>Tags</th>
+                <th>Billing Channel</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td class="period-cell">
+                  <span class="period-text">Jan 1 - 31, 2026</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jan 31, 2026</td>
+                <td>Feb 1, 2026</td>
+                <td><span class="tag postpaid">Postpaid Usage</span></td>
+                <td>Azure</td>
+                <td class="amount">$3,733.74</td>
+                <td>
+                  <span class="status-indicator draft">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                    </svg>
+                    Draft
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="period-cell">
+                  <span class="period-text">Dec 1 - 31, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Dec 31, 2025</td>
+                <td>Jan 1, 2026</td>
+                <td><span class="tag postpaid">Postpaid Usage</span></td>
+                <td>Azure</td>
+                <td class="amount">$6,442.17</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="period-cell">
+                  <span class="period-text">Nov 1 - 30, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Nov 30, 2025</td>
+                <td>Dec 1, 2025</td>
+                <td><span class="tag overage">Overage Burst</span></td>
+                <td>AWS Marketplace</td>
+                <td class="amount">$8,500.00</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="period-cell">
+                  <span class="period-text">Nov 1 - 30, 2025</span>
+                  <span class="adjustments-count">(1 adjustment)</span>
+                </td>
+                <td>Nov 30, 2025</td>
+                <td>Dec 1, 2025</td>
+                <td><span class="tag postpaid">Postpaid Usage</span></td>
+                <td>Azure</td>
+                <td class="amount">$5,934.87</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="period-cell">
+                  <span class="period-text">Nov 1 - 30, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jan 1, 2026</td>
+                <td>Feb 1, 2026</td>
+                <td><span class="tag postpaid">Postpaid Usage</span></td>
+                <td>GCP Marketplace</td>
+                <td class="amount">$704.11</td>
+                <td>
+                  <span class="status-indicator draft">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                    </svg>
+                    Draft
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td class="period-cell">
+                  <span class="period-text">Oct 1 - 31, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Nov 1, 2025</td>
+                <td>Nov 1, 2025</td>
+                <td><span class="tag azure-p3">Azure P3</span></td>
+                <td>Azure</td>
+                <td class="amount negative">-$421.83</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td class="period-cell">
+                  <span class="period-text">Sep 1 - 30, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Nov 1, 2025</td>
+                <td>Oct 1, 2025</td>
+                <td><span class="tag in-deal">In-deal Burst</span></td>
+                <td>Databricks Direct</td>
+                <td class="amount">$9,734.74</td>
+                <td>
+                  <span class="status-indicator finalized">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Finalized
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td class="period-cell">
+                  <span class="period-text">Aug 1 - 31, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Sep 1, 2025</td>
+                <td>Sep 1, 2025</td>
+                <td><span class="tag postpaid">Postpaid Usage</span></td>
+                <td>SAP</td>
+                <td class="amount">$12,500.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td class="period-cell">
+                  <span class="period-text">Jul 1 - 31, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Aug 1, 2025</td>
+                <td>Aug 1, 2025</td>
+                <td><span class="tag installment">Installment Due</span></td>
+                <td>AWS Marketplace</td>
+                <td class="amount">$25,000.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td class="period-cell">
+                  <span class="period-text">Jun 1 - 30, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jul 1, 2025</td>
+                <td>Jul 1, 2025</td>
+                <td><span class="tag installment">Installment Due</span></td>
+                <td>GCP Marketplace</td>
+                <td class="amount">$7,500.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- P3 Entry Modal -->
+  <div class="modal-overlay" id="p3Modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add P3 Entry</h3>
+        <button class="modal-close" onclick="closeP3Modal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Entry Type</label>
+          <select class="form-select">
+            <option>P3 Payment</option>
+            <option>P3 Consumption</option>
+            <option>Adjustment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" class="form-input" value="2026-01-21">
+        </div>
+        <div class="form-group">
+          <label>Period</label>
+          <select class="form-select">
+            <option>January 2026</option>
+            <option>December 2025</option>
+            <option>November 2025</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Amount</label>
+          <input type="number" class="form-input" placeholder="Enter amount">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-input" placeholder="Enter description">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="toolbar-btn outline" onclick="closeP3Modal()">Cancel</button>
+        <button class="toolbar-btn primary">Save Entry</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
