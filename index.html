@@ -1823,92 +1823,34 @@
 
     <!-- Billings Tab Content -->
     <div class="tab-content" id="billings-content" style="display: none;">
-      <!-- Summary Cards -->
-      <section class="section summary-section">
-        <h2 class="section-title">Billing Summary</h2>
-        <p class="section-description">Contract-to-date billing totals by year. Note: Total Billed excludes Unconsumed/Unexpired P3 Amounts for end-of-contract reconciliation purposes.</p>
-        
-        <!-- Yearly Breakdown Table -->
-        <div class="yearly-breakdown">
-          <table>
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>Installments Billing</th>
-                <th>Azure P3</th>
-                <th>Early Arrears Payments</th>
-                <th>Burst Payments</th>
-                <th>Total Billed</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="year-label">2025</td>
-                <td class="amount">$75,000.00</td>
-                <td class="amount">$22,500.00</td>
-                <td class="amount">$18,750.00</td>
-                <td class="amount">$14,234.74</td>
-                <td class="amount year-total">$130,484.74</td>
-              </tr>
-              <tr>
-                <td class="year-label">2026</td>
-                <td class="amount">$50,000.00</td>
-                <td class="amount">$10,000.00</td>
-                <td class="amount">$8,500.00</td>
-                <td class="amount">$4,000.00</td>
-                <td class="amount year-total">$72,500.00</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr class="total-row">
-                <td><strong>Total (CTD)</strong></td>
-                <td class="amount"><strong>$125,000.00</strong></td>
-                <td class="amount"><strong>$32,500.00</strong></td>
-                <td class="amount"><strong>$27,250.00</strong></td>
-                <td class="amount"><strong>$18,234.74</strong></td>
-                <td class="amount grand-total"><strong>$202,984.74</strong></td>
-              </tr>
-            </tfoot>
-          </table>
-          <p class="summary-footnote">* Total Billed excludes Unconsumed/Unexpired P3 Amounts for end-of-contract reconciliation purposes.</p>
-        </div>
-      </section>
-
-      <!-- Billings Table Section -->
+      <!-- Invoices Section -->
       <section class="section">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Invoices & Payments</h2>
-            <p class="section-description">All invoices issued against this contract with payment reconciliation from P3 and GCP reports.</p>
+            <h2 class="section-title">Invoices</h2>
+            <p class="section-description">All invoices issued against this contract.</p>
           </div>
-          <button class="toolbar-btn outline" id="collapseAllBtn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 15l-6-6-6 6"/>
-            </svg>
-            Collapse All
-          </button>
         </div>
 
-        <!-- Filters -->
+        <!-- Invoices Filters -->
         <div class="billings-filters">
           <div class="search-filter">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/>
               <path d="M21 21l-4.35-4.35"/>
             </svg>
-            <input type="text" placeholder="Filter Billings">
+            <input type="text" placeholder="Filter Invoices">
           </div>
           <label class="toggle-filter">
-            <input type="checkbox" id="nonZeroOnly">
+            <input type="checkbox">
             <span class="toggle-label">Non-Zero Only</span>
           </label>
           <select class="filter-dropdown">
             <option value="">Tags</option>
+            <option>Prepaid</option>
+            <option>Azure P3</option>
             <option>In-deal Burst</option>
             <option>Overage Burst</option>
-            <option>Installment Due</option>
-            <option>Azure P3</option>
-            <option>Postpaid Usage</option>
           </select>
           <select class="filter-dropdown">
             <option value="">Billing Channel</option>
@@ -1926,7 +1868,7 @@
           </select>
         </div>
 
-        <!-- Billings Table -->
+        <!-- Invoices Table -->
         <div class="billings-table">
           <table>
             <thead>
@@ -1950,9 +1892,9 @@
                 </td>
                 <td>Jan 31, 2026</td>
                 <td>Feb 1, 2026</td>
-                <td><span class="tag postpaid">Postpaid Usage</span></td>
-                <td>Azure</td>
-                <td class="amount">$3,733.74</td>
+                <td><span class="tag prepaid-tag">Prepaid</span></td>
+                <td>Databricks Direct</td>
+                <td class="amount">$25,000.00</td>
                 <td>
                   <span class="status-indicator draft">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1970,9 +1912,9 @@
                 </td>
                 <td>Dec 31, 2025</td>
                 <td>Jan 1, 2026</td>
-                <td><span class="tag postpaid">Postpaid Usage</span></td>
+                <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>Azure</td>
-                <td class="amount">$6,442.17</td>
+                <td class="amount">$12,500.00</td>
                 <td>
                   <span class="status-indicator finalized">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2005,46 +1947,6 @@
               <tr>
                 <td>4</td>
                 <td class="period-cell">
-                  <span class="period-text">Nov 1 - 30, 2025</span>
-                  <span class="adjustments-count">(1 adjustment)</span>
-                </td>
-                <td>Nov 30, 2025</td>
-                <td>Dec 1, 2025</td>
-                <td><span class="tag postpaid">Postpaid Usage</span></td>
-                <td>Azure</td>
-                <td class="amount">$5,934.87</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td class="period-cell">
-                  <span class="period-text">Nov 1 - 30, 2025</span>
-                  <span class="adjustments-count">(0 adjustments)</span>
-                </td>
-                <td>Jan 1, 2026</td>
-                <td>Feb 1, 2026</td>
-                <td><span class="tag postpaid">Postpaid Usage</span></td>
-                <td>GCP Marketplace</td>
-                <td class="amount">$704.11</td>
-                <td>
-                  <span class="status-indicator draft">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
-                    </svg>
-                    Draft
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td class="period-cell">
                   <span class="period-text">Oct 1 - 31, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
@@ -2063,12 +1965,12 @@
                 </td>
               </tr>
               <tr>
-                <td>7</td>
+                <td>5</td>
                 <td class="period-cell">
                   <span class="period-text">Sep 1 - 30, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
-                <td>Nov 1, 2025</td>
+                <td>Oct 1, 2025</td>
                 <td>Oct 1, 2025</td>
                 <td><span class="tag in-deal">In-deal Burst</span></td>
                 <td>Databricks Direct</td>
@@ -2083,16 +1985,16 @@
                 </td>
               </tr>
               <tr>
-                <td>8</td>
+                <td>6</td>
                 <td class="period-cell">
                   <span class="period-text">Aug 1 - 31, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
                 <td>Sep 1, 2025</td>
                 <td>Sep 1, 2025</td>
-                <td><span class="tag postpaid">Postpaid Usage</span></td>
-                <td>SAP</td>
-                <td class="amount">$12,500.00</td>
+                <td><span class="tag prepaid-tag">Prepaid</span></td>
+                <td>GCP Marketplace</td>
+                <td class="amount">$7,500.00</td>
                 <td>
                   <span class="status-indicator paid">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2103,14 +2005,34 @@
                 </td>
               </tr>
               <tr>
-                <td>9</td>
+                <td>7</td>
                 <td class="period-cell">
                   <span class="period-text">Jul 1 - 31, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
                 <td>Aug 1, 2025</td>
                 <td>Aug 1, 2025</td>
-                <td><span class="tag installment">Installment Due</span></td>
+                <td><span class="tag azure-p3">Azure P3</span></td>
+                <td>Azure</td>
+                <td class="amount negative">-$350.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Paid
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td class="period-cell">
+                  <span class="period-text">Jun 1 - 30, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jul 1, 2025</td>
+                <td>Jul 1, 2025</td>
+                <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>AWS Marketplace</td>
                 <td class="amount">$25,000.00</td>
                 <td>
@@ -2122,15 +2044,80 @@
                   </span>
                 </td>
               </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Payments Section -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Payments</h2>
+            <p class="section-description">Payments received against billing channels.</p>
+          </div>
+        </div>
+
+        <!-- Payments Filters -->
+        <div class="billings-filters">
+          <div class="search-filter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" placeholder="Filter Payments">
+          </div>
+          <select class="filter-dropdown">
+            <option value="">Billing Channel</option>
+            <option>Databricks Direct</option>
+            <option>AWS Marketplace</option>
+            <option>GCP Marketplace</option>
+            <option>Azure</option>
+            <option>SAP</option>
+          </select>
+          <select class="filter-dropdown">
+            <option value="">Status</option>
+            <option>Pending</option>
+            <option>Received</option>
+          </select>
+        </div>
+
+        <!-- Payments Table -->
+        <div class="billings-table">
+          <table>
+            <thead>
               <tr>
-                <td>10</td>
-                <td class="period-cell">
-                  <span class="period-text">Jun 1 - 30, 2025</span>
-                  <span class="adjustments-count">(0 adjustments)</span>
+                <th>#</th>
+                <th>Payment Date</th>
+                <th>Period</th>
+                <th>Tags</th>
+                <th>Billing Channel</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Jan 15, 2026</td>
+                <td>Jan 2026</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
+                <td>AWS Marketplace</td>
+                <td class="amount">$25,000.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Received
+                  </span>
                 </td>
-                <td>Jul 1, 2025</td>
-                <td>Jul 1, 2025</td>
-                <td><span class="tag installment">Installment Due</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Dec 10, 2025</td>
+                <td>Dec 2025</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
                 <td>GCP Marketplace</td>
                 <td class="amount">$7,500.00</td>
                 <td>
@@ -2138,7 +2125,103 @@
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M20 6L9 17l-5-5"/>
                     </svg>
-                    Paid
+                    Received
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Nov 20, 2025</td>
+                <td>Nov 2025</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
+                <td>SAP</td>
+                <td class="amount">$10,000.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Received
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Oct 15, 2025</td>
+                <td>Oct 2025</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
+                <td>AWS Marketplace</td>
+                <td class="amount">$25,000.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Received
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Sep 12, 2025</td>
+                <td>Sep 2025</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
+                <td>GCP Marketplace</td>
+                <td class="amount">$7,500.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Received
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Aug 8, 2025</td>
+                <td>Aug 2025</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
+                <td>SAP</td>
+                <td class="amount">$10,000.00</td>
+                <td>
+                  <span class="status-indicator paid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    Received
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>--</td>
+                <td>Feb 2026</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
+                <td>AWS Marketplace</td>
+                <td class="amount">$25,000.00</td>
+                <td>
+                  <span class="status-indicator draft">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                    </svg>
+                    Pending
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>--</td>
+                <td>Mar 2026</td>
+                <td><span class="tag early-arrears">Early Arrears Payment</span></td>
+                <td>GCP Marketplace</td>
+                <td class="amount">$7,500.00</td>
+                <td>
+                  <span class="status-indicator draft">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                    </svg>
+                    Pending
                   </span>
                 </td>
               </tr>

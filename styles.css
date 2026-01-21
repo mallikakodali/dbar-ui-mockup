@@ -2241,6 +2241,16 @@ tfoot td {
   color: #92400E;
 }
 
+.tag.prepaid-tag {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.tag.early-arrears {
+  background: #E0E7FF;
+  color: #4338CA;
+}
+
 /* Status Indicators */
 .status-indicator {
   display: inline-flex;
