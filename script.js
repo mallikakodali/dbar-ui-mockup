@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const commitBucketsContent = document.getElementById('commit-buckets-content');
   const billingSettingsContent = document.getElementById('billing-settings-content');
   const billingsContent = document.getElementById('billings-content');
+  const pricingPlanContent = document.getElementById('pricing-plan-content');
   
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       commitBucketsContent.style.display = 'none';
       billingSettingsContent.style.display = 'none';
       billingsContent.style.display = 'none';
+      if (pricingPlanContent) pricingPlanContent.style.display = 'none';
       
       // Handle tab content visibility
       const tabName = this.getAttribute('data-tab');
@@ -38,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
         billingSettingsContent.style.display = 'block';
       } else if (tabName === 'billings') {
         billingsContent.style.display = 'block';
+      } else if (tabName === 'pricing-plan') {
+        if (pricingPlanContent) pricingPlanContent.style.display = 'block';
       }
     });
   });
