@@ -513,6 +513,11 @@ tfoot td {
   color: var(--arrears-text);
 }
 
+.payment-badge.pia {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
 .schedule-cell {
   color: var(--text-muted);
   vertical-align: top;

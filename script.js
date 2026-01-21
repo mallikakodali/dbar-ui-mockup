@@ -86,7 +86,7 @@ function showEditHint() {
   
   const hint = document.createElement('div');
   hint.className = 'edit-hint';
-  hint.innerHTML = '<strong>Edit Mode:</strong> Click on any highlighted installment row to modify the date or amount. Only pending "Paid in Arrears" installments can be edited. Already paid installments cannot be modified.';
+  hint.innerHTML = '<strong>Edit Mode:</strong> Click on any installment row to modify the date or amount. Only Prepaid installment schedules can be edited.';
   
   const section = document.querySelector('.billing-channels-table');
   section.parentNode.insertBefore(hint, section);
