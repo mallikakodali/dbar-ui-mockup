@@ -1267,21 +1267,16 @@ tfoot td {
   background: #e2e8f0;
 }
 
-/* Monthly Columns - Collapsible */
+/* Monthly Columns */
 .consumption-pivot-table .monthly-col {
   min-width: 80px;
-  transition: all 0.3s ease;
-}
-
-.consumption-pivot-table .monthly-col.collapsed {
-  display: none;
 }
 
 .consumption-pivot-table .monthly-col.mtd-cell {
   background: #fffbeb;
 }
 
-.consumption-pivot-table thead .monthly-col.mtd-cell,
+.consumption-pivot-table .monthly-col.mtd-header,
 .consumption-pivot-table thead th:nth-child(3) {
   background: #fef3c7;
 }
