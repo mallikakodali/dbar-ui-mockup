@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.tab');
   const overviewContent = document.getElementById('overview-content');
+  const ledgerContent = document.getElementById('ledger-content');
   const consumptionContent = document.getElementById('consumption-content');
   const azureP3Content = document.getElementById('azure-p3-content');
   const commitBucketsContent = document.getElementById('commit-buckets-content');
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Hide all tab contents
       overviewContent.style.display = 'none';
+      if (ledgerContent) ledgerContent.style.display = 'none';
       consumptionContent.style.display = 'none';
       if (azureP3Content) azureP3Content.style.display = 'none';
       commitBucketsContent.style.display = 'none';
@@ -30,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (tabName === 'overview') {
         overviewContent.style.display = 'block';
+      } else if (tabName === 'ledger') {
+        if (ledgerContent) ledgerContent.style.display = 'block';
       } else if (tabName === 'consumption') {
         consumptionContent.style.display = 'block';
       } else if (tabName === 'azure-p3') {
