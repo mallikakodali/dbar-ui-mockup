@@ -178,3 +178,19 @@ document.addEventListener('keydown', function(e) {
     closeP3Modal();
   }
 });
+
+// Toggle Monthly Details in Consumption tab
+function toggleMonthlyDetails() {
+  const details = document.getElementById('monthlyDetails');
+  const toggle = document.querySelector('.expand-toggle');
+  
+  if (details.style.display === 'none') {
+    details.style.display = 'block';
+    toggle.classList.add('expanded');
+    toggle.querySelector('span').textContent = 'Hide Monthly Breakdown';
+  } else {
+    details.style.display = 'none';
+    toggle.classList.remove('expanded');
+    toggle.querySelector('span').textContent = 'View Monthly Breakdown';
+  }
+}
