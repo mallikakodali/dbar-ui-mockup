@@ -378,236 +378,156 @@
       <!-- Total Consumption Summary -->
       <section class="section">
         <h2 class="section-title">Total Consumption</h2>
-        <p class="section-description">Contract to date consumption with expandable monthly details.</p>
+        <p class="section-description">Contract to date consumption with expandable monthly details. Usage types on Y-axis, months on X-axis.</p>
 
-        <!-- CTD Summary Cards -->
-        <div class="ctd-summary-grid">
-          <div class="ctd-summary-card">
-            <div class="ctd-card-header">
-              <span class="ctd-label">Contract to Date</span>
-              <span class="ctd-value">$352,334</span>
-            </div>
-            <div class="ctd-breakdown">
-              <div class="ctd-row">
-                <span>Cloud Usage</span>
-                <span>$368,350</span>
-              </div>
-              <div class="ctd-row">
-                <span>+ Support Charge</span>
-                <span>$30,000</span>
-              </div>
-              <div class="ctd-row">
-                <span>+ DSE Charge</span>
-                <span>$12,000</span>
-              </div>
-              <div class="ctd-row subtract">
-                <span>− OTD</span>
-                <span>($10,000)</span>
-              </div>
-              <div class="ctd-row subtract">
-                <span>− Comp Usage</span>
-                <span>($30,000)</span>
-              </div>
-              <div class="ctd-row subtract">
-                <span>− Rollover</span>
-                <span>($18,016)</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="ctd-summary-card mtd-card">
-            <div class="ctd-card-header">
-              <span class="ctd-label">Month to Date <span class="draft-badge">Draft</span></span>
-              <span class="ctd-value">$28,067</span>
-            </div>
-            <div class="ctd-breakdown">
-              <div class="ctd-row">
-                <span>Cloud Usage</span>
-                <span>$29,400</span>
-              </div>
-              <div class="ctd-row">
-                <span>+ Support Charge</span>
-                <span>$2,500</span>
-              </div>
-              <div class="ctd-row">
-                <span>+ DSE Charge</span>
-                <span>$1,000</span>
-              </div>
-              <div class="ctd-row subtract">
-                <span>− OTD</span>
-                <span>($833)</span>
-              </div>
-              <div class="ctd-row subtract">
-                <span>− Comp Usage</span>
-                <span>($2,500)</span>
-              </div>
-              <div class="ctd-row subtract">
-                <span>− Rollover</span>
-                <span>($1,500)</span>
-              </div>
-            </div>
-          </div>
+        <!-- Consumption Table with Frozen Left Column -->
+        <div class="consumption-table-wrapper">
+          <table class="consumption-pivot-table" id="consumptionTable">
+            <thead>
+              <tr>
+                <th class="frozen-col">Usage Type</th>
+                <th class="ctd-col"><strong>Total CTD</strong></th>
+                <th class="monthly-col collapsed" data-month="jan26">Jan 26 <span class="draft-badge">MTD</span></th>
+                <th class="monthly-col collapsed" data-month="dec25">Dec 25</th>
+                <th class="monthly-col collapsed" data-month="nov25">Nov 25</th>
+                <th class="monthly-col collapsed" data-month="oct25">Oct 25</th>
+                <th class="monthly-col collapsed" data-month="sep25">Sep 25</th>
+                <th class="monthly-col collapsed" data-month="aug25">Aug 25</th>
+                <th class="monthly-col collapsed" data-month="jul25">Jul 25</th>
+                <th class="monthly-col collapsed" data-month="jun25">Jun 25</th>
+                <th class="monthly-col collapsed" data-month="may25">May 25</th>
+                <th class="monthly-col collapsed" data-month="apr25">Apr 25</th>
+                <th class="monthly-col collapsed" data-month="mar25">Mar 25</th>
+                <th class="monthly-col collapsed" data-month="feb25">Feb 25</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="frozen-col">Cloud Usage</td>
+                <td class="ctd-col"><strong>$368,350</strong></td>
+                <td class="monthly-col collapsed mtd-cell">$29,400</td>
+                <td class="monthly-col collapsed">$36,100</td>
+                <td class="monthly-col collapsed">$33,750</td>
+                <td class="monthly-col collapsed">$28,900</td>
+                <td class="monthly-col collapsed">$31,450</td>
+                <td class="monthly-col collapsed">$35,200</td>
+                <td class="monthly-col collapsed">$29,800</td>
+                <td class="monthly-col collapsed">$32,150</td>
+                <td class="monthly-col collapsed">$28,500</td>
+                <td class="monthly-col collapsed">$29,100</td>
+                <td class="monthly-col collapsed">$27,800</td>
+                <td class="monthly-col collapsed">$26,200</td>
+              </tr>
+              <tr>
+                <td class="frozen-col">+ Support Charge</td>
+                <td class="ctd-col"><strong>$30,000</strong></td>
+                <td class="monthly-col collapsed mtd-cell">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+                <td class="monthly-col collapsed">$2,500</td>
+              </tr>
+              <tr>
+                <td class="frozen-col">+ DSE Charge</td>
+                <td class="ctd-col"><strong>$12,000</strong></td>
+                <td class="monthly-col collapsed mtd-cell">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+                <td class="monthly-col collapsed">$1,000</td>
+              </tr>
+              <tr class="subtract-row">
+                <td class="frozen-col">− OTD</td>
+                <td class="ctd-col negative"><strong>($10,000)</strong></td>
+                <td class="monthly-col collapsed mtd-cell negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+                <td class="monthly-col collapsed negative">($833)</td>
+              </tr>
+              <tr class="subtract-row">
+                <td class="frozen-col">− Comp Usage</td>
+                <td class="ctd-col negative"><strong>($30,000)</strong></td>
+                <td class="monthly-col collapsed mtd-cell negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+                <td class="monthly-col collapsed negative">($2,500)</td>
+              </tr>
+              <tr class="subtract-row">
+                <td class="frozen-col">− Rollover</td>
+                <td class="ctd-col negative"><strong>($18,016)</strong></td>
+                <td class="monthly-col collapsed mtd-cell negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+                <td class="monthly-col collapsed negative">($1,500)</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="total-row">
+                <td class="frozen-col"><strong>Total Consumption</strong></td>
+                <td class="ctd-col"><strong>$352,334</strong></td>
+                <td class="monthly-col collapsed mtd-cell"><strong>$28,067</strong></td>
+                <td class="monthly-col collapsed"><strong>$34,767</strong></td>
+                <td class="monthly-col collapsed"><strong>$32,417</strong></td>
+                <td class="monthly-col collapsed"><strong>$27,567</strong></td>
+                <td class="monthly-col collapsed"><strong>$30,117</strong></td>
+                <td class="monthly-col collapsed"><strong>$33,867</strong></td>
+                <td class="monthly-col collapsed"><strong>$28,467</strong></td>
+                <td class="monthly-col collapsed"><strong>$30,817</strong></td>
+                <td class="monthly-col collapsed"><strong>$27,167</strong></td>
+                <td class="monthly-col collapsed"><strong>$27,767</strong></td>
+                <td class="monthly-col collapsed"><strong>$26,467</strong></td>
+                <td class="monthly-col collapsed"><strong>$24,867</strong></td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
 
-        <!-- Expandable Monthly Details -->
-        <div class="expandable-section">
-          <button class="expand-toggle" onclick="toggleMonthlyDetails()">
+        <!-- Expand/Collapse Button -->
+        <div class="table-actions">
+          <button class="expand-toggle" onclick="toggleMonthlyColumns()">
             <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 9l6 6 6-6"/>
             </svg>
-            <span>View Monthly Breakdown</span>
+            <span id="toggleMonthlyText">Expand Monthly Breakdown</span>
           </button>
-          
-          <div class="monthly-details" id="monthlyDetails" style="display: none;">
-            <table class="monthly-table">
-              <thead>
-                <tr>
-                  <th>Month</th>
-                  <th>Cloud Usage</th>
-                  <th>Support</th>
-                  <th>DSE</th>
-                  <th>OTD</th>
-                  <th>Comp Usage</th>
-                  <th>Rollover</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="mtd-row">
-                  <td><strong>Jan 2026</strong> <span class="draft-badge">Draft</span></td>
-                  <td>$29,400</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$28,067</strong></td>
-                </tr>
-                <tr>
-                  <td>Dec 2025</td>
-                  <td>$36,100</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$34,767</strong></td>
-                </tr>
-                <tr>
-                  <td>Nov 2025</td>
-                  <td>$33,750</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$32,417</strong></td>
-                </tr>
-                <tr>
-                  <td>Oct 2025</td>
-                  <td>$28,900</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$27,567</strong></td>
-                </tr>
-                <tr>
-                  <td>Sep 2025</td>
-                  <td>$31,450</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$30,117</strong></td>
-                </tr>
-                <tr>
-                  <td>Aug 2025</td>
-                  <td>$35,200</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$33,867</strong></td>
-                </tr>
-                <tr>
-                  <td>Jul 2025</td>
-                  <td>$29,800</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$28,467</strong></td>
-                </tr>
-                <tr>
-                  <td>Jun 2025</td>
-                  <td>$32,150</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$30,817</strong></td>
-                </tr>
-                <tr>
-                  <td>May 2025</td>
-                  <td>$28,500</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$27,167</strong></td>
-                </tr>
-                <tr>
-                  <td>Apr 2025</td>
-                  <td>$29,100</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$27,767</strong></td>
-                </tr>
-                <tr>
-                  <td>Mar 2025</td>
-                  <td>$27,800</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$26,467</strong></td>
-                </tr>
-                <tr>
-                  <td>Feb 2025</td>
-                  <td>$26,200</td>
-                  <td>$2,500</td>
-                  <td>$1,000</td>
-                  <td class="negative">($833)</td>
-                  <td class="negative">($2,500)</td>
-                  <td class="negative">($1,500)</td>
-                  <td><strong>$24,867</strong></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr class="total-row">
-                  <td><strong>Contract Total</strong></td>
-                  <td><strong>$368,350</strong></td>
-                  <td><strong>$30,000</strong></td>
-                  <td><strong>$12,000</strong></td>
-                  <td class="negative"><strong>($10,000)</strong></td>
-                  <td class="negative"><strong>($30,000)</strong></td>
-                  <td class="negative"><strong>($18,016)</strong></td>
-                  <td><strong>$352,334</strong></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
         </div>
       </section>
 

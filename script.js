@@ -179,18 +179,28 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Toggle Monthly Details in Consumption tab
-function toggleMonthlyDetails() {
-  const details = document.getElementById('monthlyDetails');
-  const toggle = document.querySelector('.expand-toggle');
+// Toggle Monthly Columns in Consumption tab
+function toggleMonthlyColumns() {
+  const table = document.getElementById('consumptionTable');
+  const monthlyCols = table.querySelectorAll('.monthly-col');
+  const toggle = document.querySelector('.table-actions .expand-toggle');
+  const toggleText = document.getElementById('toggleMonthlyText');
   
-  if (details.style.display === 'none') {
-    details.style.display = 'block';
-    toggle.classList.add('expanded');
-    toggle.querySelector('span').textContent = 'Hide Monthly Breakdown';
-  } else {
-    details.style.display = 'none';
+  const isExpanded = !monthlyCols[0].classList.contains('collapsed');
+  
+  monthlyCols.forEach(col => {
+    if (isExpanded) {
+      col.classList.add('collapsed');
+    } else {
+      col.classList.remove('collapsed');
+    }
+  });
+  
+  if (isExpanded) {
     toggle.classList.remove('expanded');
-    toggle.querySelector('span').textContent = 'View Monthly Breakdown';
+    toggleText.textContent = 'Expand Monthly Breakdown';
+  } else {
+    toggle.classList.add('expanded');
+    toggleText.textContent = 'Collapse Monthly Breakdown';
   }
 }
