@@ -373,6 +373,165 @@
           </div>
         </div>
       </div>
+
+      <!-- Month End Reconciliation -->
+      <section class="section">
+        <h2 class="section-title">Month End Reconciliation</h2>
+        <p class="section-description">December 2025 month end reconciliation breakdown and allocation.</p>
+        
+        <div class="recon-two-pane-grid">
+          <!-- Recon Breakdown Pane -->
+          <div class="recon-pane">
+            <h3 class="pane-title">Month End Recon Breakdown</h3>
+            <p class="pane-subtitle">December 2025</p>
+            <div class="pane-rows">
+              <div class="pane-row">
+                <span>Total Consumption (Month)</span>
+                <span>$34,767</span>
+              </div>
+              <div class="pane-row">
+                <span>Total Billed (Month)</span>
+                <span>$30,767</span>
+              </div>
+              <div class="pane-row total">
+                <span>Position</span>
+                <span class="burst-text">$4,000 Burst</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Allocation Pane -->
+          <div class="recon-pane">
+            <h3 class="pane-title">Burst Allocation to Billing Channel</h3>
+            <p class="pane-subtitle">FIFO allocation across controllable channels</p>
+            <div class="pane-rows">
+              <div class="pane-row">
+                <span>Databricks Direct</span>
+                <span>$2,500</span>
+              </div>
+              <div class="pane-row">
+                <span>AWS Marketplace</span>
+                <span>$1,500</span>
+              </div>
+              <div class="pane-row total">
+                <span>Total Allocated</span>
+                <span>$4,000</span>
+              </div>
+            </div>
+            <p class="recon-note">Burst invoices generated for Direct and AWS MP using UniCom burst SKU.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Year End Reconciliation -->
+      <section class="section">
+        <h2 class="section-title">Year End Reconciliation</h2>
+        <p class="section-description">Contract Year 1 annual reconciliation breakdown and allocation.</p>
+        
+        <div class="recon-two-pane-grid">
+          <!-- Recon Breakdown Pane -->
+          <div class="recon-pane">
+            <h3 class="pane-title">Year End Recon Breakdown</h3>
+            <p class="pane-subtitle">Contract Year 1 (May 2025 - May 2026)</p>
+            <div class="pane-rows">
+              <div class="pane-row">
+                <span>TDCA (Year)</span>
+                <span>$349,500</span>
+              </div>
+              <div class="pane-row">
+                <span>Total Consumption (Year)</span>
+                <span>$352,334</span>
+              </div>
+              <div class="pane-row">
+                <span>Total Billed (Year)</span>
+                <span>$332,500</span>
+              </div>
+              <div class="pane-row total">
+                <span>Year End Position</span>
+                <span class="burst-text">$19,834 Burst</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Allocation Pane -->
+          <div class="recon-pane">
+            <h3 class="pane-title">Burst Allocation to Billing Channel</h3>
+            <p class="pane-subtitle">FIFO allocation across controllable channels</p>
+            <div class="pane-rows">
+              <div class="pane-row">
+                <span>Databricks Direct</span>
+                <span>$12,000</span>
+              </div>
+              <div class="pane-row">
+                <span>AWS Marketplace</span>
+                <span>$7,834</span>
+              </div>
+              <div class="pane-row total">
+                <span>Total Allocated</span>
+                <span>$19,834</span>
+              </div>
+            </div>
+            <p class="recon-note">Year-end burst allocated to controllable channels. Uncontrollable usage from Azure/GCP/SAP billed directly.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- End of Contract Reconciliation -->
+      <section class="section">
+        <h2 class="section-title">End of Contract Reconciliation</h2>
+        <p class="section-description">Final reconciliation at contract expiration including P3 adjustments.</p>
+        
+        <div class="recon-two-pane-grid">
+          <!-- Recon Breakdown Pane -->
+          <div class="recon-pane">
+            <h3 class="pane-title">Contract End Recon Breakdown</h3>
+            <p class="pane-subtitle">Contract: May 9, 2025 - May 8, 2026</p>
+            <div class="pane-rows">
+              <div class="pane-row">
+                <span>Total Contract Value</span>
+                <span>$300,000</span>
+              </div>
+              <div class="pane-row">
+                <span>Total Consumption (Contract)</span>
+                <span>$352,334</span>
+              </div>
+              <div class="pane-row">
+                <span>Total Billed (Contract)</span>
+                <span>$332,500</span>
+              </div>
+              <div class="pane-row subtract">
+                <span>− Unconsumed P3 (Excluded)</span>
+                <span>($8,400)</span>
+              </div>
+              <div class="pane-row total">
+                <span>Final Settlement</span>
+                <span class="burst-text">$11,434 Burst Due</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Allocation Pane -->
+          <div class="recon-pane">
+            <h3 class="pane-title">Final Burst Allocation to Billing Channel</h3>
+            <p class="pane-subtitle">Final settlement allocation</p>
+            <div class="pane-rows">
+              <div class="pane-row">
+                <span>Databricks Direct</span>
+                <span>$7,000</span>
+              </div>
+              <div class="pane-row">
+                <span>AWS Marketplace</span>
+                <span>$4,434</span>
+              </div>
+              <div class="pane-row total">
+                <span>Total Final Burst</span>
+                <span>$11,434</span>
+              </div>
+            </div>
+            <p class="recon-note">Final burst calculated after excluding unconsumed P3 from Total Billed. Settlement invoices generated for final amounts.</p>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- Consumption Tab Content -->

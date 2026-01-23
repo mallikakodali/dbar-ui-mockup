@@ -1194,6 +1194,106 @@ tfoot td {
   }
 }
 
+/* Reconciliation Two-Pane Grid */
+.recon-two-pane-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.recon-pane {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.recon-pane .pane-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.recon-pane .pane-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 16px 0;
+}
+
+.recon-pane .pane-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recon-pane .pane-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.recon-pane .pane-row span:first-child {
+  color: var(--text-secondary);
+}
+
+.recon-pane .pane-row span:last-child {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.recon-pane .pane-row.subtract span:first-child {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.recon-pane .pane-row.subtract span:last-child {
+  color: #991B1B;
+}
+
+.recon-pane .pane-row.total {
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 6px;
+}
+
+.recon-pane .pane-row.total span:first-child {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.recon-pane .pane-row.total span:last-child {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.burst-text {
+  color: #DC2626 !important;
+  font-weight: 700;
+}
+
+.credit-text {
+  color: #16A34A !important;
+  font-weight: 700;
+}
+
+.recon-note {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .recon-two-pane-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Consumption Pivot Table */
 .consumption-table-wrapper {
   overflow-x: auto;
