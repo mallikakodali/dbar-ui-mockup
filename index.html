@@ -224,15 +224,18 @@
     <!-- Ledger Tab Content -->
     <div class="tab-content" id="ledger-content" style="display: none;">
       <!-- Priority Banner -->
-      <div class="priority-banner phase-2">
+      <div class="priority-banner mixed">
         <svg class="priority-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
         </svg>
         <div class="priority-banner-content">
-          <div class="priority-banner-title">Phase 2</div>
-          <div>This tab is planned for Phase 2 implementation.</div>
+          <div class="priority-banner-title">Multiple Phases</div>
+          <ul class="priority-banner-list">
+            <li><span class="priority-badge p2">Phase 2</span> TDCP, TDCA, Ledger Balance, Month End Reconciliation</li>
+            <li><span class="priority-badge p3">Phase 3</span> Year End Reconciliation, End of Contract Reconciliation</li>
+          </ul>
         </div>
       </div>
 
@@ -310,7 +313,7 @@
               <span class="ledger-operator">−</span>
               <span class="ledger-item">Total Billed</span>
               <span class="ledger-operator">=</span>
-              <span class="ledger-balance-tag burst">$10,000 Burst</span>
+              <span class="ledger-balance-tag burst">$10,000</span>
             </div>
           </div>
 
@@ -395,7 +398,7 @@
               </div>
               <div class="pane-row total">
                 <span>Position</span>
-                <span class="burst-text">$4,000 Burst</span>
+                <span class="burst-text">$4,000</span>
               </div>
             </div>
           </div>
@@ -448,7 +451,7 @@
               </div>
               <div class="pane-row total">
                 <span>Year End Position</span>
-                <span class="burst-text">$19,834 Burst</span>
+                <span class="burst-text">$19,834</span>
               </div>
             </div>
           </div>
@@ -505,7 +508,7 @@
               </div>
               <div class="pane-row total">
                 <span>Final Settlement</span>
-                <span class="burst-text">$11,434 Burst Due</span>
+                <span class="burst-text">$11,434</span>
               </div>
             </div>
           </div>
