@@ -1403,6 +1403,38 @@ tfoot td {
   background: var(--bg-light);
 }
 
+/* Section Header Row */
+.consumption-pivot-table .section-header-row td {
+  background: #e2e8f0;
+  font-family: 'DM Sans', sans-serif;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.consumption-pivot-table .section-header-row .frozen-col {
+  background: #e2e8f0;
+}
+
+/* Indent for cloud breakdown rows */
+.consumption-pivot-table .frozen-col.indent {
+  padding-left: 28px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Subtotal Row */
+.consumption-pivot-table .subtotal-row td {
+  background: #f1f5f9;
+  border-top: 1px solid var(--border-color);
+}
+
+.consumption-pivot-table .subtotal-row .frozen-col {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* Table Actions */
 .table-actions {
   margin-top: 0;
