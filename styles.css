@@ -1324,6 +1324,38 @@ tfoot td {
   line-height: 1.5;
 }
 
+/* Pending Reconciliation Styles */
+.recon-pane.pending-recon {
+  background: #FAFAFA;
+  border: 1px dashed var(--border-color);
+}
+
+.pending-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #F5F5F5;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.pending-message svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.placeholder-rows .pane-row {
+  opacity: 0.5;
+}
+
+.placeholder {
+  color: var(--text-muted) !important;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .recon-two-pane-grid {
     grid-template-columns: 1fr;
