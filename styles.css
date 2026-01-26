@@ -1368,6 +1368,27 @@ tfoot td {
   background: var(--bg-light);
 }
 
+/* Mock Illustration Brackets */
+.mock-bracket {
+  color: #9333EA;
+  font-style: italic;
+}
+
+.mock-bracket-inline {
+  color: #9333EA;
+  font-style: italic;
+}
+
+.mock-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: #FAF5FF;
+  border: 1px dashed #D8B4FE;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin: 12px 0;
+}
+
 @media (max-width: 768px) {
   .recon-two-pane-grid {
     grid-template-columns: 1fr;
