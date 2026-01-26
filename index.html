@@ -241,64 +241,54 @@
 
       <!-- TDCP, TDCA, Ledger Horizontal Panes -->
       <div class="commit-panes-grid">
-        <!-- TDCP Pane -->
-        <div class="commit-pane">
-          <h3 class="pane-title">TDCP</h3>
-          <p class="pane-subtitle">Total Databricks Commit Payable</p>
-          <div class="pane-rows">
-            <div class="pane-row">
-              <span>Total Commit Value</span>
-              <span>$270,000</span>
-            </div>
-            <div class="pane-row">
-              <span>Deferred Prepaid</span>
-              <span>$225,000</span>
-            </div>
-            <div class="pane-row">
-              <span>Deferred PIA</span>
-              <span>$45,000</span>
-            </div>
-            <div class="pane-row">
-              <span>OTD</span>
-              <span>$7,500</span>
-            </div>
-            <div class="pane-row">
-              <span>Comp Usage</span>
-              <span>$22,500</span>
-            </div>
-            <div class="pane-row">
-              <span>Prepaid Rollover</span>
-              <span>$13,500</span>
-            </div>
-            <div class="pane-row total">
-              <span>Total TDCP</span>
-              <span>$306,000</span>
-            </div>
-          </div>
-        </div>
-
         <!-- TDCA Pane -->
         <div class="commit-pane">
           <h3 class="pane-title">TDCA</h3>
           <p class="pane-subtitle">Total Databricks Commit Available</p>
           <div class="pane-rows">
             <div class="pane-row">
-              <span>Total Commit Value</span>
-              <span>$270,000</span>
-            </div>
-            <div class="pane-row">
-              <span>Deferred Prepaid</span>
+              <span>Prepaid Commitment</span>
               <span>$225,000</span>
             </div>
             <div class="pane-row">
-              <span>Deferred PIA</span>
-              <span>$45,000</span>
+              <span>PIA Commitment</span>
+              <span>$75,000</span>
             </div>
             <div class="pane-row total">
-              <span>Total TDCA</span>
-              <span>$349,500</span>
+              <span>Total TDCA (Base Commit)</span>
+              <span>$300,000</span>
             </div>
           </div>
+          <p class="pane-note">Base contractual commit amount available for consumption.</p>
+        </div>
+
+        <!-- TDCP Pane -->
+        <div class="commit-pane">
+          <h3 class="pane-title">TDCP</h3>
+          <p class="pane-subtitle">Total Databricks Commit Payable</p>
+          <div class="pane-rows">
+            <div class="pane-row">
+              <span>TDCA (Base Commit)</span>
+              <span>$300,000</span>
+            </div>
+            <div class="pane-row">
+              <span>+ OTD (One-Time Discount)</span>
+              <span>$10,000</span>
+            </div>
+            <div class="pane-row">
+              <span>+ Comp Usage Credits</span>
+              <span>$30,000</span>
+            </div>
+            <div class="pane-row">
+              <span>+ Rollover Credits</span>
+              <span>$18,016</span>
+            </div>
+            <div class="pane-row total">
+              <span>Total TDCP</span>
+              <span>$358,016</span>
+            </div>
+          </div>
+          <p class="pane-note">TDCA + Credits = Total commit payable including all allowances.</p>
         </div>
 
         <!-- Ledger Pane -->

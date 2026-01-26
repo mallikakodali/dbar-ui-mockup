@@ -1174,6 +1174,16 @@ tfoot td {
   border-bottom: 1px solid var(--border-light);
 }
 
+/* Pane Note */
+.pane-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 12px 0 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+  font-style: italic;
+}
+
 @media (max-width: 1200px) {
   .commit-panes-grid {
     grid-template-columns: 1fr 1fr;
