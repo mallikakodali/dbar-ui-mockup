@@ -2199,12 +2199,6 @@
             <option>Azure</option>
             <option>SAP</option>
           </select>
-          <select class="filter-dropdown">
-            <option value="">Status</option>
-            <option>Draft</option>
-            <option>Finalized</option>
-            <option>Paid</option>
-          </select>
         </div>
 
         <!-- Invoices Table -->
@@ -2219,7 +2213,6 @@
                 <th>Tags</th>
                 <th>Billing Channel</th>
                 <th>Amount</th>
-                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -2234,14 +2227,6 @@
                 <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>Databricks Direct</td>
                 <td class="amount">$25,000.00</td>
-                <td>
-                  <span class="status-indicator draft">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
-                    </svg>
-                    Draft
-                  </span>
-                </td>
               </tr>
               <tr>
                 <td>2</td>
@@ -2254,14 +2239,6 @@
                 <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>Azure</td>
                 <td class="amount">$12,500.00</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
               </tr>
               <tr>
                 <td>3</td>
@@ -2274,14 +2251,6 @@
                 <td><span class="tag overage">Overage Burst</span></td>
                 <td>AWS Marketplace</td>
                 <td class="amount">$8,500.00</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
               </tr>
               <tr>
                 <td>4</td>
@@ -2294,14 +2263,6 @@
                 <td><span class="tag azure-p3">Azure P3</span></td>
                 <td>Azure</td>
                 <td class="amount negative">-$421.83</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
               </tr>
               <tr>
                 <td>5</td>
@@ -2314,14 +2275,6 @@
                 <td><span class="tag in-deal">In-deal Burst</span></td>
                 <td>Databricks Direct</td>
                 <td class="amount">$9,734.74</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
               </tr>
               <tr>
                 <td>6</td>
@@ -2334,14 +2287,6 @@
                 <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>GCP Marketplace</td>
                 <td class="amount">$7,500.00</td>
-                <td>
-                  <span class="status-indicator paid">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Paid
-                  </span>
-                </td>
               </tr>
               <tr>
                 <td>7</td>
@@ -2354,14 +2299,6 @@
                 <td><span class="tag azure-p3">Azure P3</span></td>
                 <td>Azure</td>
                 <td class="amount negative">-$350.00</td>
-                <td>
-                  <span class="status-indicator paid">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Paid
-                  </span>
-                </td>
               </tr>
               <tr>
                 <td>8</td>
@@ -2374,14 +2311,6 @@
                 <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>AWS Marketplace</td>
                 <td class="amount">$25,000.00</td>
-                <td>
-                  <span class="status-indicator paid">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Paid
-                  </span>
-                </td>
               </tr>
             </tbody>
           </table>
