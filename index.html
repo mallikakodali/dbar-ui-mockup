@@ -247,19 +247,27 @@
           <p class="pane-subtitle">Total Databricks Commit Available</p>
           <div class="pane-rows">
             <div class="pane-row">
-              <span>Prepaid Commitment</span>
-              <span>$225,000</span>
+              <span>TDCP (Base Payable)</span>
+              <span>$8,182,500</span>
             </div>
             <div class="pane-row">
-              <span>PIA Commitment</span>
-              <span>$75,000</span>
+              <span>+ Comp Usage Credits</span>
+              <span>$15,000</span>
+            </div>
+            <div class="pane-row">
+              <span>+ OTD (One-Time Discount)</span>
+              <span>$40,000</span>
+            </div>
+            <div class="pane-row">
+              <span>+ Rollover from Prior Order</span>
+              <span>$20,000</span>
             </div>
             <div class="pane-row total">
-              <span>Total TDCA (Base Commit)</span>
-              <span>$300,000</span>
+              <span>Total TDCA</span>
+              <span>$8,257,500</span>
             </div>
           </div>
-          <p class="pane-note">Base contractual commit amount available for consumption.</p>
+          <p class="pane-note">TDCP + Credits = Total commit available for consumption.</p>
         </div>
 
         <!-- TDCP Pane -->
@@ -268,42 +276,61 @@
           <p class="pane-subtitle">Total Databricks Commit Payable</p>
           <div class="pane-rows">
             <div class="pane-row">
-              <span>TDCA (Base Commit)</span>
-              <span>$300,000</span>
+              <span>Total Contract Value (TCV)</span>
+              <span>$8,119,500</span>
             </div>
             <div class="pane-row">
-              <span>+ OTD (One-Time Discount)</span>
-              <span>$10,000</span>
-            </div>
-            <div class="pane-row">
-              <span>+ Comp Usage Credits</span>
-              <span>$30,000</span>
-            </div>
-            <div class="pane-row">
-              <span>+ Rollover Credits</span>
-              <span>$18,016</span>
+              <span>+ Deferred from Prior Contract</span>
+              <span>$63,000</span>
             </div>
             <div class="pane-row total">
               <span>Total TDCP</span>
-              <span>$358,016</span>
+              <span>$8,182,500</span>
             </div>
           </div>
-          <p class="pane-note">TDCA + Credits = Total commit payable including all allowances.</p>
+          <div class="pane-breakdown">
+            <div class="breakdown-title">TCV Breakdown</div>
+            <div class="pane-row small">
+              <span>Prepaid Installments</span>
+              <span>$2,182,000</span>
+            </div>
+            <div class="pane-row small indent">
+              <span>AWS Marketplace</span>
+              <span>$1,000,000</span>
+            </div>
+            <div class="pane-row small indent">
+              <span>Databricks Direct</span>
+              <span>$1,082,000</span>
+            </div>
+            <div class="pane-row small indent">
+              <span>Azure P3</span>
+              <span>$100,000</span>
+            </div>
+            <div class="pane-row small">
+              <span>PIA Portion</span>
+              <span>$1,711,500</span>
+            </div>
+            <div class="pane-row small">
+              <span>Other (Support, DSE, etc.)</span>
+              <span>$4,226,000</span>
+            </div>
+          </div>
+          <p class="pane-note">Rollover Right: $800,000 | Support: MC 10% off 20% | DSE: 0% discount, 1yr</p>
         </div>
 
         <!-- Ledger Pane -->
         <div class="commit-pane ledger-pane">
           <h3 class="pane-title">Ledger Balance</h3>
-          <p class="pane-subtitle">Contract to Date Balance (Step 6)</p>
+          <p class="pane-subtitle">Contract to Date Balance (Step 6) - 9 months into contract</p>
           
           <!-- Ledger Balance Result -->
           <div class="ledger-result">
             <div class="ledger-equation">
-              <span class="ledger-item">Total Billed ($332,500)</span>
+              <span class="ledger-item">Total Billed ($6,411,500)</span>
               <span class="ledger-operator">−</span>
-              <span class="ledger-item">Total Consumption ($352,334)</span>
+              <span class="ledger-item">Total Consumption ($6,546,250)</span>
               <span class="ledger-operator">=</span>
-              <span class="ledger-balance-tag burst">-$19,834</span>
+              <span class="ledger-balance-tag burst">-$134,750</span>
             </div>
           </div>
 
@@ -313,31 +340,31 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Cloud Usage (Step 1)</span>
-                <span>$368,350</span>
+                <span>$5,500,000</span>
               </div>
               <div class="pane-row">
-                <span>+ Support Charge (Step 2)</span>
-                <span>$30,000</span>
+                <span>+ Support Charge (Step 2: 20% × 90%)</span>
+                <span>$990,000</span>
               </div>
               <div class="pane-row">
-                <span>+ DSE Charge (Step 3)</span>
-                <span>$12,000</span>
+                <span>+ DSE Charge (Step 3: 9 months)</span>
+                <span>$112,500</span>
               </div>
               <div class="pane-row subtract">
-                <span>− Applied OTD</span>
-                <span>($10,000)</span>
-              </div>
-              <div class="pane-row subtract">
-                <span>− Applied Comp Usage</span>
+                <span>− Applied OTD (75% of $40,000)</span>
                 <span>($30,000)</span>
               </div>
               <div class="pane-row subtract">
-                <span>− Applied Rollover</span>
-                <span>($18,016)</span>
+                <span>− Applied Comp Usage (75% of $15,000)</span>
+                <span>($11,250)</span>
+              </div>
+              <div class="pane-row subtract">
+                <span>− Applied Rollover (75% of $20,000)</span>
+                <span>($15,000)</span>
               </div>
               <div class="pane-row total">
                 <span>Total Net Consumption</span>
-                <span>$352,334</span>
+                <span>$6,546,250</span>
               </div>
             </div>
           </div>
@@ -347,28 +374,32 @@
             <h4 class="ledger-section-title">Total Billed (Step 5)</h4>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Prepaid (Direct + MP + P3)</span>
-                <span>$200,000</span>
+                <span>Prepaid - AWS MP (75% of $1M)</span>
+                <span>$750,000</span>
               </div>
               <div class="pane-row">
-                <span>Azure P3</span>
-                <span>$25,000</span>
+                <span>Prepaid - Databricks Direct (75% of $1.082M)</span>
+                <span>$811,500</span>
               </div>
               <div class="pane-row">
-                <span>In-deal Burst</span>
-                <span>$35,000</span>
+                <span>Azure P3 (75% of $100K)</span>
+                <span>$75,000</span>
               </div>
               <div class="pane-row">
-                <span>Overage Burst</span>
-                <span>$15,000</span>
+                <span>PIA Billed (Azure/GCP/SAP)</span>
+                <span>$1,200,000</span>
               </div>
               <div class="pane-row">
-                <span>Early Arrears Payments (PIA)</span>
-                <span>$57,500</span>
+                <span>In-deal Burst (Controllable)</span>
+                <span>$75,000</span>
+              </div>
+              <div class="pane-row">
+                <span>Support & DSE Billings</span>
+                <span>$3,500,000</span>
               </div>
               <div class="pane-row total">
                 <span>Total Billed</span>
-                <span>$332,500</span>
+                <span>$6,411,500</span>
               </div>
             </div>
           </div>
@@ -378,7 +409,7 @@
       <!-- Contract to Date Reconciliation -->
       <section class="section">
         <h2 class="section-title">Contract to Date Reconciliation</h2>
-        <p class="section-description">Running reconciliation from contract start to current date.</p>
+        <p class="section-description">Running reconciliation from contract start to current date (9 months).</p>
         
         <div class="recon-two-pane-grid">
           <!-- CTD Recon Breakdown Pane -->
@@ -387,39 +418,40 @@
             <p class="pane-subtitle">May 9, 2025 - Jan 26, 2026</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Total Consumption (CTD)</span>
-                <span>$352,334</span>
+                <span>Total Net Consumption (CTD)</span>
+                <span>$6,546,250</span>
               </div>
               <div class="pane-row">
                 <span>Total Billed (CTD)</span>
-                <span>$332,500</span>
+                <span>$6,411,500</span>
               </div>
               <div class="pane-row total">
-                <span>CTD Position</span>
-                <span class="burst-text">$19,834</span>
+                <span>CTD Position (Burst)</span>
+                <span class="burst-text">$134,750</span>
               </div>
             </div>
+            <p class="recon-note">Balance = Billed − Consumption = $6,411,500 − $6,546,250 = -$134,750</p>
           </div>
 
           <!-- CTD Allocation Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">CTD Burst Allocation to Billing Channel</h3>
-            <p class="pane-subtitle">Cumulative burst allocation across channels</p>
+            <p class="pane-subtitle">FIFO allocation to controllable channels (Step 8)</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Databricks Direct</span>
-                <span>$12,000</span>
+                <span>Databricks Direct (Controllable)</span>
+                <span>$85,000</span>
               </div>
               <div class="pane-row">
-                <span>AWS Marketplace</span>
-                <span>$7,834</span>
+                <span>AWS Marketplace (Controllable)</span>
+                <span>$49,750</span>
               </div>
               <div class="pane-row total">
-                <span>Total CTD Burst</span>
-                <span>$19,834</span>
+                <span>Total CTD Controllable Burst</span>
+                <span>$134,750</span>
               </div>
             </div>
-            <p class="recon-note">Running total of burst invoices generated from contract start to date.</p>
+            <p class="recon-note">Azure/GCP/SAP consumption billed as PIA automatically (uncontrollable).</p>
           </div>
         </div>
       </section>
@@ -437,18 +469,18 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Total Net Consumption (Month)</span>
-                <span>$34,767</span>
+                <span>$727,361</span>
               </div>
               <div class="pane-row">
                 <span>Total Billed (Month)</span>
-                <span>$30,767</span>
+                <span>$712,389</span>
               </div>
               <div class="pane-row total">
-                <span>Balance (Step 6)</span>
-                <span class="burst-text">$4,000</span>
+                <span>Month Balance (Step 6)</span>
+                <span class="burst-text">$14,972</span>
               </div>
             </div>
-            <p class="recon-note">Balance = Billed − Consumption. Negative = Burst (Step 8)</p>
+            <p class="recon-note">Monthly consumption exceeds billing by $14,972 (Burst)</p>
           </div>
 
           <!-- Allocation Pane -->
@@ -458,15 +490,15 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Databricks Direct</span>
-                <span>$2,500</span>
+                <span>$9,500</span>
               </div>
               <div class="pane-row">
                 <span>AWS Marketplace</span>
-                <span>$1,500</span>
+                <span>$5,472</span>
               </div>
               <div class="pane-row total">
                 <span>Total Controllable Burst</span>
-                <span>$4,000</span>
+                <span>$14,972</span>
               </div>
             </div>
             <p class="recon-note">Burst invoices generated for Direct and AWS MP using UniCom burst SKU. Azure/GCP/SAP billed as PIA automatically.</p>
@@ -483,47 +515,47 @@
           <!-- Recon Breakdown Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">Year End Recon Breakdown</h3>
-            <p class="pane-subtitle">Contract Year 1 (May 2025 - May 2026)</p>
+            <p class="pane-subtitle">Contract Year 1 (May 2025 - May 2026) - Projected</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Total Net Consumption (Year)</span>
-                <span>$352,334</span>
+                <span>Projected Net Consumption (Year)</span>
+                <span>$8,728,333</span>
               </div>
               <div class="pane-row">
-                <span>Total Billed (Year)</span>
-                <span>$332,500</span>
+                <span>Projected Total Billed (Year)</span>
+                <span>$8,548,667</span>
               </div>
               <div class="pane-row">
                 <span>Total Contractual Prepaid (OF)</span>
-                <span>$300,000</span>
+                <span>$2,182,000</span>
               </div>
               <div class="pane-row total">
-                <span>Year End Balance (Step 6)</span>
-                <span class="burst-text">$19,834</span>
+                <span>Projected Year End Balance</span>
+                <span class="burst-text">$179,666</span>
               </div>
             </div>
-            <p class="recon-note">Balance = Billed ($332,500) − Consumption ($352,334) = -$19,834 (Burst)</p>
+            <p class="recon-note">Credit check (Step 7): If Consumption > Max(Billed, Prepaid), burst is due.</p>
           </div>
 
           <!-- Allocation Pane -->
           <div class="recon-pane">
-            <h3 class="pane-title">Controllable Burst Allocation (Step 8)</h3>
+            <h3 class="pane-title">Projected Burst Allocation (Step 8)</h3>
             <p class="pane-subtitle">FIFO allocation to Direct and AWS MP</p>
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Databricks Direct</span>
-                <span>$12,000</span>
+                <span>$110,000</span>
               </div>
               <div class="pane-row">
                 <span>AWS Marketplace</span>
-                <span>$7,834</span>
+                <span>$69,666</span>
               </div>
               <div class="pane-row total">
-                <span>Total Controllable Burst</span>
-                <span>$19,834</span>
+                <span>Total Projected Burst</span>
+                <span>$179,666</span>
               </div>
             </div>
-            <p class="recon-note">Credit check (Step 7): Since Consumption > Billed, no credit due. Burst allocated to controllable channels.</p>
+            <p class="recon-note">Projected based on current run rate. Azure/GCP/SAP billed as PIA automatically.</p>
           </div>
         </div>
       </section>
@@ -537,51 +569,51 @@
           <!-- Recon Breakdown Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">Contract End Recon Breakdown</h3>
-            <p class="pane-subtitle">Contract: May 9, 2025 - May 8, 2026</p>
+            <p class="pane-subtitle">Contract: May 9, 2025 - May 8, 2026 - Projected</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Total Consumption (Contract)</span>
-                <span>$352,334</span>
+                <span>Projected Consumption (Contract)</span>
+                <span>$8,728,333</span>
               </div>
               <div class="pane-row">
-                <span>Total Billed (Contract)</span>
-                <span>$332,500</span>
+                <span>Projected Total Billed (Contract)</span>
+                <span>$8,548,667</span>
               </div>
               <div class="pane-row subtract">
                 <span>− Unconsumed P3 (Excluded from Billed)</span>
-                <span>($8,400)</span>
+                <span>($25,000)</span>
               </div>
               <div class="pane-row">
                 <span>Adjusted Total Billed for EOC</span>
-                <span>$324,100</span>
+                <span>$8,523,667</span>
               </div>
               <div class="pane-row total">
-                <span>Final Settlement (Burst)</span>
-                <span class="burst-text">$28,234</span>
+                <span>Projected Final Settlement (Burst)</span>
+                <span class="burst-text">$204,666</span>
               </div>
             </div>
-            <p class="recon-note">Calculation: Total Consumption ($352,334) − Adjusted Billed ($324,100) = $28,234</p>
+            <p class="recon-note">EOC = Consumption ($8,728,333) − Adjusted Billed ($8,523,667) = $204,666</p>
           </div>
 
           <!-- Allocation Pane -->
           <div class="recon-pane">
-            <h3 class="pane-title">Final Burst Allocation to Billing Channel</h3>
+            <h3 class="pane-title">Projected Final Burst Allocation</h3>
             <p class="pane-subtitle">FIFO allocation across controllable channels (Step 8)</p>
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Databricks Direct (Controllable)</span>
-                <span>$17,000</span>
+                <span>$125,000</span>
               </div>
               <div class="pane-row">
                 <span>AWS Marketplace (Controllable)</span>
-                <span>$11,234</span>
+                <span>$79,666</span>
               </div>
               <div class="pane-row total">
-                <span>Total Final Burst</span>
-                <span>$28,234</span>
+                <span>Total Projected Final Burst</span>
+                <span>$204,666</span>
               </div>
             </div>
-            <p class="recon-note">Final burst allocated to controllable channels (Direct, AWS MP). Azure/GCP/SAP usage billed as PIA automatically.</p>
+            <p class="recon-note">Projected based on current consumption rate. Unconsumed P3 excluded from Total Billed per Step 5.</p>
           </div>
         </div>
       </section>
