@@ -1356,6 +1356,18 @@ tfoot td {
   font-style: italic;
 }
 
+/* Billing Table Footer */
+.footer-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.grand-total td {
+  border-top: 2px solid var(--border-color);
+  background: var(--bg-light);
+}
+
 @media (max-width: 768px) {
   .recon-two-pane-grid {
     grid-template-columns: 1fr;
