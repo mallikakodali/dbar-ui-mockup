@@ -494,18 +494,23 @@
         </div>
 
         <!-- Ledger Pane -->
-        <div class="commit-pane ledger-pane">
+        <div class="commit-pane">
           <h3 class="pane-title">Ledger Balance</h3>
           <p class="pane-subtitle">Contract to Date</p>
           
           <!-- Ledger Balance Result -->
-          <div class="ledger-result">
-            <div class="ledger-equation">
-              <span class="ledger-item">Total Billed <span class="mock-bracket">($2,290,000)</span></span>
-              <span class="ledger-operator">−</span>
-              <span class="ledger-item">Total Consumption <span class="mock-bracket">($811,944)</span></span>
-              <span class="ledger-operator">=</span>
-              <span class="ledger-balance-tag credit">$1,478,056</span>
+          <div class="pane-rows">
+            <div class="pane-row">
+              <span>Total Billed</span>
+              <span>$2,190,000</span>
+            </div>
+            <div class="pane-row">
+              <span>Total Consumption</span>
+              <span>$811,944</span>
+            </div>
+            <div class="pane-row total">
+              <span>Balance (Credit)</span>
+              <span class="credit-text">$1,378,056</span>
             </div>
           </div>
 
@@ -562,7 +567,7 @@
               </div>
               <div class="pane-row">
                 <span>Azure Uncontrollable</span>
-                <span>$100,000</span>
+                <span>$0</span>
               </div>
               <div class="pane-row">
                 <span>SAP Uncontrollable</span>
@@ -570,7 +575,7 @@
               </div>
               <div class="pane-row total">
                 <span>Total Billed</span>
-                <span>$2,290,000</span>
+                <span>$2,190,000</span>
               </div>
             </div>
           </div>
@@ -594,14 +599,13 @@
               </div>
               <div class="pane-row">
                 <span>Total Billed (CTD)</span>
-                <span>$2,290,000</span>
+                <span>$2,190,000</span>
               </div>
               <div class="pane-row total">
                 <span>CTD Position (Credit)</span>
-                <span class="credit-text">$1,478,056</span>
+                <span class="credit-text">$1,378,056</span>
               </div>
             </div>
-            <p class="recon-note">Balance = Billed − Consumption = $2,290,000 − $811,944 = $1,478,056 Credit</p>
           </div>
 
           <!-- CTD Allocation Pane -->
@@ -611,14 +615,13 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Credit to Next Period</span>
-                <span class="credit-text">$1,478,056</span>
+                <span class="credit-text">$1,378,056</span>
               </div>
               <div class="pane-row total">
                 <span>Total CTD Credit</span>
-                <span class="credit-text">$1,478,056</span>
+                <span class="credit-text">$1,378,056</span>
               </div>
             </div>
-            <p class="recon-note">Credit will be applied to reduce next Direct or AWS MP installment.</p>
           </div>
         </div>
       </section>
@@ -640,14 +643,13 @@
               </div>
               <div class="pane-row">
                 <span>Total Billed (Month)</span>
-                <span>$190,833</span>
+                <span>$182,500</span>
               </div>
               <div class="pane-row total">
-                <span>Month Balance</span>
-                <span class="credit-text">$123,171</span>
+                <span>Month Balance (Credit)</span>
+                <span class="credit-text">$114,838</span>
               </div>
             </div>
-            <p class="recon-note">Monthly billing exceeds consumption by $123,171 (Credit)</p>
           </div>
 
           <!-- Allocation Pane -->
@@ -657,14 +659,13 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Credit to Next Period</span>
-                <span class="credit-text">$123,171</span>
+                <span class="credit-text">$114,838</span>
               </div>
               <div class="pane-row total">
                 <span>Total Monthly Credit</span>
-                <span class="credit-text">$123,171</span>
+                <span class="credit-text">$114,838</span>
               </div>
             </div>
-            <p class="recon-note">Credit will be applied to reduce next Direct or AWS MP installment.</p>
           </div>
         </div>
       </section>
@@ -686,14 +687,13 @@
               </div>
               <div class="pane-row">
                 <span>Total Billed (Year)</span>
-                <span>$2,290,000</span>
+                <span>$2,190,000</span>
               </div>
               <div class="pane-row total">
                 <span>Year End Balance (Credit)</span>
-                <span class="credit-text">$1,478,056</span>
+                <span class="credit-text">$1,378,056</span>
               </div>
             </div>
-            <p class="recon-note">Balance = Billed − Consumption = $2,290,000 − $811,944 = $1,478,056 Credit</p>
           </div>
 
           <!-- Allocation Pane -->
@@ -703,14 +703,13 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Credit to Year 2</span>
-                <span class="credit-text">$1,478,056</span>
+                <span class="credit-text">$1,378,056</span>
               </div>
               <div class="pane-row total">
                 <span>Total Year End Credit</span>
-                <span class="credit-text">$1,478,056</span>
+                <span class="credit-text">$1,378,056</span>
               </div>
             </div>
-            <p class="recon-note">Credit will be applied to reduce Year 2 installments (Direct or AWS MP).</p>
           </div>
         </div>
       </section>
@@ -785,7 +784,7 @@
       <!-- Ledger Entries Section -->
       <section class="section">
         <h2 class="section-title">Ledger Entries</h2>
-        <p class="section-description">All ledger entries across commit buckets for this contract.</p>
+        <p class="section-description">All ledger entries across commit buckets for this contract. <span class="mock-bracket">(Note: Purple highlighting is for illustration only and doesn't match the scenario above)</span></p>
         
         <div class="section-toolbar">
           <div class="toolbar-left">
@@ -1346,18 +1345,18 @@
         <div class="p3-summary-cards">
           <div class="p3-card">
             <div class="p3-card-label">Total P3 Paid (CTD)</div>
-            <div class="p3-card-value">$80,000.00</div>
+            <div class="p3-card-value">$100,000.00</div>
             <div class="p3-card-sub">Cumulative P3 payments</div>
           </div>
           <div class="p3-card">
             <div class="p3-card-label">Total P3 Consumed (CTD)</div>
-            <div class="p3-card-value">$71,600.00</div>
-            <div class="p3-card-sub">Usage applied from P3</div>
+            <div class="p3-card-value">$100,000.00</div>
+            <div class="p3-card-sub">Usage applied from P3 (capped at P3 paid)</div>
           </div>
           <div class="p3-card">
             <div class="p3-card-label">P3 Balance</div>
-            <div class="p3-card-value">$8,400.00</div>
-            <div class="p3-card-sub">Remaining P3 credits</div>
+            <div class="p3-card-value">$0.00</div>
+            <div class="p3-card-sub">P3 fully consumed</div>
           </div>
         </div>
       </section>
@@ -1365,7 +1364,7 @@
       <!-- P3 Monthly Breakdown -->
       <section class="section">
         <h2 class="section-title">Monthly P3 Breakdown</h2>
-        <p class="section-description">Month-by-month P3 activity showing usage, consumption, and running balance.</p>
+        <p class="section-description">Month-by-month P3 activity showing Azure usage, P3 consumption, and running balance. P3 consumed based on Azure usage ($200k Year 1).</p>
 
         <div class="performance-table-wrapper">
           <table class="performance-table">
@@ -1373,81 +1372,102 @@
               <tr>
                 <th class="metric-header">Month</th>
                 <th>P3 Paid</th>
+                <th>Azure Usage</th>
                 <th>P3 Consumed</th>
-                <th>Monthly Balance</th>
                 <th>Running Balance</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="metric-name">May 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$8,500</td>
-                <td class="amount positive">$1,500</td>
-                <td class="amount">$1,500</td>
+                <td class="amount">$100,000</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$83,333</td>
               </tr>
               <tr>
                 <td class="metric-name">Jun 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$9,200</td>
-                <td class="amount positive">$800</td>
-                <td class="amount">$2,300</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$66,666</td>
               </tr>
               <tr>
                 <td class="metric-name">Jul 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$8,800</td>
-                <td class="amount positive">$1,200</td>
-                <td class="amount">$3,500</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$49,999</td>
               </tr>
               <tr>
                 <td class="metric-name">Aug 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$9,500</td>
-                <td class="amount positive">$500</td>
-                <td class="amount">$4,000</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$33,332</td>
               </tr>
               <tr>
                 <td class="metric-name">Sep 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$8,900</td>
-                <td class="amount positive">$1,100</td>
-                <td class="amount">$5,100</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$16,665</td>
               </tr>
               <tr>
                 <td class="metric-name">Oct 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$9,100</td>
-                <td class="amount positive">$900</td>
-                <td class="amount">$6,000</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$16,665</td>
+                <td class="amount">$0</td>
               </tr>
               <tr>
                 <td class="metric-name">Nov 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$9,300</td>
-                <td class="amount positive">$700</td>
-                <td class="amount">$6,700</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$0</td>
+                <td class="amount">$0</td>
               </tr>
               <tr>
                 <td class="metric-name">Dec 2025</td>
-                <td class="amount">$10,000</td>
-                <td class="amount">$9,600</td>
-                <td class="amount positive">$400</td>
-                <td class="amount">$7,100</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$0</td>
+                <td class="amount">$0</td>
               </tr>
-              <tr class="draft-row">
-                <td class="metric-name">Jan 2026 <span class="draft-badge">Draft</span></td>
-                <td class="amount mtd-column">$10,000</td>
-                <td class="amount mtd-column">$8,700</td>
-                <td class="amount mtd-column positive">$1,300</td>
-                <td class="amount mtd-column">$8,400</td>
+              <tr>
+                <td class="metric-name">Jan 2026</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$0</td>
+                <td class="amount">$0</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Feb 2026</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$0</td>
+                <td class="amount">$0</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Mar 2026</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,667</td>
+                <td class="amount">$0</td>
+                <td class="amount">$0</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Apr 2026</td>
+                <td class="amount">$0</td>
+                <td class="amount">$16,663</td>
+                <td class="amount">$0</td>
+                <td class="amount">$0</td>
               </tr>
               <tr class="subtotal-row">
-                <td class="metric-name"><strong>Total (CTD)</strong></td>
-                <td class="amount"><strong>$80,000</strong></td>
-                <td class="amount"><strong>$71,600</strong></td>
-                <td class="amount positive"><strong>$8,400</strong></td>
-                <td class="amount"><strong>$8,400</strong></td>
+                <td class="metric-name"><strong>Total (Year 1)</strong></td>
+                <td class="amount"><strong>$100,000</strong></td>
+                <td class="amount"><strong>$200,000</strong></td>
+                <td class="amount"><strong>$100,000</strong></td>
+                <td class="amount"><strong>$0</strong></td>
               </tr>
             </tbody>
           </table>
@@ -1705,9 +1725,9 @@
               <div class="bucket-progress-fill full" style="width: 100%;"></div>
             </div>
             <div class="bucket-progress-stats">
-              <span class="consumed-amount">$25,000.00</span>
+              <span class="consumed-amount">$15,000.00</span>
               <span class="separator">/</span>
-              <span class="total-amount">$25,000.00</span>
+              <span class="total-amount">$15,000.00</span>
               <span class="percentage">(100%)</span>
             </div>
           </div>
@@ -1740,13 +1760,13 @@
           
           <div class="bucket-progress-section">
             <div class="bucket-progress-bar">
-              <div class="bucket-progress-fill" style="width: 66.67%;"></div>
+              <div class="bucket-progress-fill full" style="width: 100%;"></div>
             </div>
             <div class="bucket-progress-stats">
-              <span class="consumed-amount">$10,000.00</span>
+              <span class="consumed-amount">$20,000.00</span>
               <span class="separator">/</span>
-              <span class="total-amount">$15,000.00</span>
-              <span class="percentage">(66.67%)</span>
+              <span class="total-amount">$20,000.00</span>
+              <span class="percentage">(100%)</span>
             </div>
           </div>
           
@@ -1778,13 +1798,13 @@
           
           <div class="bucket-progress-section">
             <div class="bucket-progress-bar">
-              <div class="bucket-progress-fill" style="width: 0%;"></div>
+              <div class="bucket-progress-fill full" style="width: 100%;"></div>
             </div>
             <div class="bucket-progress-stats">
-              <span class="consumed-amount">$0.00</span>
+              <span class="consumed-amount">$40,000.00</span>
               <span class="separator">/</span>
-              <span class="total-amount">$10,000.00</span>
-              <span class="percentage">(0%)</span>
+              <span class="total-amount">$40,000.00</span>
+              <span class="percentage">(100%)</span>
             </div>
           </div>
           
@@ -2082,7 +2102,7 @@
           <div class="billing-summary-card">
             <div class="summary-card-header">
               <h4>Uncontrollable Channel Payments</h4>
-              <span class="summary-total">$208,000</span>
+              <span class="summary-total">$108,000</span>
             </div>
             <div class="summary-breakdown">
               <div class="summary-row">
@@ -2095,7 +2115,7 @@
                 <span class="summary-label">
                   <span class="tag azure-mtm small">Azure MTM/Pay G</span>
                 </span>
-                <span class="summary-value">$100,000</span>
+                <span class="summary-value">$0</span>
               </div>
               <div class="summary-row">
                 <span class="summary-label">
@@ -2116,7 +2136,7 @@
           <div class="billing-summary-card total-card">
             <div class="summary-card-header">
               <h4>Total Billed (CTD)</h4>
-              <span class="summary-total large">$2,290,000</span>
+              <span class="summary-total large">$2,190,000</span>
             </div>
             <div class="summary-breakdown">
               <div class="summary-row">
@@ -2125,7 +2145,7 @@
               </div>
               <div class="summary-row">
                 <span class="summary-label">Uncontrollable Payments</span>
-                <span class="summary-value">$208,000</span>
+                <span class="summary-value">$108,000</span>
               </div>
             </div>
           </div>
@@ -2260,41 +2280,27 @@
               </tr>
               <tr>
                 <td>2</td>
-                <td>Nov 9, 2025</td>
-                <td>Nov 2025</td>
-                <td><span class="tag azure-mtm">Azure MTM/Pay G</span></td>
-                <td class="amount">$50,000.00</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Feb 9, 2026</td>
-                <td>Feb 2026</td>
-                <td><span class="tag azure-mtm">Azure MTM/Pay G</span></td>
-                <td class="amount">$50,000.00</td>
-              </tr>
-              <tr>
-                <td>4</td>
                 <td>Aug 9, 2025</td>
                 <td>Aug 2025</td>
                 <td><span class="tag sap-tag">SAP</span></td>
                 <td class="amount">$2,000.00</td>
               </tr>
               <tr>
-                <td>5</td>
+                <td>3</td>
                 <td>Nov 9, 2025</td>
                 <td>Nov 2025</td>
                 <td><span class="tag sap-tag">SAP</span></td>
                 <td class="amount">$2,000.00</td>
               </tr>
               <tr>
-                <td>6</td>
+                <td>4</td>
                 <td>Feb 9, 2026</td>
                 <td>Feb 2026</td>
                 <td><span class="tag sap-tag">SAP</span></td>
                 <td class="amount">$2,000.00</td>
               </tr>
               <tr>
-                <td>7</td>
+                <td>5</td>
                 <td>May 9, 2026</td>
                 <td>May 2026</td>
                 <td><span class="tag sap-tag">SAP</span></td>
