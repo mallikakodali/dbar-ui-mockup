@@ -1384,6 +1384,47 @@ td.indent {
   padding-left: 24px;
 }
 
+/* Yearly Schedule Display */
+.yearly-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.year-schedule-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  background: #F8FAFC;
+  border-radius: 6px;
+  border-left: 3px solid var(--primary);
+}
+
+.year-label {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 50px;
+}
+
+.year-amount {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.installment-detail {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.pia-note {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 13px;
+}
+
 /* Mock Illustration Brackets */
 .mock-bracket {
   color: #9333EA;

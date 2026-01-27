@@ -1832,288 +1832,134 @@
             <thead>
               <tr>
                 <th>Channel</th>
-                <th>Amount</th>
+                <th>Total Amount (3 Years)</th>
                 <th>Payment Type</th>
-                <th>Installment Schedule</th>
+                <th>Yearly Installment Schedule</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Year 1 Header -->
-              <tr class="year-header-row">
-                <td colspan="4"><strong>Year 1</strong> <span class="mock-bracket">(May 2025 - May 2026)</span></td>
-              </tr>
+              <!-- Prepaid Channels -->
               <tr>
-                <td class="indent">Databricks Direct</td>
-                <td class="amount">$1,082,000.00</td>
+                <td>Databricks Direct</td>
+                <td class="amount">$3,246,000.00</td>
                 <td>
                   <span class="payment-badge prepaid">Prepaid</span>
                 </td>
                 <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">May 15, 2025</span>
-                      <span class="schedule-amount">$270,500.00</span>
+                  <div class="yearly-schedule">
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 1</span>
+                      <span class="year-amount">$1,082,000.00</span>
+                      <span class="installment-detail">(4 × $270,500 quarterly)</span>
                     </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Aug 15, 2025</span>
-                      <span class="schedule-amount">$270,500.00</span>
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 2</span>
+                      <span class="year-amount">$1,082,000.00</span>
+                      <span class="installment-detail">(4 × $270,500 quarterly)</span>
                     </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Nov 15, 2025</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Feb 15, 2026</span>
-                      <span class="schedule-amount">$270,500.00</span>
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 3</span>
+                      <span class="year-amount">$1,082,000.00</span>
+                      <span class="installment-detail">(4 × $270,500 quarterly)</span>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td class="indent">AWS Marketplace</td>
-                <td class="amount">$1,000,000.00</td>
+                <td>AWS Marketplace</td>
+                <td class="amount">$1,900,000.00</td>
                 <td>
                   <span class="payment-badge prepaid">Prepaid</span>
                 </td>
                 <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">Jun 1, 2025</span>
-                      <span class="schedule-amount">$250,000.00</span>
+                  <div class="yearly-schedule">
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 1</span>
+                      <span class="year-amount">$1,000,000.00</span>
+                      <span class="installment-detail">(4 × $250,000 quarterly)</span>
                     </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Sep 1, 2025</span>
-                      <span class="schedule-amount">$250,000.00</span>
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 2</span>
+                      <span class="year-amount">$500,000.00</span>
+                      <span class="installment-detail">(4 × $125,000 quarterly)</span>
                     </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Dec 1, 2025</span>
-                      <span class="schedule-amount">$250,000.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Mar 1, 2026</span>
-                      <span class="schedule-amount">$250,000.00</span>
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 3</span>
+                      <span class="year-amount">$400,000.00</span>
+                      <span class="installment-detail">(4 × $100,000 quarterly)</span>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td class="indent">Azure P3</td>
-                <td class="amount">$100,000.00</td>
+                <td>Azure P3</td>
+                <td class="amount">$1,400,000.00</td>
                 <td>
                   <span class="payment-badge prepaid">Prepaid</span>
                 </td>
                 <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">May 15, 2025</span>
-                      <span class="schedule-amount">$100,000.00</span>
+                  <div class="yearly-schedule">
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 1</span>
+                      <span class="year-amount">$100,000.00</span>
+                      <span class="installment-detail">(annual lump sum)</span>
+                    </div>
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 2</span>
+                      <span class="year-amount">$600,000.00</span>
+                      <span class="installment-detail">(annual lump sum)</span>
+                    </div>
+                    <div class="year-schedule-block">
+                      <span class="year-label">Year 3</span>
+                      <span class="year-amount">$700,000.00</span>
+                      <span class="installment-detail">(annual lump sum)</span>
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr class="year-subtotal">
-                <td><em>Year 1 Subtotal</em></td>
-                <td class="amount"><em>$2,182,000.00</em></td>
-                <td colspan="2"></td>
               </tr>
 
-              <!-- Year 2 Header -->
-              <tr class="year-header-row">
-                <td colspan="4"><strong>Year 2</strong> <span class="mock-bracket">(May 2026 - May 2027)</span></td>
-              </tr>
+              <!-- PIA Channels -->
               <tr>
-                <td class="indent">Databricks Direct</td>
-                <td class="amount">$1,082,000.00</td>
-                <td>
-                  <span class="payment-badge prepaid">Prepaid</span>
-                </td>
-                <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">May 15, 2026</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Aug 15, 2026</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Nov 15, 2026</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Feb 15, 2027</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="indent">AWS Marketplace</td>
-                <td class="amount">$500,000.00</td>
-                <td>
-                  <span class="payment-badge prepaid">Prepaid</span>
-                </td>
-                <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">Jun 1, 2026</span>
-                      <span class="schedule-amount">$125,000.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Sep 1, 2026</span>
-                      <span class="schedule-amount">$125,000.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Dec 1, 2026</span>
-                      <span class="schedule-amount">$125,000.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Mar 1, 2027</span>
-                      <span class="schedule-amount">$125,000.00</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="indent">Azure P3</td>
-                <td class="amount">$600,000.00</td>
-                <td>
-                  <span class="payment-badge prepaid">Prepaid</span>
-                </td>
-                <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">May 15, 2026</span>
-                      <span class="schedule-amount">$600,000.00</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="year-subtotal">
-                <td><em>Year 2 Subtotal</em></td>
-                <td class="amount"><em>$2,182,000.00</em></td>
-                <td colspan="2"></td>
-              </tr>
-
-              <!-- Year 3 Header -->
-              <tr class="year-header-row">
-                <td colspan="4"><strong>Year 3</strong> <span class="mock-bracket">(May 2027 - May 2028)</span></td>
-              </tr>
-              <tr>
-                <td class="indent">Databricks Direct</td>
-                <td class="amount">$1,082,000.00</td>
-                <td>
-                  <span class="payment-badge prepaid">Prepaid</span>
-                </td>
-                <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">May 15, 2027</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Aug 15, 2027</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Nov 15, 2027</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Feb 15, 2028</span>
-                      <span class="schedule-amount">$270,500.00</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="indent">AWS Marketplace</td>
-                <td class="amount">$400,000.00</td>
-                <td>
-                  <span class="payment-badge prepaid">Prepaid</span>
-                </td>
-                <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">Jun 1, 2027</span>
-                      <span class="schedule-amount">$100,000.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Sep 1, 2027</span>
-                      <span class="schedule-amount">$100,000.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Dec 1, 2027</span>
-                      <span class="schedule-amount">$100,000.00</span>
-                    </div>
-                    <div class="schedule-row">
-                      <span class="schedule-date">Mar 1, 2028</span>
-                      <span class="schedule-amount">$100,000.00</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="indent">Azure P3</td>
-                <td class="amount">$700,000.00</td>
-                <td>
-                  <span class="payment-badge prepaid">Prepaid</span>
-                </td>
-                <td class="schedule-cell">
-                  <div class="inline-schedule">
-                    <div class="schedule-row">
-                      <span class="schedule-date">May 15, 2027</span>
-                      <span class="schedule-amount">$700,000.00</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="year-subtotal">
-                <td><em>Year 3 Subtotal</em></td>
-                <td class="amount"><em>$2,182,000.00</em></td>
-                <td colspan="2"></td>
-              </tr>
-
-              <!-- PIA Section -->
-              <tr class="year-header-row">
-                <td colspan="4"><strong>PIA Channels</strong> <span class="mock-bracket">(billed as consumed)</span></td>
-              </tr>
-              <tr>
-                <td class="indent">Azure (PIA)</td>
+                <td>Azure (PIA)</td>
                 <td class="amount">$685,000.00</td>
                 <td>
                   <span class="payment-badge pia">PIA</span>
                 </td>
-                <td class="schedule-cell">—</td>
+                <td class="schedule-cell">
+                  <span class="pia-note">Billed as consumed</span>
+                </td>
               </tr>
               <tr>
-                <td class="indent">GCP Marketplace</td>
+                <td>GCP Marketplace</td>
                 <td class="amount">$513,250.00</td>
                 <td>
                   <span class="payment-badge pia">PIA</span>
                 </td>
-                <td class="schedule-cell">—</td>
+                <td class="schedule-cell">
+                  <span class="pia-note">Billed as consumed</span>
+                </td>
               </tr>
               <tr>
-                <td class="indent">SAP</td>
+                <td>SAP</td>
                 <td class="amount">$513,250.00</td>
                 <td>
                   <span class="payment-badge pia">PIA</span>
                 </td>
-                <td class="schedule-cell">—</td>
+                <td class="schedule-cell">
+                  <span class="pia-note">Billed as consumed</span>
+                </td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <td><strong>Total Prepaid (3 Years)</strong></td>
                 <td class="amount"><strong>$6,546,000.00</strong></td>
-                <td colspan="2"><span class="footer-note">$2,182,000/year × 3 years</span></td>
+                <td colspan="2"><span class="footer-note">Databricks + AWS MP + Azure P3</span></td>
               </tr>
               <tr>
                 <td><strong>Total PIA</strong></td>
                 <td class="amount"><strong>$1,711,500.00</strong></td>
-                <td colspan="2"><span class="footer-note">Azure + GCP MP + SAP</span></td>
+                <td colspan="2"><span class="footer-note">Azure PIA + GCP MP + SAP</span></td>
               </tr>
               <tr class="grand-total">
                 <td><strong>Total TCV (3 Years)</strong></td>
