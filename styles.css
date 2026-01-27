@@ -3520,3 +3520,64 @@ td.indent {
 .subscription-value {
   color: var(--text-primary);
 }
+
+/* Ledger Entries Table */
+.ledger-entries-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ledger-entries-table th,
+.ledger-entries-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ledger-entries-table th {
+  background: var(--bg-light);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.ledger-entries-table tbody tr:hover {
+  background: var(--bg-light);
+}
+
+/* Bucket Badges */
+.bucket-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  background: #E2E8F0;
+  color: #475569;
+}
+
+.bucket-badge.comp {
+  background: #F3E8FF;
+  color: #7C3AED;
+}
+
+.bucket-badge.rollover {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.bucket-badge.trueup {
+  background: #DBEAFE;
+  color: #1D4ED8;
+}
+
+/* Manual Icon in Ledger */
+.manual-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #22C55E;
+}

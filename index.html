@@ -749,6 +749,173 @@
           </div>
         </div>
       </section>
+
+      <!-- Ledger Entries Section -->
+      <section class="section">
+        <h2 class="section-title">Ledger Entries</h2>
+        <p class="section-description">All ledger entries across commit buckets for this contract.</p>
+        
+        <div class="section-toolbar">
+          <div class="toolbar-left">
+            <div class="search-filter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input type="text" placeholder="Filter Ledger Entries">
+            </div>
+            <label class="toggle-filter">
+              <input type="checkbox">
+              <span class="toggle-label">Manual Adjustments Only</span>
+            </label>
+            <select class="filter-dropdown">
+              <option value="">Bucket</option>
+              <option>Total Commit</option>
+              <option>Complimentary Usage Credits</option>
+              <option>Rollover</option>
+              <option>True Up Credit</option>
+            </select>
+            <select class="filter-dropdown">
+              <option value="">Cloud</option>
+              <option>Azure</option>
+              <option>AWS</option>
+              <option>GCP</option>
+              <option>All</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ledger-entries-table">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 60px;">Manual</th>
+                <th>Bucket</th>
+                <th>From Date <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                <th>To Date</th>
+                <th>Cloud</th>
+                <th>Reason</th>
+                <th style="text-align: right;">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge">Total Commit</span></td>
+                <td>Jan 1, 2026</td>
+                <td>Jan 31, 2026</td>
+                <td>Azure</td>
+                <td></td>
+                <td class="amount" style="text-align: right;">$4,454.76</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge">Total Commit</span></td>
+                <td>Dec 1, 2025</td>
+                <td>Dec 31, 2025</td>
+                <td>Azure</td>
+                <td></td>
+                <td class="amount" style="text-align: right;">$6,442.17</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge comp">Comp Usage</span></td>
+                <td>Dec 1, 2025</td>
+                <td>Dec 31, 2025</td>
+                <td>All</td>
+                <td>Complimentary credits applied</td>
+                <td class="amount" style="text-align: right;">$3,500.00</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge">Total Commit</span></td>
+                <td>Nov 1, 2025</td>
+                <td>Nov 30, 2025</td>
+                <td>Azure</td>
+                <td></td>
+                <td class="amount" style="text-align: right;">$5,513.05</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge comp">Comp Usage</span></td>
+                <td>Nov 1, 2025</td>
+                <td>Nov 30, 2025</td>
+                <td>All</td>
+                <td>Complimentary credits applied</td>
+                <td class="amount" style="text-align: right;">$3,500.00</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="manual-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  </span>
+                </td>
+                <td><span class="bucket-badge">Total Commit</span></td>
+                <td>Oct 1, 2025</td>
+                <td>Oct 1, 2025</td>
+                <td></td>
+                <td>DBAR UB ledger alignment</td>
+                <td class="amount" style="text-align: right;">$3,428.81</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge rollover">Rollover</span></td>
+                <td>Oct 1, 2025</td>
+                <td>Oct 31, 2025</td>
+                <td>All</td>
+                <td>Rollover credit applied</td>
+                <td class="amount" style="text-align: right;">$2,500.00</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge">Total Commit</span></td>
+                <td>Sep 1, 2025</td>
+                <td>Sep 30, 2025</td>
+                <td>Azure</td>
+                <td></td>
+                <td class="amount" style="text-align: right;">$11,501.88</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="bucket-badge rollover">Rollover</span></td>
+                <td>Sep 1, 2025</td>
+                <td>Sep 30, 2025</td>
+                <td>All</td>
+                <td>Rollover credit applied</td>
+                <td class="amount" style="text-align: right;">$2,500.00</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="manual-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  </span>
+                </td>
+                <td><span class="bucket-badge">Total Commit</span></td>
+                <td>Sep 1, 2025</td>
+                <td>--</td>
+                <td>Azure</td>
+                <td>DBAR September ledger reset Oct 6</td>
+                <td class="amount negative" style="text-align: right;">-$5,284.65</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ledger-pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn nav">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </section>
     </div>
 
     <!-- Consumption Tab Content -->
@@ -1451,172 +1618,8 @@
               <span class="schedule-label">Billing Schedule:</span>
               <span class="schedule-value">--</span>
             </div>
-            <div class="ledger-entries">
-              <span class="ledger-label">Ledger Entries</span>
-              <span class="ledger-count">12</span>
-              <button class="expand-btn" onclick="toggleLedger(this)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6"/>
-                </svg>
-              </button>
-            </div>
           </div>
 
-          <!-- Ledger Entries Section (Expandable) -->
-          <div class="ledger-section" style="display: none;">
-            <div class="ledger-toolbar">
-              <div class="ledger-filters">
-                <div class="search-filter">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="M21 21l-4.35-4.35"/>
-                  </svg>
-                  <input type="text" placeholder="Filter Ledger Entries">
-                </div>
-                <label class="toggle-filter">
-                  <input type="checkbox">
-                  <span class="toggle-label">Manual Adjustments Only</span>
-                </label>
-                <select class="filter-dropdown">
-                  <option>Cloud</option>
-                  <option>Azure</option>
-                  <option>AWS</option>
-                  <option>GCP</option>
-                </select>
-              </div>
-              <button class="toolbar-btn outline">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 5v14M5 12h14"/>
-                </svg>
-                Create Ledger Entry
-              </button>
-            </div>
-
-            <div class="ledger-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th style="width: 60px;">Manual</th>
-                    <th>From Date <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
-                    <th>To Date <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
-                    <th>Cloud</th>
-                    <th>Reason</th>
-                    <th style="text-align: right;">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td>Jan 1, 2026</td>
-                    <td>Jan 31, 2026</td>
-                    <td>Azure</td>
-                    <td></td>
-                    <td class="amount" style="text-align: right;">$4,454.76</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Dec 1, 2025</td>
-                    <td>Dec 31, 2025</td>
-                    <td>Azure</td>
-                    <td></td>
-                    <td class="amount" style="text-align: right;">$6,442.17</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Nov 1, 2025</td>
-                    <td>Nov 30, 2025</td>
-                    <td>Azure</td>
-                    <td></td>
-                    <td class="amount" style="text-align: right;">$5,513.05</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Oct 1, 2025</td>
-                    <td>Oct 31, 2025</td>
-                    <td>Azure</td>
-                    <td></td>
-                    <td class="amount" style="text-align: right;">$6,585.25</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="manual-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M20 6L9 17l-5-5"/>
-                        </svg>
-                      </span>
-                    </td>
-                    <td>Oct 1, 2025</td>
-                    <td>Oct 1, 2025</td>
-                    <td></td>
-                    <td>DBAR UB ledger alignment</td>
-                    <td class="amount" style="text-align: right;">$3,428.81</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Sep 1, 2025</td>
-                    <td>Sep 30, 2025</td>
-                    <td>Azure</td>
-                    <td></td>
-                    <td class="amount" style="text-align: right;">$11,501.88</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="manual-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M20 6L9 17l-5-5"/>
-                        </svg>
-                      </span>
-                    </td>
-                    <td>Sep 1, 2025</td>
-                    <td>--</td>
-                    <td>Azure</td>
-                    <td>DBAR September ledger reset Oct 6</td>
-                    <td class="amount negative" style="text-align: right;">-$5,284.65</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <span class="manual-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M20 6L9 17l-5-5"/>
-                        </svg>
-                      </span>
-                    </td>
-                    <td>Sep 1, 2025</td>
-                    <td>--</td>
-                    <td>Azure</td>
-                    <td>CRA to DBAR Migration: snapshot_trueup</td>
-                    <td class="amount negative" style="text-align: right;">-$0.01</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Aug 1, 2025</td>
-                    <td>Aug 30, 2025</td>
-                    <td>Azure</td>
-                    <td>CRA to DBAR Migration: Monthly usage burndown</td>
-                    <td class="amount" style="text-align: right;">$6,163.51</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Jul 1, 2025</td>
-                    <td>Jul 30, 2025</td>
-                    <td></td>
-                    <td>CRA to DBAR Migration: Monthly usage burndown</td>
-                    <td class="amount" style="text-align: right;">$7,893.05</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="ledger-pagination">
-              <button class="page-btn active">1</button>
-              <button class="page-btn">2</button>
-              <button class="page-btn nav">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 18l6-6-6-6"/>
-                </svg>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -1664,83 +1667,6 @@
             <div class="billing-schedule">
               <span class="schedule-label">Billing Schedule:</span>
               <span class="schedule-value">--</span>
-            </div>
-            <div class="ledger-entries">
-              <span class="ledger-label">Ledger Entries</span>
-              <span class="ledger-count">8</span>
-              <button class="expand-btn" onclick="toggleLedger(this)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Ledger Entries Section -->
-          <div class="ledger-section" style="display: none;">
-            <div class="ledger-toolbar">
-              <div class="ledger-filters">
-                <div class="search-filter">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="M21 21l-4.35-4.35"/>
-                  </svg>
-                  <input type="text" placeholder="Filter Ledger Entries">
-                </div>
-                <label class="toggle-filter">
-                  <input type="checkbox">
-                  <span class="toggle-label">Manual Adjustments Only</span>
-                </label>
-                <select class="filter-dropdown">
-                  <option>Cloud</option>
-                </select>
-              </div>
-              <button class="toolbar-btn outline">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 5v14M5 12h14"/>
-                </svg>
-                Create Ledger Entry
-              </button>
-            </div>
-            <div class="ledger-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th style="width: 60px;">Manual</th>
-                    <th>From Date</th>
-                    <th>To Date</th>
-                    <th>Cloud</th>
-                    <th>Reason</th>
-                    <th style="text-align: right;">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td>Dec 1, 2025</td>
-                    <td>Dec 31, 2025</td>
-                    <td>All</td>
-                    <td>Complimentary credits applied</td>
-                    <td class="amount" style="text-align: right;">$3,500.00</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Nov 1, 2025</td>
-                    <td>Nov 30, 2025</td>
-                    <td>All</td>
-                    <td>Complimentary credits applied</td>
-                    <td class="amount" style="text-align: right;">$3,500.00</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Oct 1, 2025</td>
-                    <td>Oct 31, 2025</td>
-                    <td>All</td>
-                    <td>Complimentary credits applied</td>
-                    <td class="amount" style="text-align: right;">$3,500.00</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
@@ -1791,75 +1717,6 @@
               <span class="schedule-label">Billing Schedule:</span>
               <span class="schedule-value">--</span>
             </div>
-            <div class="ledger-entries">
-              <span class="ledger-label">Ledger Entries</span>
-              <span class="ledger-count">5</span>
-              <button class="expand-btn" onclick="toggleLedger(this)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Ledger Entries Section -->
-          <div class="ledger-section" style="display: none;">
-            <div class="ledger-toolbar">
-              <div class="ledger-filters">
-                <div class="search-filter">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="M21 21l-4.35-4.35"/>
-                  </svg>
-                  <input type="text" placeholder="Filter Ledger Entries">
-                </div>
-                <label class="toggle-filter">
-                  <input type="checkbox">
-                  <span class="toggle-label">Manual Adjustments Only</span>
-                </label>
-                <select class="filter-dropdown">
-                  <option>Cloud</option>
-                </select>
-              </div>
-              <button class="toolbar-btn outline">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 5v14M5 12h14"/>
-                </svg>
-                Create Ledger Entry
-              </button>
-            </div>
-            <div class="ledger-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th style="width: 60px;">Manual</th>
-                    <th>From Date</th>
-                    <th>To Date</th>
-                    <th>Cloud</th>
-                    <th>Reason</th>
-                    <th style="text-align: right;">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td>Oct 1, 2025</td>
-                    <td>Oct 31, 2025</td>
-                    <td>All</td>
-                    <td>Rollover credit applied</td>
-                    <td class="amount" style="text-align: right;">$2,500.00</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>Sep 1, 2025</td>
-                    <td>Sep 30, 2025</td>
-                    <td>All</td>
-                    <td>Rollover credit applied</td>
-                    <td class="amount" style="text-align: right;">$2,500.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
           </div>
         </div>
       </div>
@@ -1908,67 +1765,6 @@
             <div class="billing-schedule">
               <span class="schedule-label">Billing Schedule:</span>
               <span class="schedule-value">--</span>
-            </div>
-            <div class="ledger-entries">
-              <span class="ledger-label">Ledger Entries</span>
-              <span class="ledger-count">0</span>
-              <button class="expand-btn" onclick="toggleLedger(this)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Ledger Entries Section (Empty) -->
-          <div class="ledger-section" style="display: none;">
-            <div class="ledger-toolbar">
-              <div class="ledger-filters">
-                <div class="search-filter">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="M21 21l-4.35-4.35"/>
-                  </svg>
-                  <input type="text" placeholder="Filter Ledger Entries">
-                </div>
-                <label class="toggle-filter">
-                  <input type="checkbox">
-                  <span class="toggle-label">Manual Adjustments Only</span>
-                </label>
-                <select class="filter-dropdown">
-                  <option>Cloud</option>
-                </select>
-              </div>
-              <button class="toolbar-btn outline">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 5v14M5 12h14"/>
-                </svg>
-                Create Ledger Entry
-              </button>
-            </div>
-            <div class="ledger-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th style="width: 60px;">Manual</th>
-                    <th>From Date</th>
-                    <th>To Date</th>
-                    <th>Cloud</th>
-                    <th>Reason</th>
-                    <th style="text-align: right;">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="empty-state">
-                    <td colspan="6">
-                      <div class="empty-content">
-                        <p class="empty-text">No ledger entries</p>
-                        <p class="empty-subtext">Create a ledger entry to get started</p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
