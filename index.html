@@ -169,10 +169,6 @@
               <span class="info-value">$0.00 <button class="inline-edit-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></button></span>
             </div>
             <div class="info-row">
-              <span class="info-label">Is Bursting</span>
-              <span class="info-value">No</span>
-            </div>
-            <div class="info-row">
               <span class="info-label">Is Universal Commit?</span>
               <span class="info-value">Yes</span>
             </div>
@@ -248,7 +244,6 @@
               <tr>
                 <th>P. <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
                 <th>Name</th>
-                <th>Type</th>
                 <th>Start Date</th>
                 <th>End Date</th>
                 <th>Drawdown</th>
@@ -258,7 +253,6 @@
               <tr>
                 <td>700</td>
                 <td>Total Commit Value</td>
-                <td><span class="bucket-tag blue">Specified Commit</span></td>
                 <td>May 9, 2025</td>
                 <td>May 8, 2028</td>
                 <td>
@@ -274,7 +268,6 @@
               <tr>
                 <td>701</td>
                 <td>Rollover Postpaid</td>
-                <td><span class="bucket-tag orange">Rollover Bucket</span></td>
                 <td>May 9, 2025</td>
                 <td>May 8, 2028</td>
                 <td>
@@ -290,7 +283,6 @@
               <tr>
                 <td>702</td>
                 <td>Prepaid Rollover</td>
-                <td><span class="bucket-tag orange">Rollover Bucket</span></td>
                 <td>May 9, 2025</td>
                 <td>May 8, 2028</td>
                 <td>
@@ -306,7 +298,6 @@
               <tr>
                 <td>703</td>
                 <td>One Time Discount</td>
-                <td><span class="bucket-tag blue">Adjustment Bucket</span></td>
                 <td>May 9, 2025</td>
                 <td>May 8, 2028</td>
                 <td>
@@ -322,7 +313,6 @@
               <tr>
                 <td>704</td>
                 <td>Comp Usage</td>
-                <td><span class="bucket-tag purple">Credit Bucket</span></td>
                 <td>May 9, 2025</td>
                 <td>May 8, 2028</td>
                 <td>
@@ -625,17 +615,9 @@
                 <span>Total Billed (CTD)</span>
                 <span>$2,290,000</span>
               </div>
-              <div class="pane-row">
-                <span>Difference (Billed - Consumption)</span>
-                <span>$1,478,056</span>
-              </div>
-              <div class="pane-row">
-                <span>Uncontrollable excl. P3 ($208k - $100k)</span>
-                <span>$108,000</span>
-              </div>
               <div class="pane-row total">
-                <span>CTD Credit = min(Uncontrollable excl. P3, Difference)</span>
-                <span class="credit-text">$108,000</span>
+                <span>CTD Position</span>
+                <span>Credit (Billed > Consumption)</span>
               </div>
             </div>
           </div>
@@ -643,11 +625,15 @@
           <!-- CTD Allocation Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">CTD Credit Allocation</h3>
-            <p class="pane-subtitle">Credit to be applied to next billing period</p>
+            <p class="pane-subtitle">Credit = min(Uncontrollable excl. P3, Billed - Consumption)</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Credit to Next Period</span>
-                <span class="credit-text">$108,000</span>
+                <span>Difference (Billed - Consumption)</span>
+                <span>$1,478,056</span>
+              </div>
+              <div class="pane-row">
+                <span>Uncontrollable excl. P3</span>
+                <span>$108,000</span>
               </div>
               <div class="pane-row total">
                 <span>Total CTD Credit</span>
@@ -661,7 +647,7 @@
       <!-- Month End Reconciliation -->
       <section class="section">
         <h2 class="section-title">Month End Reconciliation</h2>
-        <p class="section-description">April 2026 month end reconciliation (last month of Year 1).</p>
+        <p class="section-description">April 2026 month end reconciliation (last month of Year 1). Month end evaluates for burst only.</p>
         
         <div class="recon-two-pane-grid">
           <!-- Recon Breakdown Pane -->
@@ -677,33 +663,21 @@
                 <span>Total Billed (Month)</span>
                 <span>$182,500</span>
               </div>
-              <div class="pane-row">
-                <span>Difference (Billed - Consumption)</span>
-                <span>$114,838</span>
-              </div>
-              <div class="pane-row">
-                <span>Monthly Uncontrollable excl. P3</span>
-                <span>$9,000</span>
-              </div>
               <div class="pane-row total">
-                <span>Monthly Credit = min(Uncontrollable excl. P3, Difference)</span>
-                <span class="credit-text">$9,000</span>
+                <span>Month Status</span>
+                <span>No Burst (Billed > Consumption)</span>
               </div>
             </div>
           </div>
 
           <!-- Allocation Pane -->
           <div class="recon-pane">
-            <h3 class="pane-title">Credit Allocation</h3>
-            <p class="pane-subtitle">Credit applied to next billing period</p>
+            <h3 class="pane-title">Burst Allocation</h3>
+            <p class="pane-subtitle">Burst allocation to billing channels</p>
             <div class="pane-rows">
-              <div class="pane-row">
-                <span>Credit to Next Period</span>
-                <span class="credit-text">$9,000</span>
-              </div>
               <div class="pane-row total">
-                <span>Total Monthly Credit</span>
-                <span class="credit-text">$9,000</span>
+                <span>Monthly Burst</span>
+                <span>N/A</span>
               </div>
             </div>
           </div>
@@ -729,17 +703,9 @@
                 <span>Total Billed (Year)</span>
                 <span>$2,290,000</span>
               </div>
-              <div class="pane-row">
-                <span>Difference (Billed - Consumption)</span>
-                <span>$1,478,056</span>
-              </div>
-              <div class="pane-row">
-                <span>Uncontrollable excl. P3 ($208k - $100k)</span>
-                <span>$108,000</span>
-              </div>
               <div class="pane-row total">
-                <span>Year End Credit = min(Uncontrollable excl. P3, Difference)</span>
-                <span class="credit-text">$108,000</span>
+                <span>Year End Position</span>
+                <span>Credit (Billed > Consumption)</span>
               </div>
             </div>
           </div>
@@ -747,11 +713,15 @@
           <!-- Allocation Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">Year End Credit Allocation</h3>
-            <p class="pane-subtitle">Credit to be carried forward to Year 2</p>
+            <p class="pane-subtitle">Credit = min(Uncontrollable excl. P3, Billed - Consumption)</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Credit to Year 2</span>
-                <span class="credit-text">$108,000</span>
+                <span>Difference (Billed - Consumption)</span>
+                <span>$1,478,056</span>
+              </div>
+              <div class="pane-row">
+                <span>Uncontrollable excl. P3</span>
+                <span>$108,000</span>
               </div>
               <div class="pane-row total">
                 <span>Total Year End Credit</span>
