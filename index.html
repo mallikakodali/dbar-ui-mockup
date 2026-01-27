@@ -501,11 +501,11 @@
           <!-- Ledger Balance Result -->
           <div class="ledger-result">
             <div class="ledger-equation">
-              <span class="ledger-item">Total Billed <span class="mock-bracket">($6,411,500)</span></span>
+              <span class="ledger-item">Total Billed <span class="mock-bracket">($2,290,000)</span></span>
               <span class="ledger-operator">−</span>
-              <span class="ledger-item">Total Consumption <span class="mock-bracket">($6,546,250)</span></span>
+              <span class="ledger-item">Total Consumption <span class="mock-bracket">($811,944)</span></span>
               <span class="ledger-operator">=</span>
-              <span class="ledger-balance-tag burst">-$134,750</span>
+              <span class="ledger-balance-tag credit">$1,478,056</span>
             </div>
           </div>
 
@@ -515,31 +515,31 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Cloud Usage</span>
-                <span>$5,500,000</span>
+                <span>$608,800</span>
               </div>
               <div class="pane-row">
                 <span>+ Support Charge</span>
-                <span>$990,000</span>
+                <span>$108,144</span>
               </div>
               <div class="pane-row">
                 <span>+ DSE Charge</span>
-                <span>$112,500</span>
+                <span>$170,000</span>
               </div>
               <div class="pane-row subtract">
                 <span>− Applied OTD <span class="mock-bracket">(drawdown first)</span></span>
-                <span>($30,000)</span>
+                <span>($40,000)</span>
               </div>
               <div class="pane-row subtract">
                 <span>− Applied Comp Usage <span class="mock-bracket">(drawdown first)</span></span>
-                <span>($11,250)</span>
+                <span>($15,000)</span>
               </div>
               <div class="pane-row subtract">
                 <span>− Applied Rollover <span class="mock-bracket">(drawdown first)</span></span>
-                <span>($15,000)</span>
+                <span>($20,000)</span>
               </div>
               <div class="pane-row total">
                 <span>Total Net Consumption</span>
-                <span>$6,546,250</span>
+                <span>$811,944</span>
               </div>
             </div>
           </div>
@@ -550,31 +550,27 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Prepaid - AWS MP <span class="mock-bracket">(consumed first)</span></span>
-                <span>$750,000</span>
+                <span>$1,000,000</span>
               </div>
               <div class="pane-row">
                 <span>Prepaid - Databricks Direct <span class="mock-bracket">(consumed first)</span></span>
-                <span>$811,500</span>
+                <span>$1,082,000</span>
               </div>
               <div class="pane-row">
                 <span>Azure P3 <span class="mock-bracket">(consumed first)</span></span>
-                <span>$75,000</span>
+                <span>$100,000</span>
               </div>
               <div class="pane-row">
-                <span>PIA Billed <span class="mock-bracket">(after prepaid exhausted)</span></span>
-                <span>$1,200,000</span>
+                <span>Azure Uncontrollable</span>
+                <span>$100,000</span>
               </div>
               <div class="pane-row">
-                <span>In-deal Burst <span class="mock-bracket">(controllable channels)</span></span>
-                <span>$75,000</span>
-              </div>
-              <div class="pane-row">
-                <span>Support & DSE Billings</span>
-                <span>$3,500,000</span>
+                <span>SAP Uncontrollable</span>
+                <span>$8,000</span>
               </div>
               <div class="pane-row total">
                 <span>Total Billed</span>
-                <span>$6,411,500</span>
+                <span>$2,290,000</span>
               </div>
             </div>
           </div>
@@ -584,49 +580,45 @@
       <!-- Contract to Date Reconciliation -->
       <section class="section">
         <h2 class="section-title">Contract to Date Reconciliation</h2>
-        <p class="section-description">Running reconciliation from contract start to current date (9 months).</p>
+        <p class="section-description">Running reconciliation from contract start to end of Year 1.</p>
         
         <div class="recon-two-pane-grid">
           <!-- CTD Recon Breakdown Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">CTD Recon Breakdown</h3>
-            <p class="pane-subtitle">May 9, 2025 - Jan 26, 2026</p>
+            <p class="pane-subtitle">May 9, 2025 - May 8, 2026</p>
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Total Net Consumption (CTD)</span>
-                <span>$6,546,250</span>
+                <span>$811,944</span>
               </div>
               <div class="pane-row">
                 <span>Total Billed (CTD)</span>
-                <span>$6,411,500</span>
+                <span>$2,290,000</span>
               </div>
               <div class="pane-row total">
-                <span>CTD Position (Burst)</span>
-                <span class="burst-text">$134,750</span>
+                <span>CTD Position (Credit)</span>
+                <span class="credit-text">$1,478,056</span>
               </div>
             </div>
-            <p class="recon-note">Balance = Billed − Consumption = $6,411,500 − $6,546,250 = -$134,750</p>
+            <p class="recon-note">Balance = Billed − Consumption = $2,290,000 − $811,944 = $1,478,056 Credit</p>
           </div>
 
           <!-- CTD Allocation Pane -->
           <div class="recon-pane">
-            <h3 class="pane-title">CTD Burst Allocation to Billing Channel</h3>
-            <p class="pane-subtitle">FIFO allocation to controllable channels (Step 8)</p>
+            <h3 class="pane-title">CTD Credit Allocation</h3>
+            <p class="pane-subtitle">Credit to be applied to next billing period</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Databricks Direct (Controllable)</span>
-                <span>$85,000</span>
-              </div>
-              <div class="pane-row">
-                <span>AWS Marketplace (Controllable)</span>
-                <span>$49,750</span>
+                <span>Credit to Next Period</span>
+                <span class="credit-text">$1,478,056</span>
               </div>
               <div class="pane-row total">
-                <span>Total CTD Controllable Burst</span>
-                <span>$134,750</span>
+                <span>Total CTD Credit</span>
+                <span class="credit-text">$1,478,056</span>
               </div>
             </div>
-            <p class="recon-note">Azure/GCP/SAP consumption billed as PIA automatically (uncontrollable).</p>
+            <p class="recon-note">Credit will be applied to reduce next Direct or AWS MP installment.</p>
           </div>
         </div>
       </section>
@@ -634,49 +626,45 @@
       <!-- Month End Reconciliation -->
       <section class="section">
         <h2 class="section-title">Month End Reconciliation</h2>
-        <p class="section-description">December 2025 month end reconciliation (Steps 6-8).</p>
+        <p class="section-description">April 2026 month end reconciliation (last month of Year 1).</p>
         
         <div class="recon-two-pane-grid">
           <!-- Recon Breakdown Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">Month End Recon Breakdown</h3>
-            <p class="pane-subtitle">December 2025</p>
+            <p class="pane-subtitle">April 2026</p>
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Total Net Consumption (Month)</span>
-                <span>$727,361</span>
+                <span>$67,662</span>
               </div>
               <div class="pane-row">
                 <span>Total Billed (Month)</span>
-                <span>$712,389</span>
+                <span>$190,833</span>
               </div>
               <div class="pane-row total">
-                <span>Month Balance (Step 6)</span>
-                <span class="burst-text">$14,972</span>
+                <span>Month Balance</span>
+                <span class="credit-text">$123,171</span>
               </div>
             </div>
-            <p class="recon-note">Monthly consumption exceeds billing by $14,972 (Burst)</p>
+            <p class="recon-note">Monthly billing exceeds consumption by $123,171 (Credit)</p>
           </div>
 
           <!-- Allocation Pane -->
           <div class="recon-pane">
-            <h3 class="pane-title">Controllable Burst Allocation (Step 8)</h3>
-            <p class="pane-subtitle">FIFO allocation to Direct and AWS MP</p>
+            <h3 class="pane-title">Credit Allocation</h3>
+            <p class="pane-subtitle">Credit applied to next billing period</p>
             <div class="pane-rows">
               <div class="pane-row">
-                <span>Databricks Direct</span>
-                <span>$9,500</span>
-              </div>
-              <div class="pane-row">
-                <span>AWS Marketplace</span>
-                <span>$5,472</span>
+                <span>Credit to Next Period</span>
+                <span class="credit-text">$123,171</span>
               </div>
               <div class="pane-row total">
-                <span>Total Controllable Burst</span>
-                <span>$14,972</span>
+                <span>Total Monthly Credit</span>
+                <span class="credit-text">$123,171</span>
               </div>
             </div>
-            <p class="recon-note">Burst invoices generated for Direct and AWS MP using UniCom burst SKU. Azure/GCP/SAP billed as PIA automatically.</p>
+            <p class="recon-note">Credit will be applied to reduce next Direct or AWS MP installment.</p>
           </div>
         </div>
       </section>
@@ -684,61 +672,45 @@
       <!-- Year End Reconciliation -->
       <section class="section">
         <h2 class="section-title">Year End Reconciliation</h2>
-        <p class="section-description">Contract Year 1 annual reconciliation (Steps 6-7 Credit Check).</p>
+        <p class="section-description">Contract Year 1 annual reconciliation (May 2025 - May 2026).</p>
         
         <div class="recon-two-pane-grid">
           <!-- Recon Breakdown Pane -->
-          <div class="recon-pane pending-recon">
+          <div class="recon-pane">
             <h3 class="pane-title">Year End Recon Breakdown</h3>
             <p class="pane-subtitle">Contract Year 1 (May 2025 - May 2026)</p>
-            <div class="pending-message">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-              <span>Year end reconciliation will be calculated at contract anniversary (May 2026)</span>
-            </div>
-            <div class="pane-rows placeholder-rows">
+            <div class="pane-rows">
               <div class="pane-row">
                 <span>Total Net Consumption (Year)</span>
-                <span class="placeholder">—</span>
+                <span>$811,944</span>
               </div>
               <div class="pane-row">
                 <span>Total Billed (Year)</span>
-                <span class="placeholder">—</span>
+                <span>$2,290,000</span>
               </div>
               <div class="pane-row total">
-                <span>Year End Balance</span>
-                <span class="placeholder">—</span>
+                <span>Year End Balance (Credit)</span>
+                <span class="credit-text">$1,478,056</span>
               </div>
             </div>
+            <p class="recon-note">Balance = Billed − Consumption = $2,290,000 − $811,944 = $1,478,056 Credit</p>
           </div>
 
           <!-- Allocation Pane -->
-          <div class="recon-pane pending-recon">
-            <h3 class="pane-title">Burst/Credit Allocation (Step 7-8)</h3>
-            <p class="pane-subtitle">Allocation pending year end calculation</p>
-            <div class="pending-message">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-              <span>Will show burst or credit allocation based on year end results</span>
-            </div>
-            <div class="pane-rows placeholder-rows">
+          <div class="recon-pane">
+            <h3 class="pane-title">Year End Credit Allocation</h3>
+            <p class="pane-subtitle">Credit to be carried forward to Year 2</p>
+            <div class="pane-rows">
               <div class="pane-row">
-                <span>Databricks Direct</span>
-                <span class="placeholder">—</span>
-              </div>
-              <div class="pane-row">
-                <span>AWS Marketplace</span>
-                <span class="placeholder">—</span>
+                <span>Credit to Year 2</span>
+                <span class="credit-text">$1,478,056</span>
               </div>
               <div class="pane-row total">
-                <span>Total Allocation</span>
-                <span class="placeholder">—</span>
+                <span>Total Year End Credit</span>
+                <span class="credit-text">$1,478,056</span>
               </div>
             </div>
+            <p class="recon-note">Credit will be applied to reduce Year 2 installments (Direct or AWS MP).</p>
           </div>
         </div>
       </section>
@@ -1003,7 +975,7 @@
       <!-- Total Consumption Summary -->
       <section class="section">
         <h2 class="section-title">Total Consumption</h2>
-        <p class="section-description">Contract to date and monthly consumption breakdown (9 months). Usage types on Y-axis, months on X-axis.</p>
+        <p class="section-description">Contract Year 1 consumption breakdown (12 months). Usage types on Y-axis, months on X-axis.</p>
 
         <!-- Consumption Table with Frozen Left Column -->
         <div class="consumption-table-wrapper">
@@ -1011,8 +983,11 @@
             <thead>
               <tr>
                 <th class="frozen-col">Usage Type</th>
-                <th class="ctd-col"><strong>Total CTD</strong></th>
-                <th class="monthly-col mtd-header">Jan 26 <span class="draft-badge">MTD</span></th>
+                <th class="ctd-col"><strong>Year 1 Total</strong></th>
+                <th class="monthly-col">Apr 26</th>
+                <th class="monthly-col">Mar 26</th>
+                <th class="monthly-col">Feb 26</th>
+                <th class="monthly-col">Jan 26</th>
                 <th class="monthly-col">Dec 25</th>
                 <th class="monthly-col">Nov 25</th>
                 <th class="monthly-col">Oct 25</th>
@@ -1025,48 +1000,56 @@
             </thead>
             <tbody>
               <tr>
-                <td class="frozen-col">Cloud Usage (Step 1)</td>
-                <td class="ctd-col"><strong>$5,500,000</strong></td>
-                <td class="monthly-col mtd-cell">$485,000</td>
-                <td class="monthly-col">$650,000</td>
-                <td class="monthly-col">$625,000</td>
-                <td class="monthly-col">$590,000</td>
-                <td class="monthly-col">$610,000</td>
-                <td class="monthly-col">$640,000</td>
-                <td class="monthly-col">$620,000</td>
-                <td class="monthly-col">$630,000</td>
-                <td class="monthly-col">$650,000</td>
+                <td class="frozen-col">Cloud Usage</td>
+                <td class="ctd-col"><strong>$608,800</strong></td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,733</td>
+                <td class="monthly-col">$50,737</td>
               </tr>
               <tr>
-                <td class="frozen-col">+ Support (Step 2: 20%×90%)</td>
-                <td class="ctd-col"><strong>$990,000</strong></td>
-                <td class="monthly-col mtd-cell">$87,300</td>
-                <td class="monthly-col">$117,000</td>
-                <td class="monthly-col">$112,500</td>
-                <td class="monthly-col">$106,200</td>
-                <td class="monthly-col">$109,800</td>
-                <td class="monthly-col">$115,200</td>
-                <td class="monthly-col">$111,600</td>
-                <td class="monthly-col">$113,400</td>
-                <td class="monthly-col">$117,000</td>
+                <td class="frozen-col">+ Support (18%)</td>
+                <td class="ctd-col"><strong>$108,144</strong></td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
+                <td class="monthly-col">$9,012</td>
               </tr>
               <tr>
-                <td class="frozen-col">+ DSE Charge (Step 3)</td>
-                <td class="ctd-col"><strong>$112,500</strong></td>
-                <td class="monthly-col mtd-cell">$12,500</td>
-                <td class="monthly-col">$12,500</td>
-                <td class="monthly-col">$12,500</td>
-                <td class="monthly-col">$12,500</td>
-                <td class="monthly-col">$12,500</td>
-                <td class="monthly-col">$12,500</td>
-                <td class="monthly-col">$12,500</td>
-                <td class="monthly-col">$12,500</td>
-                <td class="monthly-col">$12,500</td>
+                <td class="frozen-col">+ DSE Charge</td>
+                <td class="ctd-col"><strong>$170,000</strong></td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,167</td>
+                <td class="monthly-col">$14,163</td>
               </tr>
               <tr class="subtract-row">
                 <td class="frozen-col">− Applied OTD</td>
-                <td class="ctd-col negative"><strong>($30,000)</strong></td>
-                <td class="monthly-col mtd-cell negative">($3,333)</td>
+                <td class="ctd-col negative"><strong>($40,000)</strong></td>
                 <td class="monthly-col negative">($3,333)</td>
                 <td class="monthly-col negative">($3,333)</td>
                 <td class="monthly-col negative">($3,333)</td>
@@ -1075,11 +1058,18 @@
                 <td class="monthly-col negative">($3,333)</td>
                 <td class="monthly-col negative">($3,333)</td>
                 <td class="monthly-col negative">($3,333)</td>
+                <td class="monthly-col negative">($3,333)</td>
+                <td class="monthly-col negative">($3,333)</td>
+                <td class="monthly-col negative">($3,333)</td>
+                <td class="monthly-col negative">($3,337)</td>
               </tr>
               <tr class="subtract-row">
                 <td class="frozen-col">− Applied Comp Usage</td>
-                <td class="ctd-col negative"><strong>($11,250)</strong></td>
-                <td class="monthly-col mtd-cell negative">($1,250)</td>
+                <td class="ctd-col negative"><strong>($15,000)</strong></td>
+                <td class="monthly-col negative">($1,250)</td>
+                <td class="monthly-col negative">($1,250)</td>
+                <td class="monthly-col negative">($1,250)</td>
+                <td class="monthly-col negative">($1,250)</td>
                 <td class="monthly-col negative">($1,250)</td>
                 <td class="monthly-col negative">($1,250)</td>
                 <td class="monthly-col negative">($1,250)</td>
@@ -1091,8 +1081,7 @@
               </tr>
               <tr class="subtract-row">
                 <td class="frozen-col">− Applied Rollover</td>
-                <td class="ctd-col negative"><strong>($15,000)</strong></td>
-                <td class="monthly-col mtd-cell negative">($1,667)</td>
+                <td class="ctd-col negative"><strong>($20,000)</strong></td>
                 <td class="monthly-col negative">($1,667)</td>
                 <td class="monthly-col negative">($1,667)</td>
                 <td class="monthly-col negative">($1,667)</td>
@@ -1101,21 +1090,28 @@
                 <td class="monthly-col negative">($1,667)</td>
                 <td class="monthly-col negative">($1,667)</td>
                 <td class="monthly-col negative">($1,667)</td>
+                <td class="monthly-col negative">($1,667)</td>
+                <td class="monthly-col negative">($1,667)</td>
+                <td class="monthly-col negative">($1,667)</td>
+                <td class="monthly-col negative">($1,663)</td>
               </tr>
             </tbody>
             <tfoot>
               <tr class="total-row">
                 <td class="frozen-col"><strong>Total Net Consumption</strong></td>
-                <td class="ctd-col"><strong>$6,546,250</strong></td>
-                <td class="monthly-col mtd-cell"><strong>$578,550</strong></td>
-                <td class="monthly-col"><strong>$773,250</strong></td>
-                <td class="monthly-col"><strong>$743,750</strong></td>
-                <td class="monthly-col"><strong>$702,450</strong></td>
-                <td class="monthly-col"><strong>$726,050</strong></td>
-                <td class="monthly-col"><strong>$761,450</strong></td>
-                <td class="monthly-col"><strong>$737,850</strong></td>
-                <td class="monthly-col"><strong>$749,650</strong></td>
-                <td class="monthly-col"><strong>$773,250</strong></td>
+                <td class="ctd-col"><strong>$811,944</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
+                <td class="monthly-col"><strong>$67,662</strong></td>
               </tr>
             </tfoot>
           </table>
@@ -1125,15 +1121,18 @@
       <!-- Usage by Cloud Type -->
       <section class="section">
         <h2 class="section-title">Usage Breakdown by Cloud</h2>
-        <p class="section-description">Compute usage and support usage breakdown by cloud type (9 months).</p>
+        <p class="section-description">Compute usage and support usage breakdown by cloud type (Year 1).</p>
 
         <div class="consumption-table-wrapper">
           <table class="consumption-pivot-table">
             <thead>
               <tr>
                 <th class="frozen-col">Usage by Cloud</th>
-                <th class="ctd-col"><strong>Total CTD</strong></th>
-                <th class="monthly-col mtd-header">Jan 26 <span class="draft-badge">MTD</span></th>
+                <th class="ctd-col"><strong>Year 1 Total</strong></th>
+                <th class="monthly-col">Apr 26</th>
+                <th class="monthly-col">Mar 26</th>
+                <th class="monthly-col">Feb 26</th>
+                <th class="monthly-col">Jan 26</th>
                 <th class="monthly-col">Dec 25</th>
                 <th class="monthly-col">Nov 25</th>
                 <th class="monthly-col">Oct 25</th>
@@ -1147,142 +1146,172 @@
             <tbody>
               <!-- Compute Usage Section -->
               <tr class="section-header-row">
-                <td class="frozen-col" colspan="11"><strong>Compute Usage by Cloud</strong></td>
-              </tr>
-              <tr>
-                <td class="frozen-col indent">Azure</td>
-                <td class="ctd-col">$2,200,000</td>
-                <td class="monthly-col mtd-cell">$194,000</td>
-                <td class="monthly-col">$260,000</td>
-                <td class="monthly-col">$250,000</td>
-                <td class="monthly-col">$236,000</td>
-                <td class="monthly-col">$244,000</td>
-                <td class="monthly-col">$256,000</td>
-                <td class="monthly-col">$248,000</td>
-                <td class="monthly-col">$252,000</td>
-                <td class="monthly-col">$260,000</td>
+                <td class="frozen-col" colspan="14"><strong>Compute Usage by Cloud</strong></td>
               </tr>
               <tr>
                 <td class="frozen-col indent">AWS</td>
-                <td class="ctd-col">$1,650,000</td>
-                <td class="monthly-col mtd-cell">$145,500</td>
-                <td class="monthly-col">$195,000</td>
-                <td class="monthly-col">$187,500</td>
-                <td class="monthly-col">$177,000</td>
-                <td class="monthly-col">$183,000</td>
-                <td class="monthly-col">$192,000</td>
-                <td class="monthly-col">$186,000</td>
-                <td class="monthly-col">$189,000</td>
-                <td class="monthly-col">$195,000</td>
+                <td class="ctd-col">$400,000</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,333</td>
+                <td class="monthly-col">$33,337</td>
+              </tr>
+              <tr>
+                <td class="frozen-col indent">Azure</td>
+                <td class="ctd-col">$200,000</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,667</td>
+                <td class="monthly-col">$16,663</td>
               </tr>
               <tr>
                 <td class="frozen-col indent">GCP</td>
-                <td class="ctd-col">$825,000</td>
-                <td class="monthly-col mtd-cell">$72,750</td>
-                <td class="monthly-col">$97,500</td>
-                <td class="monthly-col">$93,750</td>
-                <td class="monthly-col">$88,500</td>
-                <td class="monthly-col">$91,500</td>
-                <td class="monthly-col">$96,000</td>
-                <td class="monthly-col">$93,000</td>
-                <td class="monthly-col">$94,500</td>
-                <td class="monthly-col">$97,500</td>
+                <td class="ctd-col">$800</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$67</td>
+                <td class="monthly-col">$63</td>
               </tr>
               <tr>
                 <td class="frozen-col indent">SAP</td>
-                <td class="ctd-col">$550,000</td>
-                <td class="monthly-col mtd-cell">$48,500</td>
-                <td class="monthly-col">$65,000</td>
-                <td class="monthly-col">$62,500</td>
-                <td class="monthly-col">$59,000</td>
-                <td class="monthly-col">$61,000</td>
-                <td class="monthly-col">$64,000</td>
-                <td class="monthly-col">$62,000</td>
-                <td class="monthly-col">$63,000</td>
-                <td class="monthly-col">$65,000</td>
+                <td class="ctd-col">$8,000</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$667</td>
+                <td class="monthly-col">$663</td>
               </tr>
               <tr class="subtotal-row">
                 <td class="frozen-col"><strong>Total Compute Usage</strong></td>
-                <td class="ctd-col"><strong>$5,500,000</strong></td>
-                <td class="monthly-col mtd-cell"><strong>$485,000</strong></td>
-                <td class="monthly-col"><strong>$650,000</strong></td>
-                <td class="monthly-col"><strong>$625,000</strong></td>
-                <td class="monthly-col"><strong>$590,000</strong></td>
-                <td class="monthly-col"><strong>$610,000</strong></td>
-                <td class="monthly-col"><strong>$640,000</strong></td>
-                <td class="monthly-col"><strong>$620,000</strong></td>
-                <td class="monthly-col"><strong>$630,000</strong></td>
-                <td class="monthly-col"><strong>$650,000</strong></td>
+                <td class="ctd-col"><strong>$608,800</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,733</strong></td>
+                <td class="monthly-col"><strong>$50,726</strong></td>
               </tr>
 
               <!-- Support Usage Section -->
               <tr class="section-header-row">
-                <td class="frozen-col" colspan="11"><strong>Support Usage by Cloud <span class="mock-bracket">(18%)</span></strong></td>
-              </tr>
-              <tr>
-                <td class="frozen-col indent">Azure</td>
-                <td class="ctd-col">$396,000</td>
-                <td class="monthly-col mtd-cell">$34,920</td>
-                <td class="monthly-col">$46,800</td>
-                <td class="monthly-col">$45,000</td>
-                <td class="monthly-col">$42,480</td>
-                <td class="monthly-col">$43,920</td>
-                <td class="monthly-col">$46,080</td>
-                <td class="monthly-col">$44,640</td>
-                <td class="monthly-col">$45,360</td>
-                <td class="monthly-col">$46,800</td>
+                <td class="frozen-col" colspan="14"><strong>Support Usage by Cloud <span class="mock-bracket">(18%)</span></strong></td>
               </tr>
               <tr>
                 <td class="frozen-col indent">AWS</td>
-                <td class="ctd-col">$297,000</td>
-                <td class="monthly-col mtd-cell">$26,190</td>
-                <td class="monthly-col">$35,100</td>
-                <td class="monthly-col">$33,750</td>
-                <td class="monthly-col">$31,860</td>
-                <td class="monthly-col">$32,940</td>
-                <td class="monthly-col">$34,560</td>
-                <td class="monthly-col">$33,480</td>
-                <td class="monthly-col">$34,020</td>
-                <td class="monthly-col">$35,100</td>
+                <td class="ctd-col">$72,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+                <td class="monthly-col">$6,000</td>
+              </tr>
+              <tr>
+                <td class="frozen-col indent">Azure</td>
+                <td class="ctd-col">$36,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
+                <td class="monthly-col">$3,000</td>
               </tr>
               <tr>
                 <td class="frozen-col indent">GCP</td>
-                <td class="ctd-col">$148,500</td>
-                <td class="monthly-col mtd-cell">$13,095</td>
-                <td class="monthly-col">$17,550</td>
-                <td class="monthly-col">$16,875</td>
-                <td class="monthly-col">$15,930</td>
-                <td class="monthly-col">$16,470</td>
-                <td class="monthly-col">$17,280</td>
-                <td class="monthly-col">$16,740</td>
-                <td class="monthly-col">$17,010</td>
-                <td class="monthly-col">$17,550</td>
+                <td class="ctd-col">$144</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
+                <td class="monthly-col">$12</td>
               </tr>
               <tr>
                 <td class="frozen-col indent">SAP</td>
-                <td class="ctd-col">$99,000</td>
-                <td class="monthly-col mtd-cell">$8,730</td>
-                <td class="monthly-col">$11,700</td>
-                <td class="monthly-col">$11,250</td>
-                <td class="monthly-col">$10,620</td>
-                <td class="monthly-col">$10,980</td>
-                <td class="monthly-col">$11,520</td>
-                <td class="monthly-col">$11,160</td>
-                <td class="monthly-col">$11,340</td>
-                <td class="monthly-col">$11,700</td>
+                <td class="ctd-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
+                <td class="monthly-col">$0</td>
               </tr>
               <tr class="subtotal-row">
                 <td class="frozen-col"><strong>Total Support Usage</strong></td>
-                <td class="ctd-col"><strong>$990,000</strong></td>
-                <td class="monthly-col mtd-cell"><strong>$87,300</strong></td>
-                <td class="monthly-col"><strong>$117,000</strong></td>
-                <td class="monthly-col"><strong>$112,500</strong></td>
-                <td class="monthly-col"><strong>$106,200</strong></td>
-                <td class="monthly-col"><strong>$109,800</strong></td>
-                <td class="monthly-col"><strong>$115,200</strong></td>
-                <td class="monthly-col"><strong>$111,600</strong></td>
-                <td class="monthly-col"><strong>$113,400</strong></td>
-                <td class="monthly-col"><strong>$117,000</strong></td>
+                <td class="ctd-col"><strong>$108,144</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
+                <td class="monthly-col"><strong>$9,012</strong></td>
               </tr>
             </tbody>
           </table>
@@ -2018,21 +2047,21 @@
       <!-- Billing Summary Section -->
       <section class="section">
         <h2 class="section-title">Billing Summary (Contract to Date)</h2>
-        <p class="section-description">Total billing breakdown by invoices and uncontrollable channel payments.</p>
+        <p class="section-description">Total billing breakdown by invoices and uncontrollable channel payments (Year 1).</p>
 
         <div class="billing-summary-grid">
           <!-- Invoices by Type -->
           <div class="billing-summary-card">
             <div class="summary-card-header">
               <h4>Invoices by Type</h4>
-              <span class="summary-total">$1,561,500</span>
+              <span class="summary-total">$2,082,000</span>
             </div>
             <div class="summary-breakdown">
               <div class="summary-row">
                 <span class="summary-label">
                   <span class="tag prepaid-tag small">Prepaid</span>
                 </span>
-                <span class="summary-value">$1,561,500</span>
+                <span class="summary-value">$2,082,000</span>
               </div>
               <div class="summary-row">
                 <span class="summary-label">
@@ -2053,7 +2082,7 @@
           <div class="billing-summary-card">
             <div class="summary-card-header">
               <h4>Uncontrollable Channel Payments</h4>
-              <span class="summary-total">$157,500</span>
+              <span class="summary-total">$208,000</span>
             </div>
             <div class="summary-breakdown">
               <div class="summary-row">
@@ -2066,19 +2095,19 @@
                 <span class="summary-label">
                   <span class="tag azure-mtm small">Azure MTM/Pay G</span>
                 </span>
-                <span class="summary-value">$25,000</span>
+                <span class="summary-value">$100,000</span>
               </div>
               <div class="summary-row">
                 <span class="summary-label">
                   <span class="tag gcp-mp small">GCP MP</span>
                 </span>
-                <span class="summary-value">$15,000</span>
+                <span class="summary-value">$0</span>
               </div>
               <div class="summary-row">
                 <span class="summary-label">
                   <span class="tag sap-tag small">SAP</span>
                 </span>
-                <span class="summary-value">$17,500</span>
+                <span class="summary-value">$8,000</span>
               </div>
             </div>
           </div>
@@ -2087,16 +2116,16 @@
           <div class="billing-summary-card total-card">
             <div class="summary-card-header">
               <h4>Total Billed (CTD)</h4>
-              <span class="summary-total large">$1,719,000</span>
+              <span class="summary-total large">$2,290,000</span>
             </div>
             <div class="summary-breakdown">
               <div class="summary-row">
                 <span class="summary-label">Invoices</span>
-                <span class="summary-value">$1,561,500</span>
+                <span class="summary-value">$2,082,000</span>
               </div>
               <div class="summary-row">
                 <span class="summary-label">Uncontrollable Payments</span>
-                <span class="summary-value">$157,500</span>
+                <span class="summary-value">$208,000</span>
               </div>
             </div>
           </div>
@@ -2156,86 +2185,26 @@
               <tr>
                 <td>1</td>
                 <td class="period-cell">
-                  <span class="period-text">Jan 1 - 31, 2026</span>
+                  <span class="period-text">May 9 - 31, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
-                <td>Jan 31, 2026</td>
-                <td>Feb 1, 2026</td>
+                <td>May 9, 2025</td>
+                <td>May 9, 2025</td>
                 <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>Databricks Direct</td>
-                <td class="amount">$270,500.00</td>
+                <td class="amount">$1,082,000.00</td>
               </tr>
               <tr>
                 <td>2</td>
                 <td class="period-cell">
-                  <span class="period-text">Dec 1 - 31, 2025</span>
-                  <span class="adjustments-count">(0 adjustments)</span>
-                </td>
-                <td>Dec 31, 2025</td>
-                <td>Jan 1, 2026</td>
-                <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>AWS Marketplace</td>
-                <td class="amount">$250,000.00</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td class="period-cell">
-                  <span class="period-text">Nov 1 - 30, 2025</span>
-                  <span class="adjustments-count">(0 adjustments)</span>
-                </td>
-                <td>Nov 30, 2025</td>
-                <td>Dec 1, 2025</td>
-                <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>Databricks Direct</td>
-                <td class="amount">$270,500.00</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td class="period-cell">
-                  <span class="period-text">Sep 1 - 30, 2025</span>
-                  <span class="adjustments-count">(0 adjustments)</span>
-                </td>
-                <td>Sep 30, 2025</td>
-                <td>Oct 1, 2025</td>
-                <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>AWS Marketplace</td>
-                <td class="amount">$250,000.00</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td class="period-cell">
-                  <span class="period-text">Aug 1 - 31, 2025</span>
-                  <span class="adjustments-count">(0 adjustments)</span>
-                </td>
-                <td>Aug 31, 2025</td>
-                <td>Sep 1, 2025</td>
-                <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>Databricks Direct</td>
-                <td class="amount">$270,500.00</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td class="period-cell">
-                  <span class="period-text">Jun 1 - 30, 2025</span>
-                  <span class="adjustments-count">(0 adjustments)</span>
-                </td>
-                <td>Jun 30, 2025</td>
-                <td>Jul 1, 2025</td>
-                <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>AWS Marketplace</td>
-                <td class="amount">$250,000.00</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td class="period-cell">
                   <span class="period-text">May 9 - 31, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
-                <td>May 31, 2025</td>
-                <td>Jun 1, 2025</td>
+                <td>May 9, 2025</td>
+                <td>May 9, 2025</td>
                 <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>Databricks Direct</td>
-                <td class="amount">$270,500.00</td>
+                <td>AWS Marketplace</td>
+                <td class="amount">$1,000,000.00</td>
               </tr>
             </tbody>
           </table>
@@ -2284,52 +2253,52 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td>May 15, 2025</td>
+                <td>May 9, 2025</td>
                 <td>May 2025</td>
                 <td><span class="tag azure-p3">Azure P3</span></td>
                 <td class="amount">$100,000.00</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Jan 15, 2026</td>
-                <td>Jan 2026</td>
+                <td>Nov 9, 2025</td>
+                <td>Nov 2025</td>
                 <td><span class="tag azure-mtm">Azure MTM/Pay G</span></td>
-                <td class="amount">$12,500.00</td>
+                <td class="amount">$50,000.00</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>Dec 10, 2025</td>
-                <td>Dec 2025</td>
-                <td><span class="tag gcp-mp">GCP MP</span></td>
-                <td class="amount">$7,500.00</td>
+                <td>Feb 9, 2026</td>
+                <td>Feb 2026</td>
+                <td><span class="tag azure-mtm">Azure MTM/Pay G</span></td>
+                <td class="amount">$50,000.00</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>Nov 20, 2025</td>
-                <td>Nov 2025</td>
+                <td>Aug 9, 2025</td>
+                <td>Aug 2025</td>
                 <td><span class="tag sap-tag">SAP</span></td>
-                <td class="amount">$10,000.00</td>
+                <td class="amount">$2,000.00</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>Oct 15, 2025</td>
-                <td>Oct 2025</td>
-                <td><span class="tag azure-mtm">Azure MTM/Pay G</span></td>
-                <td class="amount">$12,500.00</td>
+                <td>Nov 9, 2025</td>
+                <td>Nov 2025</td>
+                <td><span class="tag sap-tag">SAP</span></td>
+                <td class="amount">$2,000.00</td>
               </tr>
               <tr>
                 <td>6</td>
-                <td>Sep 12, 2025</td>
-                <td>Sep 2025</td>
-                <td><span class="tag gcp-mp">GCP MP</span></td>
-                <td class="amount">$7,500.00</td>
+                <td>Feb 9, 2026</td>
+                <td>Feb 2026</td>
+                <td><span class="tag sap-tag">SAP</span></td>
+                <td class="amount">$2,000.00</td>
               </tr>
               <tr>
                 <td>7</td>
-                <td>Aug 8, 2025</td>
-                <td>Aug 2025</td>
+                <td>May 9, 2026</td>
+                <td>May 2026</td>
                 <td><span class="tag sap-tag">SAP</span></td>
-                <td class="amount">$7,500.00</td>
+                <td class="amount">$2,000.00</td>
               </tr>
             </tbody>
           </table>
