@@ -3507,6 +3507,35 @@ td.indent {
   color: #6B7280;
 }
 
+/* Cloud Tags */
+.cloud-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cloud-tag.azure {
+  background: #DBEAFE;
+  color: #1D4ED8;
+}
+
+.cloud-tag.aws {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.cloud-tag.gcp {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.cloud-tag.sap {
+  background: #F3E8FF;
+  color: #7C3AED;
+}
+
 .subscription-detail {
   display: flex;
   gap: 8px;
