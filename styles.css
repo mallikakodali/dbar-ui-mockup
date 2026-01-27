@@ -2996,6 +2996,21 @@ td.indent {
   color: #4338CA;
 }
 
+.tag.azure-mtm {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.tag.gcp-mp {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.tag.sap-tag {
+  background: #F3E8FF;
+  color: #7C3AED;
+}
+
 /* Status Indicators */
 .status-indicator {
   display: inline-flex;
