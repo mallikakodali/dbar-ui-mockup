@@ -219,6 +219,143 @@
         </div>
       </section>
 
+      <!-- Commit Buckets Section -->
+      <section class="section">
+        <h2 class="section-title">Commit Buckets</h2>
+        
+        <div class="section-toolbar">
+          <div class="toolbar-left">
+            <div class="search-filter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input type="text" placeholder="Filter Commit Buckets">
+            </div>
+            <select class="filter-dropdown">
+              <option>Commit Type</option>
+            </select>
+            <select class="filter-dropdown">
+              <option>Billing Type</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="commit-buckets-table">
+          <table>
+            <thead>
+              <tr>
+                <th>P. <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                <th>Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Billing Schedule</th>
+                <th>Drawdown</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100</td>
+                <td>Multi-cloud Business Support</td>
+                <td>Jan 6, 2026</td>
+                <td>Jan 5, 2029</td>
+                <td>Dec 9, 2025 <span class="percent-badge">(100.00%)</span></td>
+                <td>
+                  <div class="drawdown-cell">
+                    <span class="drawdown-amount">$62.24 / $7,500.00</span>
+                    <span class="drawdown-percent">(0.83%)</span>
+                    <div class="drawdown-bar">
+                      <div class="drawdown-fill" style="width: 0.83%"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>700</td>
+                <td>Azure Commit</td>
+                <td>Jan 6, 2026</td>
+                <td>Jan 5, 2029</td>
+                <td>--</td>
+                <td>
+                  <div class="drawdown-cell">
+                    <span class="drawdown-amount">$305.31 / $35,250.00</span>
+                    <span class="drawdown-percent">(0.87%)</span>
+                    <div class="drawdown-bar">
+                      <div class="drawdown-fill" style="width: 0.87%"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Additional Billing Charges and Discounts Section -->
+      <section class="section">
+        <h2 class="section-title">Additional Billing Charges and Discounts</h2>
+        
+        <div class="section-toolbar">
+          <div class="toolbar-left">
+            <div class="search-filter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input type="text" placeholder="Filter Billing Charges and Discounts">
+            </div>
+            <select class="filter-dropdown">
+              <option>Charge Type</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="charges-table">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU Code <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                <th>Charge Type</th>
+                <th>Billing Schedule</th>
+                <th>Total Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DCIF-JUMPSTART</td>
+                <td>Charge</td>
+                <td>--</td>
+                <td class="amount">$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Platform Subscriptions Section -->
+      <section class="section">
+        <h2 class="section-title">Platform Subscriptions</h2>
+        
+        <div class="subscription-toggle-group">
+          <button class="subscription-toggle active">All</button>
+          <button class="subscription-toggle">Active</button>
+          <button class="subscription-toggle">Inactive</button>
+        </div>
+
+        <div class="subscription-cards">
+          <div class="subscription-card">
+            <div class="subscription-header">
+              <span class="subscription-id">0c578e3d-4803-4194-a53b-884b36397691</span>
+              <span class="subscription-status active">Active</span>
+            </div>
+            <div class="subscription-detail">
+              <span class="subscription-label">Period:</span>
+              <span class="subscription-value">Jan 6, 2026 - Jan 5, 2029</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
 
     <!-- Ledger Tab Content -->
