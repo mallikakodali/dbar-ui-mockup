@@ -315,7 +315,10 @@ function updateLedgerBalance(month) {
   const consumption = monthlyData.consumption[month];
   const billing = monthlyData.billing[month];
   
-  if (!consumption || !billing) return;
+  if (!consumption || !billing) {
+    console.log('No data for month:', month);
+    return;
+  }
   
   const difference = billing.total - consumption.net;
   
@@ -323,44 +326,48 @@ function updateLedgerBalance(month) {
   const commitPanes = document.querySelectorAll('#ledger-content .commit-panes-grid .commit-pane');
   const ledgerPane = commitPanes[2]; // Third pane (index 2)
   
-  if (ledgerPane) {
-    // Update main Ledger Balance Result (first pane-rows div directly under commit-pane)
-    const mainRows = ledgerPane.querySelector(':scope > .pane-rows');
-    if (mainRows) {
-      const rows = mainRows.querySelectorAll('.pane-row');
-      if (rows.length >= 3) {
-        rows[0].querySelector('span:last-child').textContent = formatCurrency(billing.total);
-        rows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
-        rows[2].querySelector('span:last-child').textContent = formatCurrency(difference);
-      }
+  if (!ledgerPane) {
+    console.log('Ledger pane not found');
+    return;
+  }
+  
+  // Update main Ledger Balance Result
+  const allPaneRows = ledgerPane.querySelectorAll('.pane-rows');
+  
+  // First pane-rows is the main result (Total Billed, Total Consumption, Difference)
+  if (allPaneRows[0]) {
+    const mainRows = allPaneRows[0].querySelectorAll('.pane-row');
+    if (mainRows.length >= 3) {
+      mainRows[0].querySelector('span:last-child').textContent = formatCurrency(billing.total);
+      mainRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
+      mainRows[2].querySelector('span:last-child').textContent = formatCurrency(difference);
     }
-    
-    // Update Total Net Consumption Breakdown (7 rows)
-    const ledgerSections = ledgerPane.querySelectorAll('.ledger-section');
-    if (ledgerSections[0]) {
-      const consumptionRows = ledgerSections[0].querySelectorAll('.pane-row');
-      if (consumptionRows.length >= 7) {
-        consumptionRows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.cloud);
-        consumptionRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.support);
-        consumptionRows[2].querySelector('span:last-child').textContent = formatCurrency(consumption.dse);
-        consumptionRows[3].querySelector('span:last-child').textContent = '($' + consumption.otd.toLocaleString('en-US') + ')';
-        consumptionRows[4].querySelector('span:last-child').textContent = '($' + consumption.comp.toLocaleString('en-US') + ')';
-        consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.prepaidRollover.toLocaleString('en-US') + ')';
-        consumptionRows[6].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
-      }
+  }
+  
+  // Second pane-rows is inside first ledger-section (Total Net Consumption breakdown)
+  if (allPaneRows[1]) {
+    const consumptionRows = allPaneRows[1].querySelectorAll('.pane-row');
+    if (consumptionRows.length >= 7) {
+      consumptionRows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.cloud);
+      consumptionRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.support);
+      consumptionRows[2].querySelector('span:last-child').textContent = formatCurrency(consumption.dse);
+      consumptionRows[3].querySelector('span:last-child').textContent = '($' + consumption.otd.toLocaleString('en-US') + ')';
+      consumptionRows[4].querySelector('span:last-child').textContent = '($' + consumption.comp.toLocaleString('en-US') + ')';
+      consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.prepaidRollover.toLocaleString('en-US') + ')';
+      consumptionRows[6].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
     }
-    
-    // Update Total Billed Breakdown
-    if (ledgerSections[1]) {
-      const billingRows = ledgerSections[1].querySelectorAll('.pane-row');
-      if (billingRows.length >= 6) {
-        billingRows[0].querySelector('span:last-child').textContent = formatCurrency(billing.awsMP);
-        billingRows[1].querySelector('span:last-child').textContent = formatCurrency(billing.databricks);
-        billingRows[2].querySelector('span:last-child').textContent = formatCurrency(billing.p3);
-        billingRows[3].querySelector('span:last-child').textContent = formatCurrency(billing.azureUncontrol);
-        billingRows[4].querySelector('span:last-child').textContent = formatCurrency(billing.sap);
-        billingRows[5].querySelector('span:last-child').textContent = formatCurrency(billing.total);
-      }
+  }
+  
+  // Third pane-rows is inside second ledger-section (Total Billed breakdown)
+  if (allPaneRows[2]) {
+    const billingRows = allPaneRows[2].querySelectorAll('.pane-row');
+    if (billingRows.length >= 6) {
+      billingRows[0].querySelector('span:last-child').textContent = formatCurrency(billing.awsMP);
+      billingRows[1].querySelector('span:last-child').textContent = formatCurrency(billing.databricks);
+      billingRows[2].querySelector('span:last-child').textContent = formatCurrency(billing.p3);
+      billingRows[3].querySelector('span:last-child').textContent = formatCurrency(billing.azureUncontrol);
+      billingRows[4].querySelector('span:last-child').textContent = formatCurrency(billing.sap);
+      billingRows[5].querySelector('span:last-child').textContent = formatCurrency(billing.total);
     }
   }
 }
@@ -406,7 +413,7 @@ function updateCTDReconciliation(month) {
 // Initialize month filter event listeners
 document.addEventListener('DOMContentLoaded', function() {
   // Ledger Balance month filter
-  const ledgerMonthFilter = document.querySelector('#ledger-content .pane-header-row .pane-filter .month-filter');
+  const ledgerMonthFilter = document.getElementById('ledgerMonthFilter');
   if (ledgerMonthFilter) {
     ledgerMonthFilter.addEventListener('change', function() {
       updateLedgerBalance(this.value);
@@ -414,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // CTD Reconciliation month filter
-  const ctdMonthFilter = document.querySelector('#ledger-content .section-header-row .recon-filter .month-filter');
+  const ctdMonthFilter = document.getElementById('ctdMonthFilter');
   if (ctdMonthFilter) {
     ctdMonthFilter.addEventListener('change', function() {
       updateCTDReconciliation(this.value);
