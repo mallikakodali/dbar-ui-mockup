@@ -374,6 +374,30 @@ body {
   gap: 16px;
 }
 
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.recon-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recon-filter .filter-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.recon-filter .month-filter {
+  min-width: 150px;
+}
+
 .section-title {
   font-size: 18px;
   font-weight: 600;
