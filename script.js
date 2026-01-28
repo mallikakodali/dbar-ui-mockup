@@ -217,74 +217,74 @@ function toggleMonthlyColumns() {
 
 const monthlyData = {
   // Monthly consumption values (cumulative) - FIFO consumption of incentives
-  // Order: OTD ($40k) → Comp ($15k) → Prepaid Rollover ($20k) → Postpaid Rollover ($63k)
-  // Total incentives: $138,000 - OTD, Comp fully consumed in May; Prepaid Rollover partial in May, full in Jun; Postpaid in Jun
+  // Order: OTD ($40k) → Comp ($15k) → Prepaid Rollover ($20k)
+  // Total applied incentives: $75,000
   // Monthly gross = ~$73,912, then Total Commit is drawn
   consumption: {
     'may-2025': { 
       cloud: 50733, support: 9012, dse: 14167, 
-      otd: 40000, comp: 15000, prepaidRollover: 18912, postpaidRollover: 0,
+      otd: 40000, comp: 15000, prepaidRollover: 18912,
       net: 0  // All covered by incentives ($73,912 applied)
     },
     'jun-2025': { 
       cloud: 101466, support: 18024, dse: 28334, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 9824  // $138k incentives fully depleted
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 72824  // $75k incentives fully depleted
     },
     'jul-2025': { 
       cloud: 152199, support: 27036, dse: 42501, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 83736
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 146736
     },
     'aug-2025': { 
       cloud: 202932, support: 36048, dse: 56668, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 157648
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 220648
     },
     'sep-2025': { 
       cloud: 253665, support: 45060, dse: 70835, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 231560
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 294560
     },
     'oct-2025': { 
       cloud: 304398, support: 54072, dse: 85002, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 305472
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 368472
     },
     'nov-2025': { 
       cloud: 355131, support: 63084, dse: 99169, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 379384
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 442384
     },
     'dec-2025': { 
       cloud: 405864, support: 72096, dse: 113336, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 453296
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 516296
     },
     'jan-2026': { 
       cloud: 456597, support: 81108, dse: 127503, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 527208
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 590208
     },
     'feb-2026': { 
       cloud: 507330, support: 90120, dse: 141670, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 601120
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 664120
     },
     'mar-2026': { 
       cloud: 558063, support: 99132, dse: 155837, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 675032
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 738032
     },
     'apr-2026': { 
       cloud: 608800, support: 108144, dse: 170000, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 748944
+      otd: 40000, comp: 15000, prepaidRollover: 20000,
+      net: 811944
     },
     'all': { 
       cloud: 608800, support: 108144, dse: 170000, 
-      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000, 
-      net: 748944
+      otd: 40000, comp: 15000, prepaidRollover: 20000, 
+      net: 811944
     }
   },
   // Monthly billing values (cumulative) - billing happens at specific times
@@ -335,19 +335,18 @@ function updateLedgerBalance(month) {
       }
     }
     
-    // Update Total Net Consumption Breakdown (now has 8 rows with separate rollovers)
+    // Update Total Net Consumption Breakdown (7 rows)
     const ledgerSections = ledgerPane.querySelectorAll('.ledger-section');
     if (ledgerSections[0]) {
       const consumptionRows = ledgerSections[0].querySelectorAll('.pane-row');
-      if (consumptionRows.length >= 8) {
+      if (consumptionRows.length >= 7) {
         consumptionRows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.cloud);
         consumptionRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.support);
         consumptionRows[2].querySelector('span:last-child').textContent = formatCurrency(consumption.dse);
         consumptionRows[3].querySelector('span:last-child').textContent = '($' + consumption.otd.toLocaleString('en-US') + ')';
         consumptionRows[4].querySelector('span:last-child').textContent = '($' + consumption.comp.toLocaleString('en-US') + ')';
         consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.prepaidRollover.toLocaleString('en-US') + ')';
-        consumptionRows[6].querySelector('span:last-child').textContent = '($' + consumption.postpaidRollover.toLocaleString('en-US') + ')';
-        consumptionRows[7].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
+        consumptionRows[6].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
       }
     }
     
