@@ -208,3 +208,148 @@ function toggleMonthlyColumns() {
     toggleText.textContent = 'Collapse Monthly Breakdown';
   }
 }
+
+// Monthly Data for Ledger Balance and CTD Reconciliation
+const monthlyData = {
+  // Monthly consumption values (cumulative)
+  consumption: {
+    'may-2025': { cloud: 50733, support: 9012, dse: 14167, otd: 3333, comp: 1250, rollover: 1667, net: 67662 },
+    'jun-2025': { cloud: 101466, support: 18024, dse: 28334, otd: 6666, comp: 2500, rollover: 3334, net: 135324 },
+    'jul-2025': { cloud: 152199, support: 27036, dse: 42501, otd: 9999, comp: 3750, rollover: 5001, net: 202986 },
+    'aug-2025': { cloud: 202932, support: 36048, dse: 56668, otd: 13332, comp: 5000, rollover: 6668, net: 270648 },
+    'sep-2025': { cloud: 253665, support: 45060, dse: 70835, otd: 16665, comp: 6250, rollover: 8335, net: 338310 },
+    'oct-2025': { cloud: 304398, support: 54072, dse: 85002, otd: 19998, comp: 7500, rollover: 10002, net: 405972 },
+    'nov-2025': { cloud: 355131, support: 63084, dse: 99169, otd: 23331, comp: 8750, rollover: 11669, net: 473634 },
+    'dec-2025': { cloud: 405864, support: 72096, dse: 113336, otd: 26664, comp: 10000, rollover: 13336, net: 541296 },
+    'jan-2026': { cloud: 456597, support: 81108, dse: 127503, otd: 29997, comp: 11250, rollover: 15003, net: 608958 },
+    'feb-2026': { cloud: 507330, support: 90120, dse: 141670, otd: 33330, comp: 12500, rollover: 16670, net: 676620 },
+    'mar-2026': { cloud: 558063, support: 99132, dse: 155837, otd: 36663, comp: 13750, rollover: 18337, net: 744282 },
+    'apr-2026': { cloud: 608800, support: 108144, dse: 170000, otd: 40000, comp: 15000, rollover: 20000, net: 811944 },
+    'all': { cloud: 608800, support: 108144, dse: 170000, otd: 40000, comp: 15000, rollover: 20000, net: 811944 }
+  },
+  // Monthly billing values (cumulative) - billing happens at specific times
+  billing: {
+    'may-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 0, sap: 0, total: 2182000 },
+    'jun-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 0, sap: 0, total: 2182000 },
+    'jul-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 0, sap: 0, total: 2182000 },
+    'aug-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 0, sap: 2000, total: 2184000 },
+    'sep-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 0, sap: 2000, total: 2184000 },
+    'oct-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 0, sap: 2000, total: 2184000 },
+    'nov-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 50000, sap: 4000, total: 2236000 },
+    'dec-2025': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 50000, sap: 4000, total: 2236000 },
+    'jan-2026': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 50000, sap: 4000, total: 2236000 },
+    'feb-2026': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 100000, sap: 6000, total: 2288000 },
+    'mar-2026': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 100000, sap: 6000, total: 2288000 },
+    'apr-2026': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 100000, sap: 8000, total: 2290000 },
+    'all': { awsMP: 1000000, databricks: 1082000, p3: 100000, azureUncontrol: 100000, sap: 8000, total: 2290000 }
+  }
+};
+
+// Format currency
+function formatCurrency(value) {
+  return '$' + value.toLocaleString('en-US');
+}
+
+// Update Ledger Balance based on selected month
+function updateLedgerBalance(month) {
+  const consumption = monthlyData.consumption[month];
+  const billing = monthlyData.billing[month];
+  
+  if (!consumption || !billing) return;
+  
+  const difference = billing.total - consumption.net;
+  
+  // Update Ledger Balance Result
+  const ledgerPane = document.querySelector('.commit-panes-grid .commit-pane:nth-child(3)');
+  if (ledgerPane) {
+    const rows = ledgerPane.querySelectorAll('.pane-rows:first-of-type .pane-row');
+    if (rows.length >= 3) {
+      rows[0].querySelector('span:last-child').textContent = formatCurrency(billing.total);
+      rows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
+      rows[2].querySelector('span:last-child').textContent = formatCurrency(difference);
+    }
+    
+    // Update Total Net Consumption Breakdown
+    const consumptionSection = ledgerPane.querySelectorAll('.ledger-section')[0];
+    if (consumptionSection) {
+      const consumptionRows = consumptionSection.querySelectorAll('.pane-row');
+      if (consumptionRows.length >= 7) {
+        consumptionRows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.cloud);
+        consumptionRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.support);
+        consumptionRows[2].querySelector('span:last-child').textContent = formatCurrency(consumption.dse);
+        consumptionRows[3].querySelector('span:last-child').textContent = '(' + formatCurrency(consumption.otd) + ')';
+        consumptionRows[4].querySelector('span:last-child').textContent = '(' + formatCurrency(consumption.comp) + ')';
+        consumptionRows[5].querySelector('span:last-child').textContent = '(' + formatCurrency(consumption.rollover) + ')';
+        consumptionRows[6].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
+      }
+    }
+    
+    // Update Total Billed Breakdown
+    const billingSection = ledgerPane.querySelectorAll('.ledger-section')[1];
+    if (billingSection) {
+      const billingRows = billingSection.querySelectorAll('.pane-row');
+      if (billingRows.length >= 6) {
+        billingRows[0].querySelector('span:last-child').textContent = formatCurrency(billing.awsMP);
+        billingRows[1].querySelector('span:last-child').textContent = formatCurrency(billing.databricks);
+        billingRows[2].querySelector('span:last-child').textContent = formatCurrency(billing.p3);
+        billingRows[3].querySelector('span:last-child').textContent = formatCurrency(billing.azureUncontrol);
+        billingRows[4].querySelector('span:last-child').textContent = formatCurrency(billing.sap);
+        billingRows[5].querySelector('span:last-child').textContent = formatCurrency(billing.total);
+      }
+    }
+  }
+}
+
+// Update CTD Reconciliation based on selected month
+function updateCTDReconciliation(month) {
+  const consumption = monthlyData.consumption[month];
+  const billing = monthlyData.billing[month];
+  
+  if (!consumption || !billing) return;
+  
+  const difference = billing.total - consumption.net;
+  const isBurst = consumption.net > billing.total;
+  const burstAmount = isBurst ? consumption.net - billing.total : 0;
+  
+  // Update CTD Recon Breakdown
+  const ctdSection = document.querySelector('.recon-two-pane-grid');
+  if (ctdSection) {
+    const breakdownPane = ctdSection.querySelector('.recon-pane:first-child');
+    if (breakdownPane) {
+      const rows = breakdownPane.querySelectorAll('.pane-row');
+      if (rows.length >= 3) {
+        rows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
+        rows[1].querySelector('span:last-child').textContent = formatCurrency(billing.total);
+        rows[2].querySelector('span:last-child').textContent = isBurst ? 'Burst (Consumption > Billed)' : 'No Burst (Billed > Consumption)';
+      }
+    }
+    
+    // Update Burst Allocation
+    const allocationPane = ctdSection.querySelector('.recon-pane:last-child');
+    if (allocationPane) {
+      const burstRow = allocationPane.querySelector('.pane-row.total span:last-child');
+      if (burstRow) {
+        burstRow.textContent = isBurst ? formatCurrency(burstAmount) : 'N/A';
+      }
+    }
+  }
+}
+
+// Initialize month filter event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  // Ledger Balance month filter
+  const ledgerMonthFilter = document.querySelector('.commit-pane .pane-header-row .month-filter');
+  if (ledgerMonthFilter) {
+    ledgerMonthFilter.addEventListener('change', function() {
+      updateLedgerBalance(this.value);
+    });
+  }
+  
+  // CTD Reconciliation month filter
+  const ctdMonthFilter = document.querySelector('.section-header-row .recon-filter .month-filter');
+  if (ctdMonthFilter) {
+    ctdMonthFilter.addEventListener('change', function() {
+      updateCTDReconciliation(this.value);
+    });
+  }
+});
