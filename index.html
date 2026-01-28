@@ -503,21 +503,24 @@
         <div class="commit-pane">
           <div class="pane-header-row">
             <h3 class="pane-title">Ledger Balance to-date</h3>
-            <select class="filter-dropdown month-filter small">
-              <option value="all" selected>All months</option>
-              <option value="apr-2026">April 2026</option>
-              <option value="mar-2026">March 2026</option>
-              <option value="feb-2026">February 2026</option>
-              <option value="jan-2026">January 2026</option>
-              <option value="dec-2025">December 2025</option>
-              <option value="nov-2025">November 2025</option>
-              <option value="oct-2025">October 2025</option>
-              <option value="sep-2025">September 2025</option>
-              <option value="aug-2025">August 2025</option>
-              <option value="jul-2025">July 2025</option>
-              <option value="jun-2025">June 2025</option>
-              <option value="may-2025">May 2025</option>
-            </select>
+            <div class="pane-filter">
+              <label class="filter-label">As of Month:</label>
+              <select class="filter-dropdown month-filter small">
+                <option value="all" selected>All months</option>
+                <option value="apr-2026">April 2026</option>
+                <option value="mar-2026">March 2026</option>
+                <option value="feb-2026">February 2026</option>
+                <option value="jan-2026">January 2026</option>
+                <option value="dec-2025">December 2025</option>
+                <option value="nov-2025">November 2025</option>
+                <option value="oct-2025">October 2025</option>
+                <option value="sep-2025">September 2025</option>
+                <option value="aug-2025">August 2025</option>
+                <option value="jul-2025">July 2025</option>
+                <option value="jun-2025">June 2025</option>
+                <option value="may-2025">May 2025</option>
+              </select>
+            </div>
           </div>
           
           <!-- Ledger Balance Result -->
@@ -528,11 +531,11 @@
             </div>
             <div class="pane-row">
               <span>Total Consumption</span>
-              <span>$811,944</span>
+              <span>$748,944</span>
             </div>
             <div class="pane-row total">
               <span>Difference (Billed - Consumption)</span>
-              <span>$1,478,056</span>
+              <span>$1,541,056</span>
             </div>
           </div>
 
@@ -561,12 +564,16 @@
                 <span>($15,000)</span>
               </div>
               <div class="pane-row subtract">
-                <span>− Applied Rollover</span>
+                <span>− Applied Prepaid Rollover</span>
                 <span>($20,000)</span>
+              </div>
+              <div class="pane-row subtract">
+                <span>− Applied Postpaid Rollover</span>
+                <span>($63,000)</span>
               </div>
               <div class="pane-row total">
                 <span>Total Net Consumption</span>
-                <span>$811,944</span>
+                <span>$748,944</span>
               </div>
             </div>
           </div>
@@ -638,7 +645,7 @@
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Total Net Consumption (CTD)</span>
-                <span>$811,944</span>
+                <span>$748,944</span>
               </div>
               <div class="pane-row">
                 <span>Total Billed (CTD)</span>

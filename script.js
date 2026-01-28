@@ -216,74 +216,75 @@ function toggleMonthlyColumns() {
 // Incentives are fully consumed by Month 2
 
 const monthlyData = {
-  // Monthly consumption values (cumulative) - incentives consumed first before Total Commit
-  // OTD ($40k), Comp ($15k), Prepaid Rollover ($20k) = $75k total incentives
-  // These are consumed first, then Total Commit is drawn
+  // Monthly consumption values (cumulative) - FIFO consumption of incentives
+  // Order: OTD ($40k) → Comp ($15k) → Prepaid Rollover ($20k) → Postpaid Rollover ($63k)
+  // Total incentives: $138,000 - consumed in first ~2 months
+  // Monthly gross = ~$73,912, then Total Commit is drawn
   consumption: {
     'may-2025': { 
       cloud: 50733, support: 9012, dse: 14167, 
-      otd: 3333, comp: 1250, rollover: 1667,
-      net: 67662
+      otd: 40000, comp: 15000, prepaidRollover: 18912, postpaidRollover: 0,
+      net: 0  // All covered by incentives
     },
     'jun-2025': { 
       cloud: 101466, support: 18024, dse: 28334, 
-      otd: 6667, comp: 2500, rollover: 3333,
-      net: 135324
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 9824  // $138k incentives depleted, remainder from Total Commit
     },
     'jul-2025': { 
       cloud: 152199, support: 27036, dse: 42501, 
-      otd: 10000, comp: 3750, rollover: 5000,
-      net: 202986
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 83736
     },
     'aug-2025': { 
       cloud: 202932, support: 36048, dse: 56668, 
-      otd: 13333, comp: 5000, rollover: 6667,
-      net: 270648
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 157648
     },
     'sep-2025': { 
       cloud: 253665, support: 45060, dse: 70835, 
-      otd: 16667, comp: 6250, rollover: 8333,
-      net: 338310
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 231560
     },
     'oct-2025': { 
       cloud: 304398, support: 54072, dse: 85002, 
-      otd: 20000, comp: 7500, rollover: 10000,
-      net: 405972
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 305472
     },
     'nov-2025': { 
       cloud: 355131, support: 63084, dse: 99169, 
-      otd: 23333, comp: 8750, rollover: 11667,
-      net: 473634
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 379384
     },
     'dec-2025': { 
       cloud: 405864, support: 72096, dse: 113336, 
-      otd: 26667, comp: 10000, rollover: 13333,
-      net: 541296
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 453296
     },
     'jan-2026': { 
       cloud: 456597, support: 81108, dse: 127503, 
-      otd: 30000, comp: 11250, rollover: 15000,
-      net: 608958
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 527208
     },
     'feb-2026': { 
       cloud: 507330, support: 90120, dse: 141670, 
-      otd: 33333, comp: 12500, rollover: 16667,
-      net: 676620
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 601120
     },
     'mar-2026': { 
       cloud: 558063, support: 99132, dse: 155837, 
-      otd: 36667, comp: 13750, rollover: 18333,
-      net: 744282
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 675032
     },
     'apr-2026': { 
       cloud: 608800, support: 108144, dse: 170000, 
-      otd: 40000, comp: 15000, rollover: 20000,
-      net: 811944
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
+      net: 748944
     },
     'all': { 
       cloud: 608800, support: 108144, dse: 170000, 
-      otd: 40000, comp: 15000, rollover: 20000, 
-      net: 811944
+      otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000, 
+      net: 748944
     }
   },
   // Monthly billing values (cumulative) - billing happens at specific times
@@ -334,18 +335,19 @@ function updateLedgerBalance(month) {
       }
     }
     
-    // Update Total Net Consumption Breakdown
+    // Update Total Net Consumption Breakdown (now has 8 rows with separate rollovers)
     const ledgerSections = ledgerPane.querySelectorAll('.ledger-section');
     if (ledgerSections[0]) {
       const consumptionRows = ledgerSections[0].querySelectorAll('.pane-row');
-      if (consumptionRows.length >= 7) {
+      if (consumptionRows.length >= 8) {
         consumptionRows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.cloud);
         consumptionRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.support);
         consumptionRows[2].querySelector('span:last-child').textContent = formatCurrency(consumption.dse);
         consumptionRows[3].querySelector('span:last-child').textContent = '($' + consumption.otd.toLocaleString('en-US') + ')';
         consumptionRows[4].querySelector('span:last-child').textContent = '($' + consumption.comp.toLocaleString('en-US') + ')';
-        consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.rollover.toLocaleString('en-US') + ')';
-        consumptionRows[6].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
+        consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.prepaidRollover.toLocaleString('en-US') + ')';
+        consumptionRows[6].querySelector('span:last-child').textContent = '($' + consumption.postpaidRollover.toLocaleString('en-US') + ')';
+        consumptionRows[7].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
       }
     }
     
@@ -405,7 +407,7 @@ function updateCTDReconciliation(month) {
 // Initialize month filter event listeners
 document.addEventListener('DOMContentLoaded', function() {
   // Ledger Balance month filter
-  const ledgerMonthFilter = document.querySelector('#ledger-content .pane-header-row .month-filter');
+  const ledgerMonthFilter = document.querySelector('#ledger-content .pane-header-row .pane-filter .month-filter');
   if (ledgerMonthFilter) {
     ledgerMonthFilter.addEventListener('change', function() {
       updateLedgerBalance(this.value);
