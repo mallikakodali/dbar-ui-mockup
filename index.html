@@ -501,8 +501,24 @@
 
         <!-- Ledger Pane -->
         <div class="commit-pane">
-          <h3 class="pane-title">Ledger Balance</h3>
-          <p class="pane-subtitle">Contract to Date</p>
+          <div class="pane-header-row">
+            <h3 class="pane-title">Ledger Balance</h3>
+            <select class="filter-dropdown month-filter small">
+              <option value="all" selected>All months</option>
+              <option value="apr-2026">April 2026</option>
+              <option value="mar-2026">March 2026</option>
+              <option value="feb-2026">February 2026</option>
+              <option value="jan-2026">January 2026</option>
+              <option value="dec-2025">December 2025</option>
+              <option value="nov-2025">November 2025</option>
+              <option value="oct-2025">October 2025</option>
+              <option value="sep-2025">September 2025</option>
+              <option value="aug-2025">August 2025</option>
+              <option value="jul-2025">July 2025</option>
+              <option value="jun-2025">June 2025</option>
+              <option value="may-2025">May 2025</option>
+            </select>
+          </div>
           
           <!-- Ledger Balance Result -->
           <div class="pane-rows">
@@ -598,7 +614,8 @@
           <div class="recon-filter">
             <label class="filter-label">As of Month:</label>
             <select class="filter-dropdown month-filter">
-              <option value="apr-2026" selected>April 2026</option>
+              <option value="all" selected>All months</option>
+              <option value="apr-2026">April 2026</option>
               <option value="mar-2026">March 2026</option>
               <option value="feb-2026">February 2026</option>
               <option value="jan-2026">January 2026</option>
@@ -618,7 +635,6 @@
           <!-- CTD Recon Breakdown Pane -->
           <div class="recon-pane">
             <h3 class="pane-title">CTD Recon Breakdown</h3>
-            <p class="pane-subtitle">May 9, 2025 - April 30, 2026</p>
             <div class="pane-rows">
               <div class="pane-row">
                 <span>Total Net Consumption (CTD)</span>
