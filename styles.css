@@ -1621,12 +1621,10 @@ td.indent {
   background: #e2e8f0;
   font-family: 'DM Sans', sans-serif;
   text-align: left;
-  padding: 10px 14px;
+  padding: 12px 14px;
+  padding-top: 16px;
   border-bottom: 1px solid var(--border-color);
-}
-
-.consumption-pivot-table .section-header-row .frozen-col {
-  background: #e2e8f0;
+  position: static;
 }
 
 /* Indent for cloud breakdown rows */
