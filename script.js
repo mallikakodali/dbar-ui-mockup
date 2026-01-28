@@ -218,18 +218,18 @@ function toggleMonthlyColumns() {
 const monthlyData = {
   // Monthly consumption values (cumulative) - FIFO consumption of incentives
   // Order: OTD ($40k) → Comp ($15k) → Prepaid Rollover ($20k) → Postpaid Rollover ($63k)
-  // Total incentives: $138,000 - consumed in first ~2 months
+  // Total incentives: $138,000 - OTD, Comp fully consumed in May; Prepaid Rollover partial in May, full in Jun; Postpaid in Jun
   // Monthly gross = ~$73,912, then Total Commit is drawn
   consumption: {
     'may-2025': { 
       cloud: 50733, support: 9012, dse: 14167, 
       otd: 40000, comp: 15000, prepaidRollover: 18912, postpaidRollover: 0,
-      net: 0  // All covered by incentives
+      net: 0  // All covered by incentives ($73,912 applied)
     },
     'jun-2025': { 
       cloud: 101466, support: 18024, dse: 28334, 
       otd: 40000, comp: 15000, prepaidRollover: 20000, postpaidRollover: 63000,
-      net: 9824  // $138k incentives depleted, remainder from Total Commit
+      net: 9824  // $138k incentives fully depleted
     },
     'jul-2025': { 
       cloud: 152199, support: 27036, dse: 42501, 
