@@ -210,22 +210,81 @@ function toggleMonthlyColumns() {
 }
 
 // Monthly Data for Ledger Balance and CTD Reconciliation
+// Incentives consumed first: OTD ($40k), Comp ($15k), Prepaid Rollover ($20k), Postpaid Rollover ($63k)
+// Then Total Commit is consumed
+// Monthly gross consumption = ~$73,912 (Cloud + Support + DSE)
+// Incentives are fully consumed by Month 2
+
 const monthlyData = {
-  // Monthly consumption values (cumulative)
+  // Monthly consumption values (cumulative) - incentives consumed first before Total Commit
+  // OTD ($40k), Comp ($15k), Prepaid Rollover ($20k) = $75k total incentives
+  // These are consumed first, then Total Commit is drawn
   consumption: {
-    'may-2025': { cloud: 50733, support: 9012, dse: 14167, otd: 3333, comp: 1250, rollover: 1667, net: 67662 },
-    'jun-2025': { cloud: 101466, support: 18024, dse: 28334, otd: 6666, comp: 2500, rollover: 3334, net: 135324 },
-    'jul-2025': { cloud: 152199, support: 27036, dse: 42501, otd: 9999, comp: 3750, rollover: 5001, net: 202986 },
-    'aug-2025': { cloud: 202932, support: 36048, dse: 56668, otd: 13332, comp: 5000, rollover: 6668, net: 270648 },
-    'sep-2025': { cloud: 253665, support: 45060, dse: 70835, otd: 16665, comp: 6250, rollover: 8335, net: 338310 },
-    'oct-2025': { cloud: 304398, support: 54072, dse: 85002, otd: 19998, comp: 7500, rollover: 10002, net: 405972 },
-    'nov-2025': { cloud: 355131, support: 63084, dse: 99169, otd: 23331, comp: 8750, rollover: 11669, net: 473634 },
-    'dec-2025': { cloud: 405864, support: 72096, dse: 113336, otd: 26664, comp: 10000, rollover: 13336, net: 541296 },
-    'jan-2026': { cloud: 456597, support: 81108, dse: 127503, otd: 29997, comp: 11250, rollover: 15003, net: 608958 },
-    'feb-2026': { cloud: 507330, support: 90120, dse: 141670, otd: 33330, comp: 12500, rollover: 16670, net: 676620 },
-    'mar-2026': { cloud: 558063, support: 99132, dse: 155837, otd: 36663, comp: 13750, rollover: 18337, net: 744282 },
-    'apr-2026': { cloud: 608800, support: 108144, dse: 170000, otd: 40000, comp: 15000, rollover: 20000, net: 811944 },
-    'all': { cloud: 608800, support: 108144, dse: 170000, otd: 40000, comp: 15000, rollover: 20000, net: 811944 }
+    'may-2025': { 
+      cloud: 50733, support: 9012, dse: 14167, 
+      otd: 3333, comp: 1250, rollover: 1667,
+      net: 67662
+    },
+    'jun-2025': { 
+      cloud: 101466, support: 18024, dse: 28334, 
+      otd: 6667, comp: 2500, rollover: 3333,
+      net: 135324
+    },
+    'jul-2025': { 
+      cloud: 152199, support: 27036, dse: 42501, 
+      otd: 10000, comp: 3750, rollover: 5000,
+      net: 202986
+    },
+    'aug-2025': { 
+      cloud: 202932, support: 36048, dse: 56668, 
+      otd: 13333, comp: 5000, rollover: 6667,
+      net: 270648
+    },
+    'sep-2025': { 
+      cloud: 253665, support: 45060, dse: 70835, 
+      otd: 16667, comp: 6250, rollover: 8333,
+      net: 338310
+    },
+    'oct-2025': { 
+      cloud: 304398, support: 54072, dse: 85002, 
+      otd: 20000, comp: 7500, rollover: 10000,
+      net: 405972
+    },
+    'nov-2025': { 
+      cloud: 355131, support: 63084, dse: 99169, 
+      otd: 23333, comp: 8750, rollover: 11667,
+      net: 473634
+    },
+    'dec-2025': { 
+      cloud: 405864, support: 72096, dse: 113336, 
+      otd: 26667, comp: 10000, rollover: 13333,
+      net: 541296
+    },
+    'jan-2026': { 
+      cloud: 456597, support: 81108, dse: 127503, 
+      otd: 30000, comp: 11250, rollover: 15000,
+      net: 608958
+    },
+    'feb-2026': { 
+      cloud: 507330, support: 90120, dse: 141670, 
+      otd: 33333, comp: 12500, rollover: 16667,
+      net: 676620
+    },
+    'mar-2026': { 
+      cloud: 558063, support: 99132, dse: 155837, 
+      otd: 36667, comp: 13750, rollover: 18333,
+      net: 744282
+    },
+    'apr-2026': { 
+      cloud: 608800, support: 108144, dse: 170000, 
+      otd: 40000, comp: 15000, rollover: 20000,
+      net: 811944
+    },
+    'all': { 
+      cloud: 608800, support: 108144, dse: 170000, 
+      otd: 40000, comp: 15000, rollover: 20000, 
+      net: 811944
+    }
   },
   // Monthly billing values (cumulative) - billing happens at specific times
   billing: {
@@ -259,35 +318,40 @@ function updateLedgerBalance(month) {
   
   const difference = billing.total - consumption.net;
   
-  // Update Ledger Balance Result
-  const ledgerPane = document.querySelector('.commit-panes-grid .commit-pane:nth-child(3)');
+  // Find the ledger pane (third commit-pane in the grid)
+  const commitPanes = document.querySelectorAll('#ledger-content .commit-panes-grid .commit-pane');
+  const ledgerPane = commitPanes[2]; // Third pane (index 2)
+  
   if (ledgerPane) {
-    const rows = ledgerPane.querySelectorAll('.pane-rows:first-of-type .pane-row');
-    if (rows.length >= 3) {
-      rows[0].querySelector('span:last-child').textContent = formatCurrency(billing.total);
-      rows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
-      rows[2].querySelector('span:last-child').textContent = formatCurrency(difference);
+    // Update main Ledger Balance Result (first pane-rows div directly under commit-pane)
+    const mainRows = ledgerPane.querySelector(':scope > .pane-rows');
+    if (mainRows) {
+      const rows = mainRows.querySelectorAll('.pane-row');
+      if (rows.length >= 3) {
+        rows[0].querySelector('span:last-child').textContent = formatCurrency(billing.total);
+        rows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
+        rows[2].querySelector('span:last-child').textContent = formatCurrency(difference);
+      }
     }
     
     // Update Total Net Consumption Breakdown
-    const consumptionSection = ledgerPane.querySelectorAll('.ledger-section')[0];
-    if (consumptionSection) {
-      const consumptionRows = consumptionSection.querySelectorAll('.pane-row');
+    const ledgerSections = ledgerPane.querySelectorAll('.ledger-section');
+    if (ledgerSections[0]) {
+      const consumptionRows = ledgerSections[0].querySelectorAll('.pane-row');
       if (consumptionRows.length >= 7) {
         consumptionRows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.cloud);
         consumptionRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.support);
         consumptionRows[2].querySelector('span:last-child').textContent = formatCurrency(consumption.dse);
-        consumptionRows[3].querySelector('span:last-child').textContent = '(' + formatCurrency(consumption.otd) + ')';
-        consumptionRows[4].querySelector('span:last-child').textContent = '(' + formatCurrency(consumption.comp) + ')';
-        consumptionRows[5].querySelector('span:last-child').textContent = '(' + formatCurrency(consumption.rollover) + ')';
+        consumptionRows[3].querySelector('span:last-child').textContent = '($' + consumption.otd.toLocaleString('en-US') + ')';
+        consumptionRows[4].querySelector('span:last-child').textContent = '($' + consumption.comp.toLocaleString('en-US') + ')';
+        consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.rollover.toLocaleString('en-US') + ')';
         consumptionRows[6].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
       }
     }
     
     // Update Total Billed Breakdown
-    const billingSection = ledgerPane.querySelectorAll('.ledger-section')[1];
-    if (billingSection) {
-      const billingRows = billingSection.querySelectorAll('.pane-row');
+    if (ledgerSections[1]) {
+      const billingRows = ledgerSections[1].querySelectorAll('.pane-row');
       if (billingRows.length >= 6) {
         billingRows[0].querySelector('span:last-child').textContent = formatCurrency(billing.awsMP);
         billingRows[1].querySelector('span:last-child').textContent = formatCurrency(billing.databricks);
@@ -311,12 +375,16 @@ function updateCTDReconciliation(month) {
   const isBurst = consumption.net > billing.total;
   const burstAmount = isBurst ? consumption.net - billing.total : 0;
   
-  // Update CTD Recon Breakdown
-  const ctdSection = document.querySelector('.recon-two-pane-grid');
+  // Find CTD Reconciliation section (first recon-two-pane-grid in ledger content)
+  const ctdSection = document.querySelector('#ledger-content .section-header-row + .recon-two-pane-grid') ||
+                     document.querySelector('#ledger-content .recon-two-pane-grid');
+  
   if (ctdSection) {
-    const breakdownPane = ctdSection.querySelector('.recon-pane:first-child');
-    if (breakdownPane) {
-      const rows = breakdownPane.querySelectorAll('.pane-row');
+    const reconPanes = ctdSection.querySelectorAll('.recon-pane');
+    
+    // Update CTD Recon Breakdown (first pane)
+    if (reconPanes[0]) {
+      const rows = reconPanes[0].querySelectorAll('.pane-row');
       if (rows.length >= 3) {
         rows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
         rows[1].querySelector('span:last-child').textContent = formatCurrency(billing.total);
@@ -324,10 +392,9 @@ function updateCTDReconciliation(month) {
       }
     }
     
-    // Update Burst Allocation
-    const allocationPane = ctdSection.querySelector('.recon-pane:last-child');
-    if (allocationPane) {
-      const burstRow = allocationPane.querySelector('.pane-row.total span:last-child');
+    // Update Burst Allocation (second pane)
+    if (reconPanes[1]) {
+      const burstRow = reconPanes[1].querySelector('.pane-row.total span:last-child');
       if (burstRow) {
         burstRow.textContent = isBurst ? formatCurrency(burstAmount) : 'N/A';
       }
@@ -338,7 +405,7 @@ function updateCTDReconciliation(month) {
 // Initialize month filter event listeners
 document.addEventListener('DOMContentLoaded', function() {
   // Ledger Balance month filter
-  const ledgerMonthFilter = document.querySelector('.commit-pane .pane-header-row .month-filter');
+  const ledgerMonthFilter = document.querySelector('#ledger-content .pane-header-row .month-filter');
   if (ledgerMonthFilter) {
     ledgerMonthFilter.addEventListener('change', function() {
       updateLedgerBalance(this.value);
@@ -346,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // CTD Reconciliation month filter
-  const ctdMonthFilter = document.querySelector('.section-header-row .recon-filter .month-filter');
+  const ctdMonthFilter = document.querySelector('#ledger-content .section-header-row .recon-filter .month-filter');
   if (ctdMonthFilter) {
     ctdMonthFilter.addEventListener('change', function() {
       updateCTDReconciliation(this.value);
