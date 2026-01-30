@@ -2829,8 +2829,10 @@ td.indent {
 /* Expanded Ledger Section */
 .bucket-ledger-expanded {
   margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-light);
+  padding: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 
 /* Ledger Filters */
@@ -2873,25 +2875,39 @@ td.indent {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .bucket-ledger-table th,
 .bucket-ledger-table td {
-  padding: 10px 12px;
+  padding: 12px 14px;
   text-align: left;
   border-bottom: 1px solid var(--border-light);
 }
 
 .bucket-ledger-table th {
   background: var(--bg-light);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-secondary);
-  font-size: 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.bucket-ledger-table th svg {
+  vertical-align: middle;
+  margin-left: 4px;
+  opacity: 0.5;
 }
 
 .bucket-ledger-table.expanded th {
-  font-size: 11px;
+  font-size: 13px;
   text-transform: none;
+}
+
+.bucket-ledger-table tbody tr:hover {
+  background: var(--bg-light);
 }
 
 .bucket-ledger-table td.amount {

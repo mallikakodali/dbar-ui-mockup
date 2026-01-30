@@ -435,8 +435,11 @@ function toggleLedgerEntries(button) {
   const ledgerExpanded = bucketCard.querySelector('.bucket-ledger-expanded');
   
   if (ledgerExpanded) {
-    const isHidden = ledgerExpanded.style.display === 'none';
+    const isHidden = ledgerExpanded.style.display === 'none' || ledgerExpanded.style.display === '';
     ledgerExpanded.style.display = isHidden ? 'block' : 'none';
     button.classList.toggle('expanded', isHidden);
   }
 }
+
+// Make toggleLedgerEntries available globally
+window.toggleLedgerEntries = toggleLedgerEntries;
