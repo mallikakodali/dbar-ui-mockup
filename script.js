@@ -428,3 +428,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Toggle Ledger Entries in Commit Buckets tab
+function toggleLedgerEntries(button) {
+  const bucketCard = button.closest('.commit-bucket-card');
+  const ledgerExpanded = bucketCard.querySelector('.bucket-ledger-expanded');
+  
+  if (ledgerExpanded) {
+    const isHidden = ledgerExpanded.style.display === 'none';
+    ledgerExpanded.style.display = isHidden ? 'block' : 'none';
+    button.classList.toggle('expanded', isHidden);
+  }
+}

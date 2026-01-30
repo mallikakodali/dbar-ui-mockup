@@ -1678,7 +1678,7 @@
       </div>
 
       <!-- Bucket Card 1: Total Commit Value -->
-      <div class="commit-bucket-card">
+      <div class="commit-bucket-card expandable">
         <div class="bucket-card-header">
           <div class="bucket-tags">
             <span class="bucket-name">Total Commit Value</span>
@@ -1712,90 +1712,172 @@
             </div>
           </div>
 
-          <!-- Ledger Entries -->
-          <div class="bucket-ledger-section">
-            <h4 class="bucket-ledger-title">Ledger Entries by Cloud</h4>
-            <table class="bucket-ledger-table">
+          <!-- Billing Schedule & Ledger Toggle -->
+          <div class="bucket-footer-row">
+            <div class="billing-schedule-info">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <button class="ledger-toggle-btn" onclick="toggleLedgerEntries(this)">
+              <span>Ledger Entries</span>
+              <span class="ledger-count">12</span>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Expandable Ledger Entries -->
+          <div class="bucket-ledger-expanded" style="display: none;">
+            <!-- Filters -->
+            <div class="ledger-filters">
+              <div class="ledger-filter-left">
+                <div class="search-filter small">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter small">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown small">
+                  <option value="">Cloud</option>
+                  <option>AWS</option>
+                  <option>Azure</option>
+                  <option>GCP</option>
+                  <option>SAP</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Ledger Table -->
+            <table class="bucket-ledger-table expanded">
               <thead>
                 <tr>
-                  <th>From Date</th>
-                  <th>To Date</th>
+                  <th class="manual-col">Manual</th>
+                  <th>From Date <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
+                  <th>To Date <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 15l5 5 5-5"/><path d="M7 9l5-5 5 5"/></svg></th>
                   <th>Cloud</th>
+                  <th>Reason</th>
                   <th style="text-align: right;">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag aws">AWS</span></td>
-                  <td class="amount">$33,333.00</td>
+                  <td class="manual-col"></td>
+                  <td>Jan 1, 2026</td>
+                  <td>Jan 31, 2026</td>
+                  <td>Azure</td>
+                  <td></td>
+                  <td class="amount">$4,454.76</td>
                 </tr>
                 <tr>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag azure">Azure</span></td>
-                  <td class="amount">$16,667.00</td>
+                  <td class="manual-col"></td>
+                  <td>Dec 1, 2025</td>
+                  <td>Dec 31, 2025</td>
+                  <td>Azure</td>
+                  <td></td>
+                  <td class="amount">$6,442.17</td>
                 </tr>
                 <tr>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag gcp">GCP</span></td>
-                  <td class="amount">$67.00</td>
+                  <td class="manual-col"></td>
+                  <td>Nov 1, 2025</td>
+                  <td>Nov 30, 2025</td>
+                  <td>Azure</td>
+                  <td></td>
+                  <td class="amount">$5,513.05</td>
                 </tr>
                 <tr>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag sap">SAP</span></td>
-                  <td class="amount">$667.00</td>
+                  <td class="manual-col"></td>
+                  <td>Oct 1, 2025</td>
+                  <td>Oct 31, 2025</td>
+                  <td>Azure</td>
+                  <td></td>
+                  <td class="amount">$6,585.25</td>
                 </tr>
                 <tr>
+                  <td class="manual-col">
+                    <svg class="manual-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  </td>
+                  <td>Oct 1, 2025</td>
+                  <td>Oct 1, 2025</td>
+                  <td></td>
+                  <td>DBAR UB ledger alignment</td>
+                  <td class="amount">$3,428.81</td>
+                </tr>
+                <tr>
+                  <td class="manual-col"></td>
+                  <td>Sep 1, 2025</td>
+                  <td>Sep 30, 2025</td>
+                  <td>Azure</td>
+                  <td></td>
+                  <td class="amount">$11,501.88</td>
+                </tr>
+                <tr>
+                  <td class="manual-col">
+                    <svg class="manual-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  </td>
+                  <td>Sep 1, 2025</td>
+                  <td>--</td>
+                  <td>Azure</td>
+                  <td>DBAR September ledger reset Oct 6</td>
+                  <td class="amount negative">-$5,284.65</td>
+                </tr>
+                <tr>
+                  <td class="manual-col">
+                    <svg class="manual-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2">
+                      <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                  </td>
+                  <td>Sep 1, 2025</td>
+                  <td>--</td>
+                  <td>Azure</td>
+                  <td>CRA to DBAR Migration: snapshot_trueup</td>
+                  <td class="amount negative">-$0.01</td>
+                </tr>
+                <tr>
+                  <td class="manual-col"></td>
+                  <td>Aug 1, 2025</td>
+                  <td>Aug 30, 2025</td>
+                  <td>Azure</td>
+                  <td>CRA to DBAR Migration: Monthly usage burndown</td>
+                  <td class="amount">$6,163.51</td>
+                </tr>
+                <tr>
+                  <td class="manual-col"></td>
                   <td>Jul 1, 2025</td>
-                  <td>Apr 30, 2026</td>
-                  <td><span class="cloud-tag aws">AWS</span></td>
-                  <td class="amount">$333,330.00</td>
-                </tr>
-                <tr>
-                  <td>Jul 1, 2025</td>
-                  <td>Apr 30, 2026</td>
-                  <td><span class="cloud-tag azure">Azure</span></td>
-                  <td class="amount">$166,670.00</td>
-                </tr>
-                <tr>
-                  <td>Jul 1, 2025</td>
-                  <td>Apr 30, 2026</td>
-                  <td><span class="cloud-tag gcp">GCP</span></td>
-                  <td class="amount">$670.00</td>
-                </tr>
-                <tr>
-                  <td>Jul 1, 2025</td>
-                  <td>Apr 30, 2026</td>
-                  <td><span class="cloud-tag sap">SAP</span></td>
-                  <td class="amount">$6,670.00</td>
-                </tr>
-                <tr>
-                  <td colspan="3"><strong>Support (18%)</strong></td>
-                  <td class="amount"><strong>$108,144.00</strong></td>
-                </tr>
-                <tr>
-                  <td colspan="3"><strong>DSE Charge</strong></td>
-                  <td class="amount"><strong>$155,830.00</strong></td>
+                  <td>Jul 30, 2025</td>
+                  <td>Azure</td>
+                  <td>CRA to DBAR Migration: Monthly usage burndown</td>
+                  <td class="amount">$7,893.05</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3"><strong>Total Consumed</strong></td>
-                  <td class="amount"><strong>$748,944.00</strong></td>
-                </tr>
-              </tfoot>
             </table>
+            
+            <!-- Pagination -->
+            <div class="ledger-pagination">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn nav">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
           </div>
           
         </div>
       </div>
 
       <!-- Bucket Card 2: Rollover Postpaid -->
-      <div class="commit-bucket-card">
+      <div class="commit-bucket-card expandable">
         <div class="bucket-card-header">
           <div class="bucket-tags">
             <span class="bucket-name">Rollover Postpaid</span>
@@ -1829,58 +1911,106 @@
             </div>
           </div>
 
-          <!-- Ledger Entries -->
-          <div class="bucket-ledger-section">
-            <h4 class="bucket-ledger-title">Ledger Entries by Cloud</h4>
-            <table class="bucket-ledger-table">
+          <!-- Billing Schedule & Ledger Toggle -->
+          <div class="bucket-footer-row">
+            <div class="billing-schedule-info">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <button class="ledger-toggle-btn" onclick="toggleLedgerEntries(this)">
+              <span>Ledger Entries</span>
+              <span class="ledger-count">4</span>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Expandable Ledger Entries -->
+          <div class="bucket-ledger-expanded" style="display: none;">
+            <!-- Filters -->
+            <div class="ledger-filters">
+              <div class="ledger-filter-left">
+                <div class="search-filter small">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter small">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown small">
+                  <option value="">Cloud</option>
+                  <option>AWS</option>
+                  <option>Azure</option>
+                  <option>GCP</option>
+                  <option>SAP</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Ledger Table -->
+            <table class="bucket-ledger-table expanded">
               <thead>
                 <tr>
+                  <th class="manual-col">Manual</th>
                   <th>From Date</th>
                   <th>To Date</th>
                   <th>Cloud</th>
+                  <th>Reason</th>
                   <th style="text-align: right;">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag aws">AWS</span></td>
+                  <td>AWS</td>
+                  <td>Rollover applied</td>
                   <td class="amount">$41,344.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag azure">Azure</span></td>
+                  <td>Azure</td>
+                  <td>Rollover applied</td>
                   <td class="amount">$20,672.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag gcp">GCP</span></td>
+                  <td>GCP</td>
+                  <td>Rollover applied</td>
                   <td class="amount">$83.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag sap">SAP</span></td>
+                  <td>SAP</td>
+                  <td>Rollover applied</td>
                   <td class="amount">$901.00</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3"><strong>Total Consumed</strong></td>
-                  <td class="amount"><strong>$63,000.00</strong></td>
-                </tr>
-              </tfoot>
             </table>
+            
+            <!-- Pagination -->
+            <div class="ledger-pagination">
+              <button class="page-btn active">1</button>
+            </div>
           </div>
           
         </div>
       </div>
 
       <!-- Bucket Card 3: Prepaid Rollover -->
-      <div class="commit-bucket-card">
+      <div class="commit-bucket-card expandable">
         <div class="bucket-card-header">
           <div class="bucket-tags">
             <span class="bucket-name">Prepaid Rollover</span>
@@ -1914,82 +2044,138 @@
             </div>
           </div>
 
-          <!-- Ledger Entries -->
-          <div class="bucket-ledger-section">
-            <h4 class="bucket-ledger-title">Ledger Entries by Cloud</h4>
-            <table class="bucket-ledger-table">
+          <!-- Billing Schedule & Ledger Toggle -->
+          <div class="bucket-footer-row">
+            <div class="billing-schedule-info">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <button class="ledger-toggle-btn" onclick="toggleLedgerEntries(this)">
+              <span>Ledger Entries</span>
+              <span class="ledger-count">8</span>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Expandable Ledger Entries -->
+          <div class="bucket-ledger-expanded" style="display: none;">
+            <!-- Filters -->
+            <div class="ledger-filters">
+              <div class="ledger-filter-left">
+                <div class="search-filter small">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter small">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown small">
+                  <option value="">Cloud</option>
+                  <option>AWS</option>
+                  <option>Azure</option>
+                  <option>GCP</option>
+                  <option>SAP</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Ledger Table -->
+            <table class="bucket-ledger-table expanded">
               <thead>
                 <tr>
+                  <th class="manual-col">Manual</th>
                   <th>From Date</th>
                   <th>To Date</th>
                   <th>Cloud</th>
+                  <th>Reason</th>
                   <th style="text-align: right;">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag aws">AWS</span></td>
+                  <td>AWS</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$12,416.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag azure">Azure</span></td>
+                  <td>Azure</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$6,208.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag gcp">GCP</span></td>
+                  <td>GCP</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$25.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag sap">SAP</span></td>
+                  <td>SAP</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$263.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag aws">AWS</span></td>
+                  <td>AWS</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$714.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag azure">Azure</span></td>
+                  <td>Azure</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$357.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag gcp">GCP</span></td>
+                  <td>GCP</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$2.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>Jun 1, 2025</td>
                   <td>Jun 30, 2025</td>
-                  <td><span class="cloud-tag sap">SAP</span></td>
+                  <td>SAP</td>
+                  <td>Prepaid rollover applied</td>
                   <td class="amount">$15.00</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3"><strong>Total Consumed</strong></td>
-                  <td class="amount"><strong>$20,000.00</strong></td>
-                </tr>
-              </tfoot>
             </table>
+            
+            <!-- Pagination -->
+            <div class="ledger-pagination">
+              <button class="page-btn active">1</button>
+            </div>
           </div>
           
         </div>
       </div>
 
       <!-- Bucket Card 4: One Time Discount -->
-      <div class="commit-bucket-card">
+      <div class="commit-bucket-card expandable">
         <div class="bucket-card-header">
           <div class="bucket-tags">
             <span class="bucket-name">One Time Discount</span>
@@ -2023,58 +2209,106 @@
             </div>
           </div>
 
-          <!-- Ledger Entries -->
-          <div class="bucket-ledger-section">
-            <h4 class="bucket-ledger-title">Ledger Entries by Cloud</h4>
-            <table class="bucket-ledger-table">
+          <!-- Billing Schedule & Ledger Toggle -->
+          <div class="bucket-footer-row">
+            <div class="billing-schedule-info">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <button class="ledger-toggle-btn" onclick="toggleLedgerEntries(this)">
+              <span>Ledger Entries</span>
+              <span class="ledger-count">4</span>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Expandable Ledger Entries -->
+          <div class="bucket-ledger-expanded" style="display: none;">
+            <!-- Filters -->
+            <div class="ledger-filters">
+              <div class="ledger-filter-left">
+                <div class="search-filter small">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter small">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown small">
+                  <option value="">Cloud</option>
+                  <option>AWS</option>
+                  <option>Azure</option>
+                  <option>GCP</option>
+                  <option>SAP</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Ledger Table -->
+            <table class="bucket-ledger-table expanded">
               <thead>
                 <tr>
+                  <th class="manual-col">Manual</th>
                   <th>From Date</th>
                   <th>To Date</th>
                   <th>Cloud</th>
+                  <th>Reason</th>
                   <th style="text-align: right;">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag aws">AWS</span></td>
+                  <td>AWS</td>
+                  <td>OTD applied</td>
                   <td class="amount">$26,260.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag azure">Azure</span></td>
+                  <td>Azure</td>
+                  <td>OTD applied</td>
                   <td class="amount">$13,130.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag gcp">GCP</span></td>
+                  <td>GCP</td>
+                  <td>OTD applied</td>
                   <td class="amount">$53.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag sap">SAP</span></td>
+                  <td>SAP</td>
+                  <td>OTD applied</td>
                   <td class="amount">$557.00</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3"><strong>Total Consumed</strong></td>
-                  <td class="amount"><strong>$40,000.00</strong></td>
-                </tr>
-              </tfoot>
             </table>
+            
+            <!-- Pagination -->
+            <div class="ledger-pagination">
+              <button class="page-btn active">1</button>
+            </div>
           </div>
           
         </div>
       </div>
 
       <!-- Bucket Card 5: Comp Usage -->
-      <div class="commit-bucket-card">
+      <div class="commit-bucket-card expandable">
         <div class="bucket-card-header">
           <div class="bucket-tags">
             <span class="bucket-name">Comp Usage</span>
@@ -2108,51 +2342,99 @@
             </div>
           </div>
 
-          <!-- Ledger Entries -->
-          <div class="bucket-ledger-section">
-            <h4 class="bucket-ledger-title">Ledger Entries by Cloud</h4>
-            <table class="bucket-ledger-table">
+          <!-- Billing Schedule & Ledger Toggle -->
+          <div class="bucket-footer-row">
+            <div class="billing-schedule-info">
+              <span class="schedule-label">Billing Schedule:</span>
+              <span class="schedule-value">--</span>
+            </div>
+            <button class="ledger-toggle-btn" onclick="toggleLedgerEntries(this)">
+              <span>Ledger Entries</span>
+              <span class="ledger-count">4</span>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Expandable Ledger Entries -->
+          <div class="bucket-ledger-expanded" style="display: none;">
+            <!-- Filters -->
+            <div class="ledger-filters">
+              <div class="ledger-filter-left">
+                <div class="search-filter small">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Ledger Entries">
+                </div>
+                <label class="toggle-filter small">
+                  <input type="checkbox">
+                  <span class="toggle-label">Manual Adjustments Only</span>
+                </label>
+                <select class="filter-dropdown small">
+                  <option value="">Cloud</option>
+                  <option>AWS</option>
+                  <option>Azure</option>
+                  <option>GCP</option>
+                  <option>SAP</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Ledger Table -->
+            <table class="bucket-ledger-table expanded">
               <thead>
                 <tr>
+                  <th class="manual-col">Manual</th>
                   <th>From Date</th>
                   <th>To Date</th>
                   <th>Cloud</th>
+                  <th>Reason</th>
                   <th style="text-align: right;">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag aws">AWS</span></td>
+                  <td>AWS</td>
+                  <td>Comp usage credits applied</td>
                   <td class="amount">$9,848.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag azure">Azure</span></td>
+                  <td>Azure</td>
+                  <td>Comp usage credits applied</td>
                   <td class="amount">$4,924.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag gcp">GCP</span></td>
+                  <td>GCP</td>
+                  <td>Comp usage credits applied</td>
                   <td class="amount">$20.00</td>
                 </tr>
                 <tr>
+                  <td class="manual-col"></td>
                   <td>May 9, 2025</td>
                   <td>May 31, 2025</td>
-                  <td><span class="cloud-tag sap">SAP</span></td>
+                  <td>SAP</td>
+                  <td>Comp usage credits applied</td>
                   <td class="amount">$208.00</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3"><strong>Total Consumed</strong></td>
-                  <td class="amount"><strong>$15,000.00</strong></td>
-                </tr>
-              </tfoot>
             </table>
+            
+            <!-- Pagination -->
+            <div class="ledger-pagination">
+              <button class="page-btn active">1</button>
+            </div>
           </div>
           
         </div>

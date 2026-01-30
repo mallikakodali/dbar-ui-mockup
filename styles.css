@@ -2754,29 +2754,130 @@ td.indent {
   font-size: 13px;
 }
 
-/* Bucket Ledger Section */
-.bucket-ledger-section {
+/* Bucket Footer Row */
+.bucket-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--border-light);
 }
 
-.bucket-ledger-title {
+.billing-schedule-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.billing-schedule-info .schedule-label {
   font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.billing-schedule-info .schedule-value {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Ledger Toggle Button */
+.ledger-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ledger-toggle-btn:hover {
+  background: var(--bg-light);
+  border-color: var(--text-muted);
+}
+
+.ledger-toggle-btn.expanded {
+  background: var(--bg-light);
+}
+
+.ledger-toggle-btn.expanded .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.ledger-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--bg-gray);
+  border-radius: 10px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--text-secondary);
+}
+
+.chevron-icon {
+  transition: transform 0.2s ease;
+}
+
+/* Expanded Ledger Section */
+.bucket-ledger-expanded {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Ledger Filters */
+.ledger-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 12px;
 }
 
+.ledger-filter-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-filter.small {
+  padding: 6px 10px;
+}
+
+.search-filter.small input {
+  font-size: 12px;
+}
+
+.toggle-filter.small {
+  font-size: 12px;
+}
+
+.toggle-filter.small .toggle-label {
+  font-size: 12px;
+}
+
+.filter-dropdown.small {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* Bucket Ledger Table */
 .bucket-ledger-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .bucket-ledger-table th,
 .bucket-ledger-table td {
-  padding: 8px 10px;
+  padding: 10px 12px;
   text-align: left;
   border-bottom: 1px solid var(--border-light);
 }
@@ -2785,14 +2886,22 @@ td.indent {
   background: var(--bg-light);
   font-weight: 600;
   color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.bucket-ledger-table.expanded th {
   font-size: 11px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .bucket-ledger-table td.amount {
   text-align: right;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
   font-weight: 500;
+}
+
+.bucket-ledger-table td.amount.negative {
+  color: var(--text-error);
 }
 
 .bucket-ledger-table tfoot td {
@@ -2803,6 +2912,16 @@ td.indent {
 
 .bucket-ledger-table tfoot td.amount {
   color: var(--text-primary);
+}
+
+/* Manual Column */
+.bucket-ledger-table .manual-col {
+  width: 60px;
+  text-align: center;
+}
+
+.manual-check {
+  display: inline-block;
 }
 
 /* Cloud Tags */
