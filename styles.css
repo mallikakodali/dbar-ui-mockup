@@ -2754,6 +2754,86 @@ td.indent {
   font-size: 13px;
 }
 
+/* Bucket Ledger Section */
+.bucket-ledger-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.bucket-ledger-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.bucket-ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.bucket-ledger-table th,
+.bucket-ledger-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.bucket-ledger-table th {
+  background: var(--bg-light);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.bucket-ledger-table td.amount {
+  text-align: right;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-weight: 500;
+}
+
+.bucket-ledger-table tfoot td {
+  background: var(--bg-light);
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.bucket-ledger-table tfoot td.amount {
+  color: var(--text-primary);
+}
+
+/* Cloud Tags */
+.cloud-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cloud-tag.aws {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.cloud-tag.azure {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.cloud-tag.gcp {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.cloud-tag.sap {
+  background: #F3E8FF;
+  color: #6B21A8;
+}
+
 .bucket-footer {
   display: flex;
   justify-content: space-between;
