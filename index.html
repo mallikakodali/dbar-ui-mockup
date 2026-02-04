@@ -670,8 +670,20 @@
 
       <!-- Year End Reconciliation -->
       <section class="section">
-        <h2 class="section-title">Year End Reconciliation</h2>
-        <p class="section-description">Contract Year 1 annual reconciliation (May 2025 - May 2026).</p>
+        <div class="section-header-row">
+          <div>
+            <h2 class="section-title">Year End Reconciliation</h2>
+            <p class="section-description">Annual reconciliation at each contract year end.</p>
+          </div>
+          <div class="recon-filter">
+            <label class="filter-label">Contract Year:</label>
+            <select id="yearEndFilter" class="filter-dropdown year-filter">
+              <option value="year-1" selected>Year 1 (May 2025 - May 2026)</option>
+              <option value="year-2">Year 2 (May 2026 - May 2027)</option>
+              <option value="year-3">Year 3 (May 2027 - May 2028)</option>
+            </select>
+          </div>
+        </div>
         
         <div class="recon-two-pane-grid">
           <!-- Recon Breakdown Pane -->
