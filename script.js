@@ -444,16 +444,326 @@ function toggleLedgerEntries(button) {
 // Make toggleLedgerEntries available globally
 window.toggleLedgerEntries = toggleLedgerEntries;
 
-// Toggle Invoice Detail in Billings tab
-function toggleInvoiceDetail(row) {
-  const detailRow = row.nextElementSibling;
-  
-  if (detailRow && detailRow.classList.contains('invoice-detail-row')) {
-    const isHidden = detailRow.style.display === 'none' || detailRow.style.display === '';
-    detailRow.style.display = isHidden ? 'table-row' : 'none';
-    row.classList.toggle('expanded', isHidden);
+// Billing Detail Modal Data
+const billingDetailData = {
+  'commit-db-y1': {
+    id: 'db-commit-2025-001',
+    status: 'Finalized',
+    statusClass: 'finalized',
+    billingPeriod: 'May 9 - 31, 2025',
+    postingPeriod: 'May 2025',
+    postingDate: 'May 9, 2025',
+    billingDate: 'May 9, 2025',
+    nsIdentifier: '--',
+    nsSalesOrderId: '--',
+    nsClass: 'MC',
+    nsIntegration: 'Will NOT integrate to NetSuite',
+    nsIntegrationClass: 'no-integrate',
+    reseller: '--',
+    isCommit: true,
+    items: [
+      { sku: 'DB-COMMIT-PREPAID', desc: 'Databricks Commit - Prepaid Installment', cloud: 'All', qty: '1.000', price: '$1,082,000.00', gross: '$1,082,000.00' }
+    ],
+    totalItems: 1,
+    totalGross: '$1,082,000.00'
+  },
+  'commit-aws-y1': {
+    id: 'aws-commit-2025-001',
+    status: 'Finalized',
+    statusClass: 'finalized',
+    billingPeriod: 'May 9 - 31, 2025',
+    postingPeriod: 'May 2025',
+    postingDate: 'May 9, 2025',
+    billingDate: 'May 9, 2025',
+    nsIdentifier: '--',
+    nsSalesOrderId: '--',
+    nsClass: 'MC',
+    nsIntegration: 'Will NOT integrate to NetSuite',
+    nsIntegrationClass: 'no-integrate',
+    reseller: '--',
+    isCommit: true,
+    items: [
+      { sku: 'DB-COMMIT-PREPAID-AWS', desc: 'Databricks Commit - AWS Marketplace Prepaid', cloud: 'AWS', qty: '1.000', price: '$1,000,000.00', gross: '$1,000,000.00' }
+    ],
+    totalItems: 1,
+    totalGross: '$1,000,000.00'
+  },
+  'indeal-burst-feb': {
+    id: 'burst-2026-002',
+    status: 'Draft',
+    statusClass: 'draft',
+    billingPeriod: 'Feb 1 - 28, 2026',
+    postingPeriod: 'Feb 2026',
+    postingDate: 'Feb 28, 2026',
+    billingDate: 'Mar 1, 2026',
+    nsIdentifier: '--',
+    nsSalesOrderId: '17292138',
+    nsClass: 'MC',
+    nsIntegration: 'Will integrate to NetSuite',
+    nsIntegrationClass: 'integrate',
+    reseller: '--',
+    isCommit: false,
+    items: [
+      { sku: 'DB-BURST-COMPUTE', desc: 'Premium All-Purpose Compute', cloud: 'AWS', qty: '12,456.231', price: '$0.25', gross: '$3,114.06', net: '$3,114.06' },
+      { sku: 'DB-BURST-COMPUTE-PHT', desc: 'Premium All-Purpose Compute (Photon)', cloud: 'AWS', qty: '5,373.420', price: '$0.25', gross: '$1,343.36', net: '$1,343.36' },
+      { sku: 'DB-BURST-JOBS', desc: 'Premium Jobs Compute', cloud: 'AWS', qty: '1,074.481', price: '$0.06', gross: '$64.47', net: '$64.47' },
+      { sku: 'DB-BURST-SERVERLESS', desc: 'Premium Serverless Compute', cloud: 'AWS', qty: '2,916.821', price: '$0.17', gross: '$495.86', net: '$495.86' },
+      { sku: 'DB-BURST-SQL', desc: 'Premium Serverless SQL Compute', cloud: 'AWS', qty: '0.198', price: '$0.36', gross: '$0.07', net: '$0.07' },
+      { sku: 'DB-BURST-STORAGE', desc: 'Premium Databricks Storage', cloud: 'AWS', qty: '0.642', price: '$1.08', gross: '$0.69', net: '$0.69' }
+    ],
+    totalItems: 6,
+    totalGross: '$5,018.46',
+    totalNet: '$5,018.46'
+  },
+  'drawdown-aws-jan': {
+    id: 'drawdown-2026-001',
+    status: 'Finalized',
+    statusClass: 'finalized',
+    billingPeriod: 'Jan 1 - 31, 2026',
+    postingPeriod: 'Jan 2026',
+    postingDate: 'Jan 31, 2026',
+    billingDate: 'Feb 1, 2026',
+    nsIdentifier: '--',
+    nsSalesOrderId: '17292140',
+    nsClass: 'MC',
+    nsIntegration: 'Will integrate to NetSuite',
+    nsIntegrationClass: 'integrate',
+    reseller: '--',
+    isCommit: false,
+    isDrawdown: true,
+    items: [
+      { sku: 'AWS-PREMIUM-COMPUTE', desc: 'AWS Premium All-Purpose Compute', cloud: 'AWS', qty: '1,543,892.412', price: '$0.25', gross: '$385,973.10', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-COMPUTE-PHT', desc: 'AWS Premium All-Purpose Compute (Photon)', cloud: 'AWS', qty: '423,156.831', price: '$0.25', gross: '$105,789.21', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS', desc: 'AWS Premium Jobs Compute', cloud: 'AWS', qty: '1,874,481.000', price: '$0.06', gross: '$112,468.86', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS-PHT', desc: 'AWS Premium Jobs Compute (Photon)', cloud: 'AWS', qty: '213,358.000', price: '$0.05', gross: '$10,667.90', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '241,182.000', price: '$0.17', gross: '$41,000.94', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '59,551.000', price: '$0.36', gross: '$21,438.36', net: '$0.00' },
+      { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '129,789.231', price: '$0.02', gross: '$2,595.78', net: '$0.00' }
+    ],
+    totalItems: 7,
+    totalGross: '$679,934.18',
+    totalNet: '$0.00'
+  },
+  'drawdown-aws-feb': {
+    id: 'drawdown-2026-002',
+    status: 'Draft',
+    statusClass: 'draft',
+    billingPeriod: 'Feb 1 - 28, 2026',
+    postingPeriod: 'Feb 2026',
+    postingDate: 'Feb 28, 2026',
+    billingDate: 'Mar 1, 2026',
+    nsIdentifier: '--',
+    nsSalesOrderId: '--',
+    nsClass: 'MC',
+    nsIntegration: 'Will integrate to NetSuite',
+    nsIntegrationClass: 'integrate',
+    reseller: '--',
+    isCommit: false,
+    isDrawdown: true,
+    items: [
+      { sku: 'AWS-PREMIUM-COMPUTE', desc: 'AWS Premium All-Purpose Compute', cloud: 'AWS', qty: '287,421.512', price: '$0.25', gross: '$71,855.38', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-COMPUTE-PHT', desc: 'AWS Premium All-Purpose Compute (Photon)', cloud: 'AWS', qty: '78,234.123', price: '$0.25', gross: '$19,558.53', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS', desc: 'AWS Premium Jobs Compute', cloud: 'AWS', qty: '312,456.000', price: '$0.06', gross: '$18,747.36', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS-PHT', desc: 'AWS Premium Jobs Compute (Photon)', cloud: 'AWS', qty: '45,678.000', price: '$0.05', gross: '$2,283.90', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '42,891.000', price: '$0.17', gross: '$7,291.47', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '5,234.000', price: '$0.36', gross: '$1,884.24', net: '$0.00' },
+      { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '10,167.500', price: '$0.02', gross: '$203.35', net: '$0.00' }
+    ],
+    totalItems: 7,
+    totalGross: '$121,824.38',
+    totalNet: '$0.00'
+  },
+  'postpaid-azure-dec': {
+    id: 'postpaid-2025-012',
+    status: 'Finalized',
+    statusClass: 'finalized',
+    billingPeriod: 'Dec 1 - 31, 2025',
+    postingPeriod: 'Dec 2025',
+    postingDate: 'Dec 31, 2025',
+    billingDate: 'Jan 1, 2026',
+    nsIdentifier: '--',
+    nsSalesOrderId: '17291856',
+    nsClass: 'MC',
+    nsIntegration: 'Will integrate to NetSuite',
+    nsIntegrationClass: 'integrate',
+    reseller: '--',
+    isCommit: false,
+    items: [
+      { sku: 'AZURE-PREMIUM-COMPUTE', desc: 'Azure Premium All-Purpose Compute', cloud: 'Azure', qty: '98,456.123', price: '$0.25', gross: '$24,614.03', net: '$24,614.03' },
+      { sku: 'AZURE-PREMIUM-JOBS', desc: 'Azure Premium Jobs Compute', cloud: 'Azure', qty: '156,234.000', price: '$0.06', gross: '$9,374.04', net: '$9,374.04' },
+      { sku: 'AZURE-SERVERLESS', desc: 'Azure Premium Serverless Compute', cloud: 'Azure', qty: '24,891.000', price: '$0.17', gross: '$4,231.47', net: '$4,231.47' },
+      { sku: 'AZURE-STORAGE', desc: 'Azure Premium Databricks Storage', cloud: 'Azure', qty: '89,413.000', price: '$0.02', gross: '$1,788.26', net: '$1,788.26' }
+    ],
+    totalItems: 4,
+    totalGross: '$40,007.80',
+    totalNet: '$40,007.80'
+  },
+  'postpaid-direct-jan': {
+    id: 'postpaid-2026-001',
+    status: 'Sent',
+    statusClass: 'sent',
+    billingPeriod: 'Jan 1 - 31, 2026',
+    postingPeriod: 'Jan 2026',
+    postingDate: 'Jan 31, 2026',
+    billingDate: 'Feb 1, 2026',
+    nsIdentifier: '--',
+    nsSalesOrderId: '17292145',
+    nsClass: 'MC',
+    nsIntegration: 'Will integrate to NetSuite',
+    nsIntegrationClass: 'integrate',
+    reseller: '--',
+    isCommit: false,
+    items: [
+      { sku: 'DB-PREMIUM-COMPUTE', desc: 'Databricks Premium All-Purpose Compute', cloud: 'Direct', qty: '3,456.123', price: '$0.25', gross: '$864.03', net: '$864.03' },
+      { sku: 'DB-PREMIUM-JOBS', desc: 'Databricks Premium Jobs Compute', cloud: 'Direct', qty: '5,234.000', price: '$0.06', gross: '$314.04', net: '$314.04' },
+      { sku: 'DB-STORAGE', desc: 'Databricks Premium Storage', cloud: 'Direct', qty: '8,082.000', price: '$0.02', gross: '$161.64', net: '$161.64' }
+    ],
+    totalItems: 3,
+    totalGross: '$1,339.71',
+    totalNet: '$1,339.71'
+  },
+  'postpaid-azure-jan': {
+    id: 'postpaid-2026-002',
+    status: 'Finalized',
+    statusClass: 'finalized',
+    billingPeriod: 'Jan 1 - 31, 2026',
+    postingPeriod: 'Jan 2026',
+    postingDate: 'Jan 31, 2026',
+    billingDate: 'Feb 1, 2026',
+    nsIdentifier: '--',
+    nsSalesOrderId: '17292146',
+    nsClass: 'MC',
+    nsIntegration: 'Will integrate to NetSuite',
+    nsIntegrationClass: 'integrate',
+    reseller: '--',
+    isCommit: false,
+    items: [
+      { sku: 'AZURE-PREMIUM-COMPUTE', desc: 'Azure Premium All-Purpose Compute', cloud: 'Azure', qty: '102,345.678', price: '$0.25', gross: '$25,586.42', net: '$25,586.42' },
+      { sku: 'AZURE-PREMIUM-JOBS', desc: 'Azure Premium Jobs Compute', cloud: 'Azure', qty: '134,567.000', price: '$0.06', gross: '$8,074.02', net: '$8,074.02' },
+      { sku: 'AZURE-SERVERLESS', desc: 'Azure Premium Serverless Compute', cloud: 'Azure', qty: '21,456.000', price: '$0.17', gross: '$3,647.52', net: '$3,647.52' },
+      { sku: 'AZURE-STORAGE', desc: 'Azure Premium Databricks Storage', cloud: 'Azure', qty: '46,547.000', price: '$0.02', gross: '$930.94', net: '$930.94' }
+    ],
+    totalItems: 4,
+    totalGross: '$38,238.90',
+    totalNet: '$38,238.90'
+  },
+  'overage-azure-jan': {
+    id: 'overage-2026-001',
+    status: 'Finalized',
+    statusClass: 'finalized',
+    billingPeriod: 'Jan 1 - 31, 2026',
+    postingPeriod: 'Jan 2026',
+    postingDate: 'Jan 31, 2026',
+    billingDate: 'Feb 1, 2026',
+    nsIdentifier: '--',
+    nsSalesOrderId: '--',
+    nsClass: 'MC',
+    nsIntegration: 'Will integrate to NetSuite',
+    nsIntegrationClass: 'integrate',
+    reseller: '--',
+    isCommit: false,
+    items: [],
+    totalItems: 0,
+    totalGross: '$0.00',
+    totalNet: '$0.00'
   }
+};
+
+// Open Billing Detail Modal
+function openBillingDetail(event, billingKey) {
+  event.preventDefault();
+  
+  const data = billingDetailData[billingKey];
+  if (!data) return;
+  
+  const modal = document.getElementById('billingDetailModal');
+  
+  // Populate modal data
+  document.getElementById('modalBillingId').textContent = data.id;
+  document.getElementById('modalStatus').textContent = data.status;
+  document.getElementById('modalStatus').className = 'meta-badge ' + data.statusClass;
+  document.getElementById('modalBillingPeriod').textContent = data.billingPeriod;
+  document.getElementById('modalPostingPeriod').textContent = data.postingPeriod;
+  document.getElementById('modalPostingDate').textContent = data.postingDate;
+  document.getElementById('modalBillingDate').textContent = data.billingDate;
+  document.getElementById('modalNsIdentifier').textContent = data.nsIdentifier;
+  
+  if (data.nsSalesOrderId === '--') {
+    document.getElementById('modalNsSalesOrderId').innerHTML = '--';
+  } else {
+    document.getElementById('modalNsSalesOrderId').innerHTML = '<a href="#" class="info-link">' + data.nsSalesOrderId + ' <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>';
+  }
+  
+  document.getElementById('modalNsClass').textContent = data.nsClass;
+  document.getElementById('modalNsIntegration').textContent = data.nsIntegration;
+  document.getElementById('modalNsIntegration').className = 'modal-info-value ' + data.nsIntegrationClass;
+  document.getElementById('modalReseller').textContent = data.reseller;
+  
+  // Build billing items table
+  let tableHtml = '<table class="modal-billing-table"><thead><tr>';
+  tableHtml += '<th>SKU</th><th>Description</th><th>Cloud</th><th>Quantity</th><th>Unit Price</th><th>Gross Amount</th>';
+  if (!data.isCommit) {
+    tableHtml += '<th>Net Amount</th>';
+  }
+  tableHtml += '</tr></thead><tbody>';
+  
+  if (data.items.length === 0) {
+    const colspan = data.isCommit ? 6 : 7;
+    tableHtml += '<tr><td colspan="' + colspan + '" style="text-align: center; color: var(--text-muted); padding: 24px;">No billing items for this period</td></tr>';
+  } else {
+    data.items.forEach(item => {
+      tableHtml += '<tr>';
+      tableHtml += '<td>' + item.sku + '</td>';
+      tableHtml += '<td>' + item.desc + '</td>';
+      tableHtml += '<td>' + item.cloud + '</td>';
+      tableHtml += '<td class="number">' + item.qty + '</td>';
+      tableHtml += '<td class="amount">' + item.price + '</td>';
+      tableHtml += '<td class="amount">' + item.gross + '</td>';
+      if (!data.isCommit) {
+        tableHtml += '<td class="amount">' + (item.net || item.gross) + '</td>';
+      }
+      tableHtml += '</tr>';
+    });
+  }
+  
+  tableHtml += '</tbody><tfoot><tr>';
+  const footerColspan = data.isCommit ? 5 : 5;
+  tableHtml += '<td colspan="' + footerColspan + '" class="total-label">Total (' + data.totalItems + ' items):</td>';
+  tableHtml += '<td class="amount"><strong>' + data.totalGross + '</strong></td>';
+  if (!data.isCommit) {
+    tableHtml += '<td class="amount"><strong>' + (data.totalNet || data.totalGross) + '</strong></td>';
+  }
+  tableHtml += '</tr></tfoot></table>';
+  
+  document.getElementById('modalBillingTable').innerHTML = tableHtml;
+  
+  // Show modal
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
 
-// Make toggleInvoiceDetail available globally
-window.toggleInvoiceDetail = toggleInvoiceDetail;
+// Close Billing Detail Modal
+function closeBillingDetail() {
+  const modal = document.getElementById('billingDetailModal');
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Close modal on escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeBillingDetail();
+  }
+});
+
+// Close modal on backdrop click
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('billingDetailModal');
+  if (e.target === modal) {
+    closeBillingDetail();
+  }
+});
+
+// Make functions available globally
+window.openBillingDetail = openBillingDetail;
+window.closeBillingDetail = closeBillingDetail;

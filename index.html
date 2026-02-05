@@ -2814,7 +2814,7 @@
         </div>
 
         <!-- Invoices Table -->
-        <div class="billings-table expandable-billings">
+        <div class="billings-table">
           <table>
             <thead>
               <tr>
@@ -2823,299 +2823,273 @@
                 <th>Posting Date</th>
                 <th>Billing Date</th>
                 <th>Tags</th>
-                <th>Billing Channel</th>
-                <th>Amount</th>
+                <th>Type</th>
+                <th>Billing Source</th>
+                <th>Status</th>
+                <th>Gross Amount</th>
+                <th>Net Amount</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Invoice 1: Prepaid - Databricks -->
-              <tr class="invoice-row" onclick="toggleInvoiceDetail(this)">
-                <td>1</td>
-                <td class="period-cell clickable">
-                  <svg class="expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 18l6-6-6-6"/>
-                  </svg>
-                  <span class="period-text">May 9 - 31, 2025</span>
+              <!-- Commit Installments - Year 1 -->
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'commit-db-y1')">May 9 - 31, 2025</a>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
                 <td>May 9, 2025</td>
                 <td>May 9, 2025</td>
-                <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>Databricks Direct</td>
+                <td><span class="tag prepaid-tag">Commit</span></td>
+                <td>Commit Installment</td>
+                <td>Direct</td>
+                <td><span class="status-tag finalized">Finalized</span></td>
+                <td class="amount">$1,082,000.00</td>
                 <td class="amount">$1,082,000.00</td>
               </tr>
-              <tr class="invoice-detail-row" style="display: none;">
-                <td colspan="7">
-                  <div class="invoice-detail-content">
-                    <!-- Billing Information -->
-                    <div class="billing-info-section">
-                      <h4 class="detail-section-title">Billing Information</h4>
-                      <div class="billing-info-grid">
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Identifier</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Sales Order ID</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Class</span>
-                          <span class="billing-info-value">MC</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Integration</span>
-                          <span class="billing-info-value no-integrate">Will NOT integrate to NetSuite</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">Reseller</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Billing Items -->
-                    <div class="billing-items-section">
-                      <h4 class="detail-section-title">Billing Items</h4>
-                      <div class="billing-items-filters">
-                        <div class="search-filter small">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="M21 21l-4.35-4.35"/>
-                          </svg>
-                          <input type="text" placeholder="Filter Billing Items">
-                        </div>
-                        <select class="filter-dropdown small">
-                          <option value="">Cloud</option>
-                          <option>AWS</option>
-                          <option>Azure</option>
-                          <option>GCP</option>
-                        </select>
-                      </div>
-                      <table class="billing-items-table">
-                        <thead>
-                          <tr>
-                            <th>SKU</th>
-                            <th>Description</th>
-                            <th>Cloud</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Gross Amount</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>DB-COMMIT-PREPAID</td>
-                            <td>Databricks Commit - Prepaid Installment</td>
-                            <td>All</td>
-                            <td class="number">1.000</td>
-                            <td class="amount">$1,082,000.00</td>
-                            <td class="amount">$1,082,000.00</td>
-                          </tr>
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <td colspan="5" class="total-label">Total (1 item):</td>
-                            <td class="amount"><strong>$1,082,000.00</strong></td>
-                          </tr>
-                        </tfoot>
-                      </table>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-
-              <!-- Invoice 2: Prepaid - AWS MP -->
-              <tr class="invoice-row" onclick="toggleInvoiceDetail(this)">
-                <td>2</td>
-                <td class="period-cell clickable">
-                  <svg class="expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 18l6-6-6-6"/>
-                  </svg>
-                  <span class="period-text">May 9 - 31, 2025</span>
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'commit-aws-y1')">May 9 - 31, 2025</a>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
                 <td>May 9, 2025</td>
                 <td>May 9, 2025</td>
-                <td><span class="tag prepaid-tag">Prepaid</span></td>
-                <td>AWS Marketplace</td>
+                <td><span class="tag prepaid-tag">Commit</span></td>
+                <td>Commit Installment</td>
+                <td>AWS</td>
+                <td><span class="status-tag finalized">Finalized</span></td>
+                <td class="amount">$1,000,000.00</td>
                 <td class="amount">$1,000,000.00</td>
               </tr>
-              <tr class="invoice-detail-row" style="display: none;">
-                <td colspan="7">
-                  <div class="invoice-detail-content">
-                    <!-- Billing Information -->
-                    <div class="billing-info-section">
-                      <h4 class="detail-section-title">Billing Information</h4>
-                      <div class="billing-info-grid">
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Identifier</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Sales Order ID</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Class</span>
-                          <span class="billing-info-value">MC</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Integration</span>
-                          <span class="billing-info-value no-integrate">Will NOT integrate to NetSuite</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">Reseller</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Billing Items -->
-                    <div class="billing-items-section">
-                      <h4 class="detail-section-title">Billing Items</h4>
-                      <div class="billing-items-filters">
-                        <div class="search-filter small">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="M21 21l-4.35-4.35"/>
-                          </svg>
-                          <input type="text" placeholder="Filter Billing Items">
-                        </div>
-                        <select class="filter-dropdown small">
-                          <option value="">Cloud</option>
-                          <option>AWS</option>
-                          <option>Azure</option>
-                          <option>GCP</option>
-                        </select>
-                      </div>
-                      <table class="billing-items-table">
-                        <thead>
-                          <tr>
-                            <th>SKU</th>
-                            <th>Description</th>
-                            <th>Cloud</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Gross Amount</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>DB-COMMIT-PREPAID-AWS</td>
-                            <td>Databricks Commit - AWS Marketplace Prepaid</td>
-                            <td>AWS</td>
-                            <td class="number">1.000</td>
-                            <td class="amount">$1,000,000.00</td>
-                            <td class="amount">$1,000,000.00</td>
-                          </tr>
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <td colspan="5" class="total-label">Total (1 item):</td>
-                            <td class="amount"><strong>$1,000,000.00</strong></td>
-                          </tr>
-                        </tfoot>
-                      </table>
-                    </div>
-                  </div>
-                </td>
-              </tr>
 
-              <!-- Invoice 3: In-deal Burst Example (for illustration) -->
-              <tr class="invoice-row" onclick="toggleInvoiceDetail(this)">
-                <td>3</td>
-                <td class="period-cell clickable">
-                  <svg class="expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 18l6-6-6-6"/>
-                  </svg>
-                  <span class="period-text">Jun 1 - 30, 2025</span>
+              <!-- Postpaid Usage -->
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'postpaid-azure-dec')">Dec 1 - 31, 2025</a>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
-                <td>Jul 1, 2025</td>
-                <td>Jul 5, 2025</td>
-                <td><span class="tag in-deal">In-deal Burst</span></td>
-                <td>Databricks Direct</td>
+                <td>Dec 31, 2025</td>
+                <td>Jan 1, 2026</td>
+                <td><span class="tag postpaid-usage">Postpaid Usage</span></td>
+                <td>Usage</td>
+                <td>AZURE</td>
+                <td><span class="status-tag finalized">Finalized</span></td>
+                <td class="amount">$40,007.80</td>
+                <td class="amount">$40,007.80</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'postpaid-direct-jan')">Jan 1 - 31, 2026</a>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jan 31, 2026</td>
+                <td>Feb 1, 2026</td>
+                <td><span class="tag postpaid-usage">Postpaid Usage</span></td>
+                <td>Usage</td>
+                <td>Direct</td>
+                <td><span class="status-tag sent">Sent</span></td>
+                <td class="amount">$1,339.71</td>
+                <td class="amount">$1,339.71</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'postpaid-azure-jan')">Jan 1 - 31, 2026</a>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jan 31, 2026</td>
+                <td>Feb 1, 2026</td>
+                <td><span class="tag postpaid-usage">Postpaid Usage</span></td>
+                <td>Usage</td>
+                <td>AZURE</td>
+                <td><span class="status-tag finalized">Finalized</span></td>
+                <td class="amount">$38,238.90</td>
+                <td class="amount">$38,238.90</td>
+              </tr>
+
+              <!-- Overage Usage -->
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'overage-azure-jan')">Jan 1 - 31, 2026</a>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jan 31, 2026</td>
+                <td>Feb 1, 2026</td>
+                <td><span class="tag overage">Overage Usage</span></td>
+                <td>Usage</td>
+                <td>AZURE</td>
+                <td><span class="status-tag finalized">Finalized</span></td>
+                <td class="amount">$0.00</td>
                 <td class="amount">$0.00</td>
               </tr>
-              <tr class="invoice-detail-row" style="display: none;">
-                <td colspan="7">
-                  <div class="invoice-detail-content">
-                    <!-- Billing Information -->
-                    <div class="billing-info-section">
-                      <h4 class="detail-section-title">Billing Information</h4>
-                      <div class="billing-info-grid">
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Identifier</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Sales Order ID</span>
-                          <span class="billing-info-value"><a href="#" class="info-link">17292138 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Class</span>
-                          <span class="billing-info-value">MC</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">NetSuite Integration</span>
-                          <span class="billing-info-value integrate">Will integrate to NetSuite</span>
-                        </div>
-                        <div class="billing-info-row">
-                          <span class="billing-info-label">Reseller</span>
-                          <span class="billing-info-value">--</span>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Billing Items -->
-                    <div class="billing-items-section">
-                      <h4 class="detail-section-title">Billing Items</h4>
-                      <div class="billing-items-filters">
-                        <div class="search-filter small">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="M21 21l-4.35-4.35"/>
-                          </svg>
-                          <input type="text" placeholder="Filter Billing Items">
-                        </div>
-                        <select class="filter-dropdown small">
-                          <option value="">Cloud</option>
-                          <option>AWS</option>
-                          <option>Azure</option>
-                          <option>GCP</option>
-                        </select>
-                      </div>
-                      <table class="billing-items-table burst-table">
-                        <thead>
-                          <tr>
-                            <th>SKU</th>
-                            <th>Description</th>
-                            <th>Cloud</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Gross Amount</th>
-                            <th>Net Amount</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="empty-burst-row">
-                            <td colspan="7" class="empty-cell">No burst billing items for this period</td>
-                          </tr>
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <td colspan="5" class="total-label">Total (0 items):</td>
-                            <td class="amount"><strong>$0.00</strong></td>
-                            <td class="amount"><strong>$0.00</strong></td>
-                          </tr>
-                        </tfoot>
-                      </table>
-                    </div>
-                  </div>
+
+              <!-- In-Deal Burst with illustrative data -->
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'indeal-burst-feb')">Feb 1 - 28, 2026</a>
+                  <span class="adjustments-count">(0 adjustments)</span>
                 </td>
+                <td>Feb 28, 2026</td>
+                <td>Mar 1, 2026</td>
+                <td><span class="tag in-deal">In-deal Burst</span></td>
+                <td>Usage</td>
+                <td>Direct</td>
+                <td><span class="status-tag draft">Draft</span></td>
+                <td class="amount">$5,018.46</td>
+                <td class="amount">$5,018.46</td>
+              </tr>
+
+              <!-- Drawdown Statements -->
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'drawdown-aws-jan')">Jan 1 - 31, 2026</a>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jan 31, 2026</td>
+                <td>Feb 1, 2026</td>
+                <td><span class="tag drawdown">Drawdown Statement</span></td>
+                <td>Usage</td>
+                <td>AWS</td>
+                <td><span class="status-tag finalized">Finalized</span></td>
+                <td class="amount">$679,934.18</td>
+                <td class="amount">$0.00</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="period-cell">
+                  <a href="#" class="period-link" onclick="openBillingDetail(event, 'drawdown-aws-feb')">Feb 1 - 28, 2026</a>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Feb 28, 2026</td>
+                <td>Mar 1, 2026</td>
+                <td><span class="tag drawdown">Drawdown Statement</span></td>
+                <td>Usage</td>
+                <td>AWS</td>
+                <td><span class="status-tag draft">Draft</span></td>
+                <td class="amount">$121,824.38</td>
+                <td class="amount">$0.00</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
+
+      <!-- Billing Detail Modal -->
+      <div id="billingDetailModal" class="billing-modal" style="display: none;">
+        <div class="billing-modal-content">
+          <div class="billing-modal-header">
+            <div class="modal-header-left">
+              <h2 class="modal-title">Billing #<span id="modalBillingId">a6a47196-f1b1-399f-b159-c32935fc0efa</span></h2>
+              <div class="modal-meta">
+                <span class="meta-badge main">Main</span>
+                <span class="meta-badge draft" id="modalStatus">Draft</span>
+              </div>
+            </div>
+            <div class="modal-header-right">
+              <button class="modal-close-btn" onclick="closeBillingDetail()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="modal-date-cards">
+            <div class="modal-date-card">
+              <div class="date-card-label">Billing Period</div>
+              <div class="date-card-value" id="modalBillingPeriod">Feb 1 - 28, 2026</div>
+            </div>
+            <div class="modal-date-card">
+              <div class="date-card-label">Posting Period</div>
+              <div class="date-card-value" id="modalPostingPeriod">Feb 2026</div>
+            </div>
+            <div class="modal-date-card">
+              <div class="date-card-label">Posting Date</div>
+              <div class="date-card-value" id="modalPostingDate">Feb 28, 2026</div>
+            </div>
+            <div class="modal-date-card">
+              <div class="date-card-label">Billing Date</div>
+              <div class="date-card-value" id="modalBillingDate">Mar 1, 2026</div>
+            </div>
+          </div>
+
+          <div class="modal-tabs">
+            <button class="modal-tab active">Overview</button>
+            <button class="modal-tab">Billing Chain</button>
+          </div>
+
+          <div class="modal-body">
+            <h3 class="modal-section-title">Overview</h3>
+            
+            <!-- Billing Information -->
+            <div class="modal-info-section">
+              <h4 class="modal-info-title">Billing Information</h4>
+              <div class="modal-info-grid">
+                <div class="modal-info-row">
+                  <span class="modal-info-label">NetSuite Identifier</span>
+                  <span class="modal-info-value" id="modalNsIdentifier">--</span>
+                </div>
+                <div class="modal-info-row">
+                  <span class="modal-info-label">NetSuite Sales Order ID</span>
+                  <span class="modal-info-value" id="modalNsSalesOrderId"><a href="#" class="info-link">17292138 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></span>
+                </div>
+                <div class="modal-info-row">
+                  <span class="modal-info-label">NetSuite Class</span>
+                  <span class="modal-info-value" id="modalNsClass">MC</span>
+                </div>
+                <div class="modal-info-row">
+                  <span class="modal-info-label">NetSuite Integration</span>
+                  <span class="modal-info-value" id="modalNsIntegration">Will integrate to NetSuite</span>
+                </div>
+                <div class="modal-info-row">
+                  <span class="modal-info-label">Reseller</span>
+                  <span class="modal-info-value" id="modalReseller">--</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Change Metadata -->
+            <div class="modal-info-section">
+              <h4 class="modal-info-title">Change Metadata</h4>
+              <div class="modal-info-grid">
+                <div class="modal-info-row">
+                  <span class="modal-info-label">Notes</span>
+                  <span class="modal-info-value">--</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Billing Items -->
+            <div class="modal-billing-section">
+              <h4 class="modal-section-title">Billing</h4>
+              <div class="modal-billing-filters">
+                <div class="search-filter small">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  <input type="text" placeholder="Filter Billing Items">
+                </div>
+                <select class="filter-dropdown small">
+                  <option value="">Cloud</option>
+                  <option>AWS</option>
+                  <option>Azure</option>
+                  <option>GCP</option>
+                </select>
+              </div>
+              <div id="modalBillingTable">
+                <!-- Table will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Uncontrollable Channel Payments Section -->
       <section class="section">
