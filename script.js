@@ -532,16 +532,16 @@ const billingDetailData = {
     isCommit: false,
     isDrawdown: true,
     items: [
-      { sku: 'AWS-PREMIUM-COMPUTE', desc: 'AWS Premium All-Purpose Compute', cloud: 'AWS', qty: '1,543,892.412', price: '$0.25', gross: '$385,973.10', net: '$0.00' },
-      { sku: 'AWS-PREMIUM-COMPUTE-PHT', desc: 'AWS Premium All-Purpose Compute (Photon)', cloud: 'AWS', qty: '423,156.831', price: '$0.25', gross: '$105,789.21', net: '$0.00' },
-      { sku: 'AWS-PREMIUM-JOBS', desc: 'AWS Premium Jobs Compute', cloud: 'AWS', qty: '1,874,481.000', price: '$0.06', gross: '$112,468.86', net: '$0.00' },
-      { sku: 'AWS-PREMIUM-JOBS-PHT', desc: 'AWS Premium Jobs Compute (Photon)', cloud: 'AWS', qty: '213,358.000', price: '$0.05', gross: '$10,667.90', net: '$0.00' },
-      { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '241,182.000', price: '$0.17', gross: '$41,000.94', net: '$0.00' },
-      { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '59,551.000', price: '$0.36', gross: '$21,438.36', net: '$0.00' },
-      { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '129,789.231', price: '$0.02', gross: '$2,595.78', net: '$0.00' }
+      { sku: 'AWS-PREMIUM-COMPUTE', desc: 'AWS Premium All-Purpose Compute', cloud: 'AWS', qty: '156,892.41', price: '$0.25', gross: '$39,223.10', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-COMPUTE-PHT', desc: 'AWS Premium All-Purpose Compute (Photon)', cloud: 'AWS', qty: '42,315.68', price: '$0.25', gross: '$10,578.92', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS', desc: 'AWS Premium Jobs Compute', cloud: 'AWS', qty: '187,448.10', price: '$0.06', gross: '$11,246.89', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS-PHT', desc: 'AWS Premium Jobs Compute (Photon)', cloud: 'AWS', qty: '21,335.80', price: '$0.05', gross: '$1,066.79', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '24,118.20', price: '$0.17', gross: '$4,100.09', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '5,955.10', price: '$0.36', gross: '$2,143.84', net: '$0.00' },
+      { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '277,618.50', price: '$0.02', gross: '$5,552.37', net: '$0.00' }
     ],
     totalItems: 7,
-    totalGross: '$679,934.18',
+    totalGross: '$73,912.00',
     totalNet: '$0.00'
   },
   'drawdown-aws-feb': {
@@ -561,16 +561,16 @@ const billingDetailData = {
     isCommit: false,
     isDrawdown: true,
     items: [
-      { sku: 'AWS-PREMIUM-COMPUTE', desc: 'AWS Premium All-Purpose Compute', cloud: 'AWS', qty: '287,421.512', price: '$0.25', gross: '$71,855.38', net: '$0.00' },
-      { sku: 'AWS-PREMIUM-COMPUTE-PHT', desc: 'AWS Premium All-Purpose Compute (Photon)', cloud: 'AWS', qty: '78,234.123', price: '$0.25', gross: '$19,558.53', net: '$0.00' },
-      { sku: 'AWS-PREMIUM-JOBS', desc: 'AWS Premium Jobs Compute', cloud: 'AWS', qty: '312,456.000', price: '$0.06', gross: '$18,747.36', net: '$0.00' },
-      { sku: 'AWS-PREMIUM-JOBS-PHT', desc: 'AWS Premium Jobs Compute (Photon)', cloud: 'AWS', qty: '45,678.000', price: '$0.05', gross: '$2,283.90', net: '$0.00' },
-      { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '42,891.000', price: '$0.17', gross: '$7,291.47', net: '$0.00' },
-      { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '5,234.000', price: '$0.36', gross: '$1,884.24', net: '$0.00' },
-      { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '10,167.500', price: '$0.02', gross: '$203.35', net: '$0.00' }
+      { sku: 'AWS-PREMIUM-COMPUTE', desc: 'AWS Premium All-Purpose Compute', cloud: 'AWS', qty: '156,892.41', price: '$0.25', gross: '$39,223.10', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-COMPUTE-PHT', desc: 'AWS Premium All-Purpose Compute (Photon)', cloud: 'AWS', qty: '42,315.68', price: '$0.25', gross: '$10,578.92', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS', desc: 'AWS Premium Jobs Compute', cloud: 'AWS', qty: '187,448.10', price: '$0.06', gross: '$11,246.89', net: '$0.00' },
+      { sku: 'AWS-PREMIUM-JOBS-PHT', desc: 'AWS Premium Jobs Compute (Photon)', cloud: 'AWS', qty: '21,335.80', price: '$0.05', gross: '$1,066.79', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '24,118.20', price: '$0.17', gross: '$4,100.09', net: '$0.00' },
+      { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '5,955.10', price: '$0.36', gross: '$2,143.84', net: '$0.00' },
+      { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '277,618.50', price: '$0.02', gross: '$5,552.37', net: '$0.00' }
     ],
     totalItems: 7,
-    totalGross: '$121,824.38',
+    totalGross: '$73,912.00',
     totalNet: '$0.00'
   },
   'postpaid-azure-dec': {
