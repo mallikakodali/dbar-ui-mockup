@@ -450,6 +450,8 @@ const billingDetailData = {
     id: 'db-commit-2025-001',
     status: 'Finalized',
     statusClass: 'finalized',
+    billingTag: 'Prepaid',
+    billingTagClass: 'prepaid',
     billingPeriod: 'May 9 - 31, 2025',
     postingPeriod: 'May 2025',
     postingDate: 'May 9, 2025',
@@ -471,6 +473,8 @@ const billingDetailData = {
     id: 'aws-commit-2025-001',
     status: 'Finalized',
     statusClass: 'finalized',
+    billingTag: 'Prepaid',
+    billingTagClass: 'prepaid',
     billingPeriod: 'May 9 - 31, 2025',
     postingPeriod: 'May 2025',
     postingDate: 'May 9, 2025',
@@ -492,6 +496,8 @@ const billingDetailData = {
     id: 'burst-2026-002',
     status: 'Draft',
     statusClass: 'draft',
+    billingTag: 'In-Deal Burst',
+    billingTagClass: 'indeal-burst',
     billingPeriod: 'Feb 1 - 28, 2026',
     postingPeriod: 'Feb 2026',
     postingDate: 'Feb 28, 2026',
@@ -519,6 +525,8 @@ const billingDetailData = {
     id: 'drawdown-2026-001',
     status: 'Finalized',
     statusClass: 'finalized',
+    billingTag: 'Drawdown Statement',
+    billingTagClass: 'drawdown',
     billingPeriod: 'Jan 1 - 31, 2026',
     postingPeriod: 'Jan 2026',
     postingDate: 'Jan 31, 2026',
@@ -550,6 +558,8 @@ const billingDetailData = {
     id: 'drawdown-2026-002',
     status: 'Draft',
     statusClass: 'draft',
+    billingTag: 'Drawdown Statement',
+    billingTagClass: 'drawdown',
     billingPeriod: 'Feb 1 - 28, 2026',
     postingPeriod: 'Feb 2026',
     postingDate: 'Feb 28, 2026',
@@ -581,6 +591,8 @@ const billingDetailData = {
     id: 'postpaid-2025-012',
     status: 'Finalized',
     statusClass: 'finalized',
+    billingTag: 'Overage Burst',
+    billingTagClass: 'overage-burst',
     billingPeriod: 'Dec 1 - 31, 2025',
     postingPeriod: 'Dec 2025',
     postingDate: 'Dec 31, 2025',
@@ -606,6 +618,8 @@ const billingDetailData = {
     id: 'postpaid-2026-001',
     status: 'Sent',
     statusClass: 'sent',
+    billingTag: 'Overage Burst',
+    billingTagClass: 'overage-burst',
     billingPeriod: 'Jan 1 - 31, 2026',
     postingPeriod: 'Jan 2026',
     postingDate: 'Jan 31, 2026',
@@ -630,6 +644,8 @@ const billingDetailData = {
     id: 'postpaid-2026-002',
     status: 'Finalized',
     statusClass: 'finalized',
+    billingTag: 'Overage Burst',
+    billingTagClass: 'overage-burst',
     billingPeriod: 'Jan 1 - 31, 2026',
     postingPeriod: 'Jan 2026',
     postingDate: 'Jan 31, 2026',
@@ -655,6 +671,8 @@ const billingDetailData = {
     id: 'overage-2026-001',
     status: 'Finalized',
     statusClass: 'finalized',
+    billingTag: 'Overage Burst',
+    billingTagClass: 'overage-burst',
     billingPeriod: 'Jan 1 - 31, 2026',
     postingPeriod: 'Jan 2026',
     postingDate: 'Jan 31, 2026',
@@ -686,6 +704,17 @@ function openBillingDetail(event, billingKey) {
   document.getElementById('modalBillingId').textContent = data.id;
   document.getElementById('modalStatus').textContent = data.status;
   document.getElementById('modalStatus').className = 'meta-badge ' + data.statusClass;
+  
+  // Display billing tag
+  const billingTagEl = document.getElementById('modalBillingTag');
+  if (billingTagEl && data.billingTag) {
+    billingTagEl.textContent = data.billingTag;
+    billingTagEl.className = 'tag ' + (data.billingTagClass || '');
+    billingTagEl.style.display = 'inline-block';
+  } else if (billingTagEl) {
+    billingTagEl.style.display = 'none';
+  }
+  
   document.getElementById('modalBillingPeriod').textContent = data.billingPeriod;
   document.getElementById('modalPostingPeriod').textContent = data.postingPeriod;
   document.getElementById('modalPostingDate').textContent = data.postingDate;

@@ -3531,6 +3531,21 @@ td.indent {
   color: #6B7280;
 }
 
+.tag.indeal-burst {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.tag.overage-burst {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
+.tag.prepaid {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
 /* Billing Modal */
 .billing-modal {
   position: fixed;
