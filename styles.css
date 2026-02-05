@@ -592,6 +592,11 @@ tfoot td {
   color: var(--text-primary);
 }
 
+.amount.na {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
 .payment-badge {
   display: inline-block;
   padding: 4px 10px;
