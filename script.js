@@ -307,7 +307,7 @@ const monthlyData = {
 
 // Format currency
 function formatCurrency(value) {
-  return '$' + value.toLocaleString('en-US');
+  return '$' + value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 // Update Ledger Balance based on selected month
@@ -351,9 +351,9 @@ function updateLedgerBalance(month) {
       consumptionRows[0].querySelector('span:last-child').textContent = formatCurrency(consumption.cloud);
       consumptionRows[1].querySelector('span:last-child').textContent = formatCurrency(consumption.support);
       consumptionRows[2].querySelector('span:last-child').textContent = formatCurrency(consumption.dse);
-      consumptionRows[3].querySelector('span:last-child').textContent = '($' + consumption.otd.toLocaleString('en-US') + ')';
-      consumptionRows[4].querySelector('span:last-child').textContent = '($' + consumption.comp.toLocaleString('en-US') + ')';
-      consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.prepaidRollover.toLocaleString('en-US') + ')';
+      consumptionRows[3].querySelector('span:last-child').textContent = '($' + consumption.otd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ')';
+      consumptionRows[4].querySelector('span:last-child').textContent = '($' + consumption.comp.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ')';
+      consumptionRows[5].querySelector('span:last-child').textContent = '($' + consumption.prepaidRollover.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ')';
       consumptionRows[6].querySelector('span:last-child').textContent = formatCurrency(consumption.net);
     }
   }
