@@ -700,15 +700,19 @@ function openBillingDetail(event, billingKey) {
   document.getElementById('modalReseller').textContent = data.reseller;
   
   // Build billing items table
+  // Show Net Amount column only for non-commit and non-drawdown items
+  const showNetColumn = !data.isCommit && !data.isDrawdown;
+  
   let tableHtml = '<table class="modal-billing-table"><thead><tr>';
   tableHtml += '<th>SKU</th><th>Description</th><th>Cloud</th><th>Quantity</th><th>Unit Price</th><th>Gross Amount</th>';
-  if (!data.isCommit) {
+  if (showNetColumn) {
     tableHtml += '<th>Net Amount</th>';
   }
   tableHtml += '</tr></thead><tbody>';
   
+  const colspan = showNetColumn ? 7 : 6;
+  
   if (data.items.length === 0) {
-    const colspan = data.isCommit ? 6 : 7;
     tableHtml += '<tr><td colspan="' + colspan + '" style="text-align: center; color: var(--text-muted); padding: 24px;">No billing items for this period</td></tr>';
   } else {
     data.items.forEach(item => {
@@ -719,7 +723,7 @@ function openBillingDetail(event, billingKey) {
       tableHtml += '<td class="number">' + item.qty + '</td>';
       tableHtml += '<td class="amount">' + item.price + '</td>';
       tableHtml += '<td class="amount">' + item.gross + '</td>';
-      if (!data.isCommit) {
+      if (showNetColumn) {
         tableHtml += '<td class="amount">' + (item.net || item.gross) + '</td>';
       }
       tableHtml += '</tr>';
@@ -727,10 +731,10 @@ function openBillingDetail(event, billingKey) {
   }
   
   tableHtml += '</tbody><tfoot><tr>';
-  const footerColspan = data.isCommit ? 5 : 5;
+  const footerColspan = 5;
   tableHtml += '<td colspan="' + footerColspan + '" class="total-label">Total (' + data.totalItems + ' items):</td>';
   tableHtml += '<td class="amount"><strong>' + data.totalGross + '</strong></td>';
-  if (!data.isCommit) {
+  if (showNetColumn) {
     tableHtml += '<td class="amount"><strong>' + (data.totalNet || data.totalGross) + '</strong></td>';
   }
   tableHtml += '</tr></tfoot></table>';
