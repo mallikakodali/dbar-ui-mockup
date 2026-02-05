@@ -3261,6 +3261,166 @@ td.indent {
   color: var(--text-muted);
 }
 
+/* Expandable Invoice Rows */
+.invoice-row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.invoice-row:hover {
+  background: var(--bg-light);
+}
+
+.invoice-row.expanded {
+  background: var(--bg-light);
+}
+
+.period-cell.clickable {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.period-cell.clickable .period-text {
+  color: var(--link-blue);
+}
+
+.expand-icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: var(--text-muted);
+}
+
+.invoice-row.expanded .expand-icon {
+  transform: rotate(90deg);
+}
+
+.invoice-detail-row {
+  background: var(--bg-light);
+}
+
+.invoice-detail-row > td {
+  padding: 0 !important;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.invoice-detail-content {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Billing Info Section in Detail */
+.billing-info-section {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.detail-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+}
+
+.billing-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px 24px;
+}
+
+.billing-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.billing-info-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.billing-info-value {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.billing-info-value.no-integrate {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.billing-info-value.integrate {
+  color: #15803D;
+}
+
+/* Billing Items Section in Detail */
+.billing-items-section {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.billing-items-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.billing-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.billing-items-table th,
+.billing-items-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.billing-items-table th {
+  background: var(--bg-light);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.billing-items-table td.number {
+  text-align: right;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+}
+
+.billing-items-table td.amount {
+  text-align: right;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+}
+
+.billing-items-table tfoot td {
+  background: var(--bg-light);
+  font-weight: 500;
+}
+
+.billing-items-table .total-label {
+  text-align: right;
+}
+
+.billing-items-table .empty-cell {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 24px;
+}
+
+.empty-burst-row td {
+  background: var(--bg-light);
+}
+
 /* Tags */
 .tag {
   display: inline-block;

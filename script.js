@@ -443,3 +443,17 @@ function toggleLedgerEntries(button) {
 
 // Make toggleLedgerEntries available globally
 window.toggleLedgerEntries = toggleLedgerEntries;
+
+// Toggle Invoice Detail in Billings tab
+function toggleInvoiceDetail(row) {
+  const detailRow = row.nextElementSibling;
+  
+  if (detailRow && detailRow.classList.contains('invoice-detail-row')) {
+    const isHidden = detailRow.style.display === 'none' || detailRow.style.display === '';
+    detailRow.style.display = isHidden ? 'table-row' : 'none';
+    row.classList.toggle('expanded', isHidden);
+  }
+}
+
+// Make toggleInvoiceDetail available globally
+window.toggleInvoiceDetail = toggleInvoiceDetail;

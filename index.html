@@ -2814,7 +2814,7 @@
         </div>
 
         <!-- Invoices Table -->
-        <div class="billings-table">
+        <div class="billings-table expandable-billings">
           <table>
             <thead>
               <tr>
@@ -2828,9 +2828,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <!-- Invoice 1: Prepaid - Databricks -->
+              <tr class="invoice-row" onclick="toggleInvoiceDetail(this)">
                 <td>1</td>
-                <td class="period-cell">
+                <td class="period-cell clickable">
+                  <svg class="expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
                   <span class="period-text">May 9 - 31, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
@@ -2840,9 +2844,93 @@
                 <td>Databricks Direct</td>
                 <td class="amount">$1,082,000.00</td>
               </tr>
-              <tr>
+              <tr class="invoice-detail-row" style="display: none;">
+                <td colspan="7">
+                  <div class="invoice-detail-content">
+                    <!-- Billing Information -->
+                    <div class="billing-info-section">
+                      <h4 class="detail-section-title">Billing Information</h4>
+                      <div class="billing-info-grid">
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Identifier</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Sales Order ID</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Class</span>
+                          <span class="billing-info-value">MC</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Integration</span>
+                          <span class="billing-info-value no-integrate">Will NOT integrate to NetSuite</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">Reseller</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Billing Items -->
+                    <div class="billing-items-section">
+                      <h4 class="detail-section-title">Billing Items</h4>
+                      <div class="billing-items-filters">
+                        <div class="search-filter small">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                          </svg>
+                          <input type="text" placeholder="Filter Billing Items">
+                        </div>
+                        <select class="filter-dropdown small">
+                          <option value="">Cloud</option>
+                          <option>AWS</option>
+                          <option>Azure</option>
+                          <option>GCP</option>
+                        </select>
+                      </div>
+                      <table class="billing-items-table">
+                        <thead>
+                          <tr>
+                            <th>SKU</th>
+                            <th>Description</th>
+                            <th>Cloud</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Gross Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>DB-COMMIT-PREPAID</td>
+                            <td>Databricks Commit - Prepaid Installment</td>
+                            <td>All</td>
+                            <td class="number">1.000</td>
+                            <td class="amount">$1,082,000.00</td>
+                            <td class="amount">$1,082,000.00</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td colspan="5" class="total-label">Total (1 item):</td>
+                            <td class="amount"><strong>$1,082,000.00</strong></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Invoice 2: Prepaid - AWS MP -->
+              <tr class="invoice-row" onclick="toggleInvoiceDetail(this)">
                 <td>2</td>
-                <td class="period-cell">
+                <td class="period-cell clickable">
+                  <svg class="expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
                   <span class="period-text">May 9 - 31, 2025</span>
                   <span class="adjustments-count">(0 adjustments)</span>
                 </td>
@@ -2851,6 +2939,178 @@
                 <td><span class="tag prepaid-tag">Prepaid</span></td>
                 <td>AWS Marketplace</td>
                 <td class="amount">$1,000,000.00</td>
+              </tr>
+              <tr class="invoice-detail-row" style="display: none;">
+                <td colspan="7">
+                  <div class="invoice-detail-content">
+                    <!-- Billing Information -->
+                    <div class="billing-info-section">
+                      <h4 class="detail-section-title">Billing Information</h4>
+                      <div class="billing-info-grid">
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Identifier</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Sales Order ID</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Class</span>
+                          <span class="billing-info-value">MC</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Integration</span>
+                          <span class="billing-info-value no-integrate">Will NOT integrate to NetSuite</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">Reseller</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Billing Items -->
+                    <div class="billing-items-section">
+                      <h4 class="detail-section-title">Billing Items</h4>
+                      <div class="billing-items-filters">
+                        <div class="search-filter small">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                          </svg>
+                          <input type="text" placeholder="Filter Billing Items">
+                        </div>
+                        <select class="filter-dropdown small">
+                          <option value="">Cloud</option>
+                          <option>AWS</option>
+                          <option>Azure</option>
+                          <option>GCP</option>
+                        </select>
+                      </div>
+                      <table class="billing-items-table">
+                        <thead>
+                          <tr>
+                            <th>SKU</th>
+                            <th>Description</th>
+                            <th>Cloud</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Gross Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>DB-COMMIT-PREPAID-AWS</td>
+                            <td>Databricks Commit - AWS Marketplace Prepaid</td>
+                            <td>AWS</td>
+                            <td class="number">1.000</td>
+                            <td class="amount">$1,000,000.00</td>
+                            <td class="amount">$1,000,000.00</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td colspan="5" class="total-label">Total (1 item):</td>
+                            <td class="amount"><strong>$1,000,000.00</strong></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Invoice 3: In-deal Burst Example (for illustration) -->
+              <tr class="invoice-row" onclick="toggleInvoiceDetail(this)">
+                <td>3</td>
+                <td class="period-cell clickable">
+                  <svg class="expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                  <span class="period-text">Jun 1 - 30, 2025</span>
+                  <span class="adjustments-count">(0 adjustments)</span>
+                </td>
+                <td>Jul 1, 2025</td>
+                <td>Jul 5, 2025</td>
+                <td><span class="tag in-deal">In-deal Burst</span></td>
+                <td>Databricks Direct</td>
+                <td class="amount">$0.00</td>
+              </tr>
+              <tr class="invoice-detail-row" style="display: none;">
+                <td colspan="7">
+                  <div class="invoice-detail-content">
+                    <!-- Billing Information -->
+                    <div class="billing-info-section">
+                      <h4 class="detail-section-title">Billing Information</h4>
+                      <div class="billing-info-grid">
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Identifier</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Sales Order ID</span>
+                          <span class="billing-info-value"><a href="#" class="info-link">17292138 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a></span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Class</span>
+                          <span class="billing-info-value">MC</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">NetSuite Integration</span>
+                          <span class="billing-info-value integrate">Will integrate to NetSuite</span>
+                        </div>
+                        <div class="billing-info-row">
+                          <span class="billing-info-label">Reseller</span>
+                          <span class="billing-info-value">--</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Billing Items -->
+                    <div class="billing-items-section">
+                      <h4 class="detail-section-title">Billing Items</h4>
+                      <div class="billing-items-filters">
+                        <div class="search-filter small">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                          </svg>
+                          <input type="text" placeholder="Filter Billing Items">
+                        </div>
+                        <select class="filter-dropdown small">
+                          <option value="">Cloud</option>
+                          <option>AWS</option>
+                          <option>Azure</option>
+                          <option>GCP</option>
+                        </select>
+                      </div>
+                      <table class="billing-items-table burst-table">
+                        <thead>
+                          <tr>
+                            <th>SKU</th>
+                            <th>Description</th>
+                            <th>Cloud</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Gross Amount</th>
+                            <th>Net Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="empty-burst-row">
+                            <td colspan="7" class="empty-cell">No burst billing items for this period</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td colspan="5" class="total-label">Total (0 items):</td>
+                            <td class="amount"><strong>$0.00</strong></td>
+                            <td class="amount"><strong>$0.00</strong></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
