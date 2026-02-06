@@ -263,15 +263,15 @@
             <tbody>
               <tr>
                 <td>&lt;xyz&gt;</td>
-                <td>Total Commit Value</td>
+                <td>TDCP (TCV + Deferred True up)</td>
                 <td>May 9, 2025</td>
                 <td>May 8, 2028</td>
                 <td>
                   <div class="drawdown-cell">
-                    <span class="drawdown-amount">$748,944.00 / $8,182,500.00</span>
-                    <span class="drawdown-percent">(9.15%)</span>
+                    <span class="drawdown-amount">$811,944.00 / $8,182,500.00</span>
+                    <span class="drawdown-percent">(9.92%)</span>
                     <div class="drawdown-bar">
-                      <div class="drawdown-fill blue" style="width: 9.15%"></div>
+                      <div class="drawdown-fill blue" style="width: 9.92%"></div>
                     </div>
                   </div>
                 </td>
@@ -480,8 +480,16 @@
           <h3 class="pane-title">TDCP</h3>
           <p class="pane-subtitle">Total Databricks Commit Payable</p>
           <div class="pane-rows">
-            <div class="pane-row total">
+            <div class="pane-row">
               <span>Total Contract Value (TCV)</span>
+              <span>$8,119,500.00</span>
+            </div>
+            <div class="pane-row">
+              <span>+ Deferred True up (Postpaid)</span>
+              <span>$63,000.00</span>
+            </div>
+            <div class="pane-row total">
+              <span>TDCP</span>
               <span>$8,182,500.00</span>
             </div>
           </div>
@@ -1677,11 +1685,11 @@
         <h2 class="section-title">Commit Buckets</h2>
       </div>
 
-      <!-- Bucket Card 1: Total Commit Value -->
+      <!-- Bucket Card 1: TDCP (TCV + Deferred True up) -->
       <div class="commit-bucket-card expandable">
         <div class="bucket-card-header">
           <div class="bucket-tags">
-            <span class="bucket-name">Total Commit Value</span>
+            <span class="bucket-name">TDCP (TCV + Deferred True up)</span>
             <span class="bucket-tag gray">700</span>
             <span class="bucket-tag blue">Specified Commit</span>
             <span class="bucket-tag green">Postpaid</span>
@@ -1692,7 +1700,7 @@
           <div class="bucket-meta">
             <span class="meta-label">Product Groups:</span>
             <span class="meta-tag">All Products</span>
-            <span class="meta-tag dark">TCV-USD</span>
+            <span class="meta-tag dark">TDCP-USD</span>
           </div>
           
           <div class="bucket-period">
@@ -1702,13 +1710,13 @@
           
           <div class="bucket-progress-section">
             <div class="bucket-progress-bar">
-              <div class="bucket-progress-fill" style="width: 9.22%;"></div>
+              <div class="bucket-progress-fill" style="width: 9.92%;"></div>
             </div>
             <div class="bucket-progress-stats">
-              <span class="consumed-amount">$748,944.00</span>
+              <span class="consumed-amount">$811,944.00</span>
               <span class="separator">/</span>
-              <span class="total-amount">$8,119,500.00</span>
-              <span class="percentage">(9.22%)</span>
+              <span class="total-amount">$8,182,500.00</span>
+              <span class="percentage">(9.92%)</span>
             </div>
           </div>
 
@@ -1876,140 +1884,7 @@
         </div>
       </div>
 
-      <!-- Bucket Card 2: Rollover Postpaid -->
-      <div class="commit-bucket-card expandable">
-        <div class="bucket-card-header">
-          <div class="bucket-tags">
-            <span class="bucket-name">Rollover Postpaid</span>
-            <span class="bucket-tag gray">701</span>
-            <span class="bucket-tag orange">Rollover Bucket</span>
-            <span class="bucket-tag green">Postpaid</span>
-          </div>
-        </div>
-        
-        <div class="bucket-card-body">
-          <div class="bucket-meta">
-            <span class="meta-label">Product Groups:</span>
-            <span class="meta-tag">All Products</span>
-            <span class="meta-tag dark">ROLLOVER-POSTPAID-USD</span>
-          </div>
-          
-          <div class="bucket-period">
-            <span class="period-label">Period:</span>
-            <span class="period-value">May 9, 2025 - May 8, 2028</span>
-          </div>
-          
-          <div class="bucket-progress-section">
-            <div class="bucket-progress-bar">
-              <div class="bucket-progress-fill full" style="width: 100%;"></div>
-            </div>
-            <div class="bucket-progress-stats">
-              <span class="consumed-amount">$63,000.00</span>
-              <span class="separator">/</span>
-              <span class="total-amount">$63,000.00</span>
-              <span class="percentage">(100%)</span>
-            </div>
-          </div>
-
-          <!-- Billing Schedule & Ledger Toggle -->
-          <div class="bucket-footer-row">
-            <div class="billing-schedule-info">
-              <span class="schedule-label">Billing Schedule:</span>
-              <span class="schedule-value">--</span>
-            </div>
-            <button class="ledger-toggle-btn" onclick="toggleLedgerEntries(this)">
-              <span>Ledger Entries</span>
-              <span class="ledger-count">4</span>
-              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 9l6 6 6-6"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Expandable Ledger Entries -->
-          <div class="bucket-ledger-expanded" style="display: none;">
-            <!-- Filters -->
-            <div class="ledger-filters">
-              <div class="ledger-filter-left">
-                <div class="search-filter small">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="M21 21l-4.35-4.35"/>
-                  </svg>
-                  <input type="text" placeholder="Filter Ledger Entries">
-                </div>
-                <label class="toggle-filter small">
-                  <input type="checkbox">
-                  <span class="toggle-label">Manual Adjustments Only</span>
-                </label>
-                <select class="filter-dropdown small">
-                  <option value="">Cloud</option>
-                  <option>AWS</option>
-                  <option>Azure</option>
-                  <option>GCP</option>
-                  <option>SAP</option>
-                </select>
-              </div>
-            </div>
-            
-            <!-- Ledger Table -->
-            <table class="bucket-ledger-table expanded">
-              <thead>
-                <tr>
-                  <th class="manual-col">Manual</th>
-                  <th>From Date</th>
-                  <th>To Date</th>
-                  <th>Cloud</th>
-                  <th>Reason</th>
-                  <th style="text-align: right;">Amount</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="manual-col"></td>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td>AWS</td>
-                  <td>Rollover applied</td>
-                  <td class="amount">$41,344.00</td>
-                </tr>
-                <tr>
-                  <td class="manual-col"></td>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td>Azure</td>
-                  <td>Rollover applied</td>
-                  <td class="amount">$20,672.00</td>
-                </tr>
-                <tr>
-                  <td class="manual-col"></td>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td>GCP</td>
-                  <td>Rollover applied</td>
-                  <td class="amount">$83.00</td>
-                </tr>
-                <tr>
-                  <td class="manual-col"></td>
-                  <td>Jun 1, 2025</td>
-                  <td>Jun 30, 2025</td>
-                  <td>SAP</td>
-                  <td>Rollover applied</td>
-                  <td class="amount">$901.00</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <!-- Pagination -->
-            <div class="ledger-pagination">
-              <button class="page-btn active">1</button>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-      <!-- Bucket Card 3: Prepaid Rollover -->
+      <!-- Bucket Card 2: Prepaid Rollover -->
       <div class="commit-bucket-card expandable">
         <div class="bucket-card-header">
           <div class="bucket-tags">
