@@ -547,11 +547,10 @@ const billingDetailData = {
       { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '16,568.82', price: '$0.17', gross: '$2,816.70', net: 'N/A' },
       { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '4,087.00', price: '$0.36', gross: '$1,471.32', net: 'N/A' },
       { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '190,612.50', price: '$0.02', gross: '$3,812.46', net: 'N/A' },
-      { sku: 'MC-PRODUCTION-SUPPORT', desc: 'MC Production Support', cloud: 'AWS', qty: '1.00', price: '$9,012.00', gross: '$9,012.00', net: 'N/A' },
-      { sku: 'MC-DSE-CHARGE', desc: 'MC DSE Charge', cloud: 'AWS', qty: '1.00', price: '$14,166.67', gross: '$14,166.67', net: 'N/A' }
+      { sku: 'MC-PRODUCTION-SUPPORT', desc: 'MC Production Support', cloud: 'AWS', qty: '1.00', price: '$9,012.00', gross: '$9,012.00', net: 'N/A' }
     ],
-    totalItems: 9,
-    totalGross: '$73,912.00',
+    totalItems: 8,
+    totalGross: '$59,745.33',
     totalNet: 'N/A'
   },
   'drawdown-aws-feb': {
@@ -580,11 +579,10 @@ const billingDetailData = {
       { sku: 'AWS-SERVERLESS', desc: 'AWS Premium Serverless Compute', cloud: 'AWS', qty: '16,568.82', price: '$0.17', gross: '$2,816.70', net: 'N/A' },
       { sku: 'AWS-SERVERLESS-SQL', desc: 'AWS Premium Serverless SQL Compute', cloud: 'AWS', qty: '4,087.00', price: '$0.36', gross: '$1,471.32', net: 'N/A' },
       { sku: 'AWS-STORAGE', desc: 'AWS Premium Databricks Storage', cloud: 'AWS', qty: '190,612.50', price: '$0.02', gross: '$3,812.46', net: 'N/A' },
-      { sku: 'MC-PRODUCTION-SUPPORT', desc: 'MC Production Support', cloud: 'AWS', qty: '1.00', price: '$9,012.00', gross: '$9,012.00', net: 'N/A' },
-      { sku: 'MC-DSE-CHARGE', desc: 'MC DSE Charge', cloud: 'AWS', qty: '1.00', price: '$14,166.67', gross: '$14,166.67', net: 'N/A' }
+      { sku: 'MC-PRODUCTION-SUPPORT', desc: 'MC Production Support', cloud: 'AWS', qty: '1.00', price: '$9,012.00', gross: '$9,012.00', net: 'N/A' }
     ],
-    totalItems: 9,
-    totalGross: '$73,912.00',
+    totalItems: 8,
+    totalGross: '$59,745.33',
     totalNet: 'N/A'
   },
   'postpaid-azure-dec': {
