@@ -1326,19 +1326,24 @@
         <!-- P3 Summary Cards -->
         <div class="p3-summary-cards">
           <div class="p3-card">
-            <div class="p3-card-label">Total P3 Paid (CTD)</div>
-            <div class="p3-card-value">$100,000.00</div>
-            <div class="p3-card-sub">Cumulative P3 payments</div>
+            <div class="p3-card-label">P3 Carry Over (Prior Contract)</div>
+            <div class="p3-card-value">$6,000.00</div>
+            <div class="p3-card-sub">Unused P3 balance from prior contract</div>
+          </div>
+          <div class="p3-card">
+            <div class="p3-card-label">Total P3 Committed (Active)</div>
+            <div class="p3-card-value">$1,056,000.00</div>
+            <div class="p3-card-sub">$1,050,000 + $6,000 carry over</div>
           </div>
           <div class="p3-card">
             <div class="p3-card-label">Total P3 Consumed (CTD)</div>
-            <div class="p3-card-value">$100,000.00</div>
-            <div class="p3-card-sub">Usage applied from P3 (capped at P3 paid)</div>
+            <div class="p3-card-value">$370,990.00</div>
+            <div class="p3-card-sub">Sum of all active reservation usage</div>
           </div>
           <div class="p3-card">
             <div class="p3-card-label">P3 Balance</div>
-            <div class="p3-card-value">$0.00</div>
-            <div class="p3-card-sub">P3 fully consumed</div>
+            <div class="p3-card-value">$685,010.00</div>
+            <div class="p3-card-sub">Remaining P3 available</div>
           </div>
         </div>
       </section>
@@ -1346,14 +1351,15 @@
       <!-- P3 Monthly Breakdown -->
       <section class="section">
         <h2 class="section-title">Monthly P3 Breakdown</h2>
-        <p class="section-description">Month-by-month P3 activity showing Azure usage, P3 consumption, and running balance. <span class="mock-bracket">(Note: Details are for illustration only and values don't reflect the ledger balances)</span></p>
+        <p class="section-description">Month-by-month P3 activity showing Azure usage, P3 consumption, and running balance across all active reservations.</p>
 
         <div class="performance-table-wrapper">
           <table class="performance-table">
             <thead>
               <tr>
                 <th class="metric-header">Month</th>
-                <th>P3 Paid</th>
+                <th>P3 Committed</th>
+                <th>Carry Over</th>
                 <th>Azure Usage</th>
                 <th>P3 Consumed</th>
                 <th>Running Balance</th>
@@ -1361,304 +1367,182 @@
             </thead>
             <tbody>
               <tr>
-                <td class="metric-name">May 2025</td>
-                <td class="amount">$100,000.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$83,333.33</td>
-              </tr>
-              <tr>
-                <td class="metric-name">Jun 2025</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$66,666.66</td>
-              </tr>
-              <tr>
-                <td class="metric-name">Jul 2025</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$49,999.99</td>
-              </tr>
-              <tr>
-                <td class="metric-name">Aug 2025</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$33,333.32</td>
-              </tr>
-              <tr>
-                <td class="metric-name">Sep 2025</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$16,666.65</td>
-              </tr>
-              <tr>
-                <td class="metric-name">Oct 2025</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$16,666.65</td>
-                <td class="amount">$0.00</td>
-              </tr>
-              <tr>
-                <td class="metric-name">Nov 2025</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$0.00</td>
-              </tr>
-              <tr>
-                <td class="metric-name">Dec 2025</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$0.00</td>
-              </tr>
-              <tr>
                 <td class="metric-name">Jan 2026</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
-                <td class="amount">$0.00</td>
-                <td class="amount">$0.00</td>
+                <td class="amount">$180,000.00</td>
+                <td class="amount">$6,000.00</td>
+                <td class="amount">$45,000.00</td>
+                <td class="amount">$45,000.00</td>
+                <td class="amount">$141,000.00</td>
               </tr>
               <tr>
                 <td class="metric-name">Feb 2026</td>
                 <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
                 <td class="amount">$0.00</td>
-                <td class="amount">$0.00</td>
+                <td class="amount">$45,000.00</td>
+                <td class="amount">$45,000.00</td>
+                <td class="amount">$96,000.00</td>
               </tr>
               <tr>
                 <td class="metric-name">Mar 2026</td>
                 <td class="amount">$0.00</td>
-                <td class="amount">$16,666.67</td>
                 <td class="amount">$0.00</td>
-                <td class="amount">$0.00</td>
+                <td class="amount">$45,000.00</td>
+                <td class="amount">$45,000.00</td>
+                <td class="amount">$51,000.00</td>
               </tr>
               <tr>
                 <td class="metric-name">Apr 2026</td>
                 <td class="amount">$0.00</td>
-                <td class="amount">$16,666.63</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$51,000.00</td>
+                <td class="amount">$51,000.00</td>
+                <td class="amount">$0.00</td>
+              </tr>
+              <tr>
+                <td class="metric-name">May 2026</td>
+                <td class="amount">$320,000.00</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$68,000.00</td>
+                <td class="amount">$68,000.00</td>
+                <td class="amount">$252,000.00</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Jun 2026</td>
+                <td class="amount">$550,000.00</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$116,990.00</td>
+                <td class="amount">$116,990.00</td>
+                <td class="amount">$685,010.00</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Jul 2026</td>
                 <td class="amount">$0.00</td>
                 <td class="amount">$0.00</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Aug 2026</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Sep 2026</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Oct 2026</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Nov 2026</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+              </tr>
+              <tr>
+                <td class="metric-name">Dec 2026</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">$0.00</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
+                <td class="amount">—</td>
               </tr>
               <tr class="subtotal-row">
-                <td class="metric-name"><strong>Total (Year 1)</strong></td>
-                <td class="amount"><strong>$100,000.00</strong></td>
-                <td class="amount"><strong>$200,000.00</strong></td>
-                <td class="amount"><strong>$100,000.00</strong></td>
-                <td class="amount"><strong>$0.00</strong></td>
+                <td class="metric-name"><strong>Total (CTD)</strong></td>
+                <td class="amount"><strong>$1,050,000.00</strong></td>
+                <td class="amount"><strong>$6,000.00</strong></td>
+                <td class="amount"><strong>$370,990.00</strong></td>
+                <td class="amount"><strong>$370,990.00</strong></td>
+                <td class="amount"><strong>$685,010.00</strong></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- Azure Subscription IDs Section -->
-      <section class="section">
-        <h2 class="section-title">Azure Subscription IDs for P3</h2>
-        <p class="section-description">Azure subscriptions associated with this P3 agreement.</p>
-        
-        <div class="subscription-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Subscription ID</th>
-                <th>Subscription Name</th>
-                <th>Status</th>
-                <th>Added Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>a1b2c3d4-e5f6-7890-abcd-ef1234567890</code></td>
-                <td>Production Workloads</td>
-                <td><span class="status-badge active">Active</span></td>
-                <td>May 9, 2025</td>
-              </tr>
-              <tr>
-                <td><code>b2c3d4e5-f6a7-8901-bcde-f12345678901</code></td>
-                <td>Development Environment</td>
-                <td><span class="status-badge active">Active</span></td>
-                <td>May 9, 2025</td>
-              </tr>
-              <tr>
-                <td><code>c3d4e5f6-a7b8-9012-cdef-123456789012</code></td>
-                <td>Staging Environment</td>
-                <td><span class="status-badge active">Active</span></td>
-                <td>Jun 15, 2025</td>
-              </tr>
-              <tr>
-                <td><code>d4e5f6a7-b8c9-0123-def0-234567890123</code></td>
-                <td>Data Analytics</td>
-                <td><span class="status-badge active">Active</span></td>
-                <td>Jul 1, 2025</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- P3 Entries Table -->
+      <!-- P3 Reservations Table -->
       <section class="section">
         <div class="section-header">
           <div>
-            <h2 class="section-title">P3 Entries</h2>
-            <p class="section-description">All P3 transactions including payments and consumption records. <span class="mock-bracket">(Note: Details are for illustration only and values don't reflect the ledger balances)</span></p>
+            <h2 class="section-title">P3 Reservations</h2>
+            <p class="section-description">P3 reservations purchased under this contract.</p>
           </div>
         </div>
 
-        <!-- Filters -->
-        <div class="billings-filters">
-          <div class="search-filter">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="M21 21l-4.35-4.35"/>
-            </svg>
-            <input type="text" placeholder="Filter P3 Entries">
-          </div>
-          <select class="filter-dropdown">
-            <option value="">Entry Type</option>
-            <option>P3 Payment</option>
-            <option>P3 Consumption</option>
-            <option>Adjustment</option>
-          </select>
-          <select class="filter-dropdown">
-            <option value="">Period</option>
-            <option>Jan 2026</option>
-            <option>Dec 2025</option>
-            <option>Nov 2025</option>
-          </select>
-        </div>
-
-        <!-- P3 Table -->
+        <!-- P3 Reservations Table -->
         <div class="billings-table">
           <table>
             <thead>
               <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>Period</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Amount</th>
+                <th>P3 Reservation ID</th>
+                <th>Azure Subscription ID</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>LTD Utilization %</th>
+                <th>Commit Amount</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Jan 15, 2026</td>
-                <td>Jan 2026</td>
-                <td><span class="tag azure-p3">P3 Payment</span></td>
-                <td>Monthly P3 allocation</td>
-                <td class="amount">$10,000.00</td>
-                <td>
-                  <span class="status-indicator draft">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
-                    </svg>
-                    Draft
-                  </span>
-                </td>
+                <td>R-P3-011-res</td>
+                <td>sub-001</td>
+                <td>Jun 1, 2026</td>
+                <td>Jun 1, 2027</td>
+                <td>18.18%</td>
+                <td class="amount">$550,000.00</td>
+                <td><span class="status-badge active">Active</span></td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Jan 20, 2026</td>
-                <td>Jan 2026</td>
-                <td><span class="tag postpaid">P3 Consumption</span></td>
-                <td>Azure RI consumption</td>
-                <td class="amount negative">-$8,700.00</td>
-                <td>
-                  <span class="status-indicator draft">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
-                    </svg>
-                    Draft
-                  </span>
-                </td>
+                <td>R-P3-010-res</td>
+                <td>sub-002</td>
+                <td>May 1, 2026</td>
+                <td>May 1, 2027</td>
+                <td>42.50%</td>
+                <td class="amount">$320,000.00</td>
+                <td><span class="status-badge active">Active</span></td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>Dec 15, 2025</td>
-                <td>Dec 2025</td>
-                <td><span class="tag azure-p3">P3 Payment</span></td>
-                <td>Monthly P3 allocation</td>
-                <td class="amount">$10,000.00</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
+                <td>R-P3-009-res</td>
+                <td>sub-001</td>
+                <td>Jan 1, 2026</td>
+                <td>Jan 1, 2027</td>
+                <td>75.00%</td>
+                <td class="amount">$180,000.00</td>
+                <td><span class="status-badge active">Active</span></td>
               </tr>
               <tr>
-                <td>4</td>
-                <td>Dec 31, 2025</td>
-                <td>Dec 2025</td>
-                <td><span class="tag postpaid">P3 Consumption</span></td>
-                <td>Azure RI consumption</td>
-                <td class="amount negative">-$9,600.00</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
+                <td>R-P3-008-res</td>
+                <td>sub-003</td>
+                <td>Jun 1, 2025</td>
+                <td>Jun 1, 2026</td>
+                <td>100.00%</td>
+                <td class="amount">$250,000.00</td>
+                <td><span class="status-badge inactive">Expired</span></td>
               </tr>
               <tr>
-                <td>5</td>
-                <td>Nov 15, 2025</td>
-                <td>Nov 2025</td>
-                <td><span class="tag azure-p3">P3 Payment</span></td>
-                <td>Monthly P3 allocation</td>
-                <td class="amount">$10,000.00</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Nov 30, 2025</td>
-                <td>Nov 2025</td>
-                <td><span class="tag postpaid">P3 Consumption</span></td>
-                <td>Azure RI consumption</td>
-                <td class="amount negative">-$9,300.00</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Oct 15, 2025</td>
-                <td>Oct 2025</td>
-                <td><span class="tag in-deal">Adjustment</span></td>
-                <td>P3 reconciliation adjustment</td>
-                <td class="amount negative">-$421.83</td>
-                <td>
-                  <span class="status-indicator finalized">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    Finalized
-                  </span>
-                </td>
+                <td>R-P3-007-res</td>
+                <td>sub-002</td>
+                <td>Mar 1, 2025</td>
+                <td>Mar 1, 2026</td>
+                <td>94.32%</td>
+                <td class="amount">$100,000.00</td>
+                <td><span class="status-badge inactive">Expired</span></td>
               </tr>
             </tbody>
           </table>

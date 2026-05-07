@@ -2493,8 +2493,8 @@ td.indent {
 
 .p3-summary-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   margin-top: 20px;
 }
 
@@ -2502,7 +2502,7 @@ td.indent {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 20px 16px;
   text-align: center;
 }
 
@@ -2519,7 +2519,7 @@ td.indent {
 }
 
 .p3-card-value {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--text-primary);
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
