@@ -2493,8 +2493,8 @@ td.indent {
 
 .p3-summary-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
   margin-top: 20px;
 }
 
@@ -2502,8 +2502,10 @@ td.indent {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 20px 16px;
+  padding: 16px 12px;
   text-align: center;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .p3-card.highlight {
@@ -2512,18 +2514,21 @@ td.indent {
 }
 
 .p3-card-label {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .p3-card-value {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .p3-card-value.positive {
@@ -2531,8 +2536,11 @@ td.indent {
 }
 
 .p3-card-sub {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {
